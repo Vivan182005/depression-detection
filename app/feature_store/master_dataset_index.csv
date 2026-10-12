@@ -1,0 +1,184 @@
+session_id,participant_id,feature_path,num_frames,phq8_score,severity_class_id,severity_category,gender,binary_depression_label
+301_AUDIO,301,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/301_AUDIO_features.npz,51494,3.0,0,Minimal / Mild,0,0
+301,301,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/301_features.npz,30990,3.0,0,Minimal / Mild,0,0
+302_AUDIO,302,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/302_AUDIO_features.npz,47426,4.0,0,Minimal / Mild,1,0
+302,302,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/302_features.npz,14435,4.0,0,Minimal / Mild,1,0
+305,305,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/305_features.npz,70417,7.0,0,Minimal / Mild,0,0
+307,307,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/307_features.npz,51199,4.0,0,Minimal / Mild,1,0
+308,308,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/308_features.npz,21625,11.0,1,Moderate Depression,0,1
+309,309,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/309_features.npz,13632,2.0,0,Minimal / Mild,0,0
+310,310,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/310_features.npz,19327,4.0,0,Minimal / Mild,0,0
+311,311,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/311_features.npz,15918,1.0,0,Minimal / Mild,1,0
+312,312,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/312_features.npz,22360,2.0,0,Minimal / Mild,0,0
+313,313,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/313_features.npz,18437,7.0,0,Minimal / Mild,0,0
+314,314,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/314_features.npz,72520,1.0,0,Minimal / Mild,1,0
+315,315,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/315_features.npz,31462,2.0,0,Minimal / Mild,0,0
+316,316,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/316_features.npz,15587,6.0,0,Minimal / Mild,0,0
+317,317,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/317_features.npz,16386,8.0,0,Minimal / Mild,0,0
+318,318,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/318_features.npz,14667,3.0,0,Minimal / Mild,0,0
+319,319,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/319_features.npz,16583,13.0,1,Moderate Depression,0,1
+320,320,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/320_features.npz,17203,11.0,1,Moderate Depression,0,1
+322,322,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/322_features.npz,35845,5.0,0,Minimal / Mild,0,0
+323,323,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/323_features.npz,27247,1.0,0,Minimal / Mild,1,0
+324,324,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/324_features.npz,17903,5.0,0,Minimal / Mild,0,0
+325,325,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/325_features.npz,33171,10.0,1,Moderate Depression,0,1
+326,326,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/326_features.npz,12911,2.0,0,Minimal / Mild,0,0
+327,327,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/327_features.npz,17316,4.0,0,Minimal / Mild,0,0
+328,328,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/328_features.npz,41655,4.0,0,Minimal / Mild,0,0
+329,329,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/329_features.npz,22542,2.0,0,Minimal / Mild,1,0
+330,330,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/330_features.npz,13762,12.0,1,Moderate Depression,0,1
+331,331,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/331_features.npz,29066,3.0,0,Minimal / Mild,0,0
+332,332,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/332_features.npz,27631,2.0,0,Minimal / Mild,1,0
+333,333,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/333_features.npz,31726,5.0,0,Minimal / Mild,0,0
+334,334,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/334_features.npz,30699,1.0,0,Minimal / Mild,1,0
+335,335,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/335_features.npz,30592,3.0,0,Minimal / Mild,1,0
+336,336,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/336_features.npz,25993,7.0,0,Minimal / Mild,0,0
+337,337,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/337_features.npz,85354,1.0,0,Minimal / Mild,1,0
+339,339,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/339_features.npz,29203,11.0,1,Moderate Depression,0,1
+340,340,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/340_features.npz,11556,1.0,0,Minimal / Mild,1,0
+341,341,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/341_features.npz,26870,7.0,0,Minimal / Mild,0,0
+343,343,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/343_features.npz,15193,9.0,0,Minimal / Mild,0,0
+344,344,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/344_features.npz,42598,11.0,1,Moderate Depression,0,1
+345,345,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/345_features.npz,33074,15.0,2,Moderately Severe / Severe,0,1
+346,346,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/346_features.npz,45189,6.0,0,Minimal / Mild,1,0
+347,347,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/347_features.npz,7939,16.0,2,Moderately Severe / Severe,0,1
+348,348,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/348_features.npz,20053,20.0,2,Moderately Severe / Severe,0,1
+349,349,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/349_features.npz,34391,4.0,0,Minimal / Mild,1,0
+350,350,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/350_features.npz,31227,11.0,1,Moderate Depression,0,1
+351,351,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/351_features.npz,27718,14.0,1,Moderate Depression,0,1
+352,352,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/352_features.npz,33750,10.0,1,Moderate Depression,0,1
+353,353,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/353_features.npz,27677,11.0,1,Moderate Depression,0,1
+354,354,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/354_features.npz,10368,2.0,0,Minimal / Mild,1,0
+355,355,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/355_features.npz,23422,10.0,1,Moderate Depression,0,1
+356,356,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/356_features.npz,37617,10.0,1,Moderate Depression,0,1
+357,357,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/357_features.npz,9684,7.0,0,Minimal / Mild,0,0
+358,358,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/358_features.npz,17018,7.0,0,Minimal / Mild,0,0
+359,359,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/359_features.npz,38312,6.0,0,Minimal / Mild,0,0
+360,360,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/360_features.npz,13240,4.0,0,Minimal / Mild,0,0
+361,361,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/361_features.npz,24969,3.0,0,Minimal / Mild,1,0
+362,362,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/362_features.npz,18351,20.0,2,Moderately Severe / Severe,0,1
+363,363,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/363_features.npz,49716,0.0,0,Minimal / Mild,1,0
+364,364,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/364_features.npz,84317,0.0,0,Minimal / Mild,1,0
+365,365,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/365_features.npz,47286,2.0,0,Minimal / Mild,1,0
+366,366,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/366_features.npz,56241,0.0,0,Minimal / Mild,1,0
+367,367,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/367_features.npz,67462,1.0,0,Minimal / Mild,1,0
+368,368,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/368_features.npz,62826,7.0,0,Minimal / Mild,0,0
+369,369,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/369_features.npz,48597,0.0,0,Minimal / Mild,1,0
+370,370,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/370_features.npz,53213,0.0,0,Minimal / Mild,1,0
+371,371,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/371_features.npz,18339,9.0,0,Minimal / Mild,0,0
+372,372,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/372_features.npz,48569,13.0,1,Moderate Depression,0,1
+373,373,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/373_features.npz,57495,3.0,0,Minimal / Mild,1,0
+374,374,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/374_features.npz,52640,2.0,0,Minimal / Mild,1,0
+375,375,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/375_features.npz,9807,5.0,0,Minimal / Mild,0,0
+376,376,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/376_features.npz,35082,12.0,1,Moderate Depression,0,1
+377,377,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/377_features.npz,54250,2.0,0,Minimal / Mild,1,0
+378,378,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/378_features.npz,26354,1.0,0,Minimal / Mild,1,0
+379,379,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/379_features.npz,42739,2.0,0,Minimal / Mild,1,0
+380,380,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/380_features.npz,82433,10.0,1,Moderate Depression,0,1
+381,381,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/381_features.npz,30929,2.0,0,Minimal / Mild,1,0
+382,382,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/382_features.npz,21729,1.0,0,Minimal / Mild,1,0
+383,383,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/383_features.npz,59477,7.0,0,Minimal / Mild,0,0
+384,384,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/384_features.npz,28253,4.0,0,Minimal / Mild,1,0
+385,385,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/385_features.npz,6647,8.0,0,Minimal / Mild,0,0
+386,386,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/386_features.npz,44634,11.0,1,Moderate Depression,0,1
+387,387,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/387_features.npz,10805,2.0,0,Minimal / Mild,1,0
+388,388,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/388_features.npz,9766,2.0,0,Minimal / Mild,1,0
+389,389,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/389_features.npz,13001,1.0,0,Minimal / Mild,1,0
+390,390,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/390_features.npz,42756,3.0,0,Minimal / Mild,1,0
+391,391,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/391_features.npz,14655,9.0,0,Minimal / Mild,0,0
+392,392,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/392_features.npz,15217,1.0,0,Minimal / Mild,1,0
+393,393,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/393_features.npz,14026,2.0,0,Minimal / Mild,1,0
+395,395,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/395_features.npz,27492,3.0,0,Minimal / Mild,1,0
+396,396,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/396_features.npz,23125,2.0,0,Minimal / Mild,1,0
+399,399,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/399_features.npz,22270,2.0,0,Minimal / Mild,1,0
+400,400,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/400_features.npz,28393,7.0,0,Minimal / Mild,0,0
+401,401,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/401_features.npz,30533,9.0,0,Minimal / Mild,0,0
+402,402,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/402_features.npz,31611,11.0,1,Moderate Depression,0,1
+403,403,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/403_features.npz,28761,2.0,0,Minimal / Mild,1,0
+404,404,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/404_features.npz,32846,3.0,0,Minimal / Mild,1,0
+405,405,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/405_features.npz,63858,4.0,0,Minimal / Mild,0,0
+406,406,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/406_features.npz,20399,2.0,0,Minimal / Mild,1,0
+407,407,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/407_features.npz,58642,3.0,0,Minimal / Mild,1,0
+410,410,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/410_features.npz,37932,2.0,0,Minimal / Mild,1,0
+411,411,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/411_features.npz,59382,3.0,0,Minimal / Mild,1,0
+412,412,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/412_features.npz,21654,12.0,1,Moderate Depression,0,1
+413,413,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/413_features.npz,36616,2.0,0,Minimal / Mild,1,0
+415,415,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/415_features.npz,23905,3.0,0,Minimal / Mild,1,0
+416,416,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/416_features.npz,30314,3.0,0,Minimal / Mild,1,0
+417,417,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/417_features.npz,30187,2.0,0,Minimal / Mild,1,0
+418,418,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/418_features.npz,38972,3.0,0,Minimal / Mild,1,0
+419,419,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/419_features.npz,39634,3.0,0,Minimal / Mild,1,0
+420,420,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/420_features.npz,25766,2.0,0,Minimal / Mild,1,0
+421,421,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/421_features.npz,26619,1.0,0,Minimal / Mild,1,0
+422,422,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/422_features.npz,53694,4.0,0,Minimal / Mild,1,0
+423,423,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/423_features.npz,30475,0.0,0,Minimal / Mild,1,0
+424,424,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/424_features.npz,48706,3.0,0,Minimal / Mild,1,0
+425,425,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/425_features.npz,41937,6.0,0,Minimal / Mild,0,0
+426,426,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/426_features.npz,27361,20.0,2,Moderately Severe / Severe,0,1
+427,427,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/427_features.npz,25580,5.0,0,Minimal / Mild,0,0
+428,428,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/428_features.npz,17571,0.0,0,Minimal / Mild,1,0
+429,429,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/429_features.npz,26572,1.0,0,Minimal / Mild,1,0
+430,430,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/430_features.npz,27382,3.0,0,Minimal / Mild,1,0
+431,431,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/431_features.npz,23889,2.0,0,Minimal / Mild,1,0
+432,432,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/432_features.npz,28831,1.0,0,Minimal / Mild,1,0
+433,433,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/433_features.npz,21949,10.0,1,Moderate Depression,0,1
+434,434,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/434_features.npz,55413,2.0,0,Minimal / Mild,1,0
+435,435,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/435_features.npz,36318,3.0,0,Minimal / Mild,1,0
+436,436,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/436_features.npz,23046,2.0,0,Minimal / Mild,1,0
+437,437,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/437_features.npz,31299,0.0,0,Minimal / Mild,1,0
+438,438,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/438_features.npz,72089,4.0,0,Minimal / Mild,1,0
+439,439,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/439_features.npz,60623,3.0,0,Minimal / Mild,1,0
+440,440,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/440_features.npz,46839,2.0,0,Minimal / Mild,1,0
+441,441,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/441_features.npz,20442,18.0,2,Moderately Severe / Severe,0,1
+442,442,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/442_features.npz,33635,3.0,0,Minimal / Mild,1,0
+443,443,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/443_features.npz,13939,1.0,0,Minimal / Mild,1,0
+444,444,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/444_features.npz,62787,7.0,0,Minimal / Mild,0,0
+445,445,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/445_features.npz,21925,1.0,0,Minimal / Mild,1,0
+446,446,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/446_features.npz,42004,0.0,0,Minimal / Mild,1,0
+447,447,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/447_features.npz,29939,1.0,0,Minimal / Mild,1,0
+448,448,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/448_features.npz,53825,18.0,2,Moderately Severe / Severe,0,1
+449,449,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/449_features.npz,47995,2.0,0,Minimal / Mild,1,0
+450,450,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/450_features.npz,52353,3.0,0,Minimal / Mild,1,0
+451,451,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/451_features.npz,44842,2.0,0,Minimal / Mild,1,0
+452,452,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/452_features.npz,16612,1.0,0,Minimal / Mild,1,0
+453,453,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/453_features.npz,32712,2.0,0,Minimal / Mild,1,0
+454,454,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/454_features.npz,17241,1.0,0,Minimal / Mild,1,0
+455,455,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/455_features.npz,28255,1.0,0,Minimal / Mild,1,0
+456,456,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/456_features.npz,31683,6.0,0,Minimal / Mild,0,0
+457,457,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/457_features.npz,31344,3.0,0,Minimal / Mild,1,0
+459,459,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/459_features.npz,25394,16.0,2,Moderately Severe / Severe,0,1
+461,461,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/461_features.npz,19881,3.0,0,Minimal / Mild,1,0
+462,462,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/462_features.npz,41751,2.0,0,Minimal / Mild,1,0
+463,463,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/463_features.npz,24020,0.0,0,Minimal / Mild,1,0
+464,464,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/464_features.npz,42287,0.0,0,Minimal / Mild,1,0
+465,465,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/465_features.npz,49556,2.0,0,Minimal / Mild,1,0
+466,466,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/466_features.npz,68023,4.0,0,Minimal / Mild,1,0
+467,467,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/467_features.npz,26125,1.0,0,Minimal / Mild,1,0
+468,468,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/468_features.npz,34935,4.0,0,Minimal / Mild,1,0
+469,469,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/469_features.npz,42755,3.0,0,Minimal / Mild,1,0
+470,470,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/470_features.npz,33443,2.0,0,Minimal / Mild,1,0
+471,471,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/471_features.npz,40238,0.0,0,Minimal / Mild,1,0
+472,472,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/472_features.npz,27499,2.0,0,Minimal / Mild,1,0
+473,473,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/473_features.npz,6045,0.0,0,Minimal / Mild,1,0
+474,474,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/474_features.npz,32725,4.0,0,Minimal / Mild,1,0
+475,475,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/475_features.npz,14245,6.0,0,Minimal / Mild,0,0
+476,476,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/476_features.npz,12859,2.0,0,Minimal / Mild,1,0
+477,477,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/477_features.npz,50836,3.0,0,Minimal / Mild,1,0
+478,478,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/478_features.npz,27606,1.0,0,Minimal / Mild,1,0
+479,479,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/479_features.npz,17032,7.0,0,Minimal / Mild,0,0
+480,480,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/480_features.npz,25389,2.0,0,Minimal / Mild,1,0
+481,481,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/481_features.npz,44130,3.0,0,Minimal / Mild,1,0
+482,482,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/482_features.npz,39413,2.0,0,Minimal / Mild,1,0
+483,483,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/483_features.npz,59216,4.0,0,Minimal / Mild,1,0
+484,484,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/484_features.npz,37782,2.0,0,Minimal / Mild,1,0
+485,485,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/485_features.npz,13505,2.0,0,Minimal / Mild,1,0
+486,486,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/486_features.npz,18489,4.0,0,Minimal / Mild,1,0
+487,487,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/487_features.npz,39663,0.0,0,Minimal / Mild,1,0
+488,488,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/488_features.npz,29702,0.0,0,Minimal / Mild,1,0
+489,489,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/489_features.npz,11139,1.0,0,Minimal / Mild,1,0
+490,490,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/490_features.npz,12306,2.0,0,Minimal / Mild,1,0
+491,491,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/491_features.npz,28523,8.0,0,Minimal / Mild,0,0
+492,492,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/492_features.npz,35620,2.0,0,Minimal / Mild,1,0
+loud_audio301,301,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/loud_audio301_features.npz,21657,3.0,0,Minimal / Mild,0,0
+loud_audio302,302,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/loud_audio302_features.npz,10747,4.0,0,Minimal / Mild,1,0
+loud_audio306,306,/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/loud_audio306_features.npz,25226,21.0,2,Moderately Severe / Severe,1,1

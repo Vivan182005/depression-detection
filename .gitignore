@@ -1,5 +1,35 @@
-venv/
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# macOS system files
 .DS_Store
-temp_*
+
+# Large compressed archives
+*.tar.gz
+*.zip
+*.tar
+app_pre_multimodal_backup.tar.gz
+app_backup_before_cleanup/
+
+# Audio binary files (exceed GitHub file size limits)
+*.wav
+*.mp3
+*.flac
+Clean_audio/
+NEW_AUDIO/
+NEW_AUDIO_DAIC/
+unseen/**/*.wav
+
+# Large intermediate numpy caches
+app/feature_store/*.npz
+
+# Temporary and local test outputs
+app/output/
