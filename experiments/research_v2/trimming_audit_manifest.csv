@@ -1,0 +1,36 @@
+participant_id,status,interview_start_sec,detection_method,detected_phrase,setup_dialogue_detected,confidence,defer_participant_only_extraction,notes
+606,accepted_setup_trimmed,0.0,ellie_greeting_matched,"Hi, I'm Ellie",False,rule_based_deterministic,False,Standard Ellie greeting matched at 0.0s.
+608,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+609,not_detected,0.0,no_greeting_no_setup_found,,False,uncalibrated,True,Neither setup dialogue nor standard greeting detected; conversational start is uncertain.
+612,uncertain,185.68,setup_detected_transition_ambiguous,Frozen or something,True,uncertain,True,Setup dialogue detected but interview transition boundary is ambiguous. Defer participant-only extraction.
+617,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+618,not_detected,0.0,no_greeting_no_setup_found,,False,uncalibrated,True,Neither setup dialogue nor standard greeting detected; conversational start is uncertain.
+620,not_detected,0.0,no_greeting_no_setup_found,,False,uncalibrated,True,Neither setup dialogue nor standard greeting detected; conversational start is uncertain.
+622,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+625,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+627,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+629,not_detected,0.0,no_greeting_no_setup_found,,False,uncalibrated,True,Neither setup dialogue nor standard greeting detected; conversational start is uncertain.
+631,accepted_setup_trimmed,0.0,ellie_greeting_matched,"Hi, I'm Ellie",False,rule_based_deterministic,False,Standard Ellie greeting matched at 0.0s.
+636,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+640,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+641,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+650,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+651,accepted_setup_trimmed,0.0,ellie_greeting_matched,"Hi, I'm Ellie",False,rule_based_deterministic,False,Standard Ellie greeting matched at 0.0s.
+652,not_detected,0.0,no_greeting_no_setup_found,,False,uncalibrated,True,Neither setup dialogue nor standard greeting detected; conversational start is uncertain.
+657,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+658,not_detected,0.0,no_greeting_no_setup_found,,False,uncalibrated,True,Neither setup dialogue nor standard greeting detected; conversational start is uncertain.
+659,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+660,uncertain,17.76,setup_detected_transition_ambiguous,fly in here; she looks like; virtual human,True,uncertain,True,Setup dialogue detected but interview transition boundary is ambiguous. Defer participant-only extraction.
+661,uncertain,65.24,setup_detected_transition_ambiguous,she looks like; play the Sims,True,uncertain,True,Setup dialogue detected but interview transition boundary is ambiguous. Defer participant-only extraction.
+663,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+664,uncertain,89.14,setup_detected_transition_ambiguous,mortal combat,True,uncertain,True,Setup dialogue detected but interview transition boundary is ambiguous. Defer participant-only extraction.
+666,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+667,not_detected,0.0,no_greeting_no_setup_found,,False,uncalibrated,True,Neither setup dialogue nor standard greeting detected; conversational start is uncertain.
+669,accepted_setup_trimmed,84.96,setup_dialogue_transition,there she is,True,rule_based_deterministic,False,Setup dialogue detected and trimmed up to 85.0s.
+670,not_detected,0.0,no_greeting_no_setup_found,,False,uncalibrated,True,Neither setup dialogue nor standard greeting detected; conversational start is uncertain.
+673,accepted_setup_trimmed,0.0,ellie_greeting_matched,safe and secure environment,False,rule_based_deterministic,False,Standard Ellie greeting matched at 0.0s.
+676,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+677,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+679,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+702,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.
+703,accepted_immediate_start,0.0,immediate_clinical_response_0s,,False,rule_based_deterministic,False,No setup detected; participant provides immediate clinical responses from 0.0s.

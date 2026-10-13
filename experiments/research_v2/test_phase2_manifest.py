@@ -101,5 +101,42 @@ class TestPhase2Manifest(unittest.TestCase):
         total_sum = sum(len(self.df[self.df['cohort_role'] == r]) for r in roles)
         self.assertEqual(total_sum, 275)
 
+
+    def test_roster_audit_integrity(self):
+        """Verify participant_roster_audit.csv has exact counts and disjoint cohorts."""
+        roster_path = os.path.join(_REPO_ROOT, 'experiments', 'research_v2', 'participant_roster_audit.csv')
+        self.assertTrue(os.path.exists(roster_path))
+        df_roster = pd.read_csv(roster_path)
+        self.assertEqual(len(df_roster), 275)
+        
+        dev_included = df_roster[df_roster['included_in_dev'] == True]
+        self.assertEqual(len(dev_included), 240)
+        
+        # Verify 179 WoZ and 61 Avatar are disjoint
+        woz_pids = set(df_roster[df_roster['cohort_role'] == 'dev_active_woz']['participant_id'])
+        avatar_pids = set(df_roster[df_roster['cohort_role'] == 'avatar_candidate_expansion']['participant_id'])
+        self.assertEqual(len(woz_pids), 179)
+        self.assertEqual(len(avatar_pids), 61)
+        self.assertEqual(len(woz_pids.intersection(avatar_pids)), 0)
+        
+        # Verify sealed cohort has 0 dev inclusions
+        sealed_included = df_roster[(df_roster['cohort_role'] == 'sealed_quarantine') & (df_roster['included_in_dev'] == True)]
+        self.assertEqual(len(sealed_included), 0)
+
+    def test_trimming_manifest_and_versioning(self):
+        """Verify trimming audit manifest and separate transcript versioning."""
+        audit_csv = os.path.join(_REPO_ROOT, 'experiments', 'research_v2', 'trimming_audit_manifest.csv')
+        self.assertTrue(os.path.exists(audit_csv))
+        df_audit = pd.read_csv(audit_csv)
+        self.assertIn('status', df_audit.columns)
+        self.assertIn('defer_participant_only_extraction', df_audit.columns)
+        self.assertIn('interview_start_sec', df_audit.columns)
+        
+        # Verify raw transcripts are preserved and separate from trimmed
+        raw_dir = os.path.join(_REPO_ROOT, 'experiments', 'research_v2', 'transcripts_avatar_dev')
+        trimmed_dir = os.path.join(_REPO_ROOT, 'experiments', 'research_v2', 'transcripts_avatar_dev_trimmed')
+        self.assertTrue(os.path.exists(raw_dir))
+        self.assertTrue(os.path.exists(trimmed_dir))
+
 if __name__ == '__main__':
     unittest.main()

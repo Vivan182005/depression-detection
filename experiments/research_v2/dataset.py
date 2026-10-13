@@ -23,7 +23,10 @@ def load_development_dataset() -> Dict[str, Any]:
     fs_dir = os.path.join(_REPO_ROOT, 'app', 'feature_store')
     
     df = pd.read_csv(master_path)
+    # Strictly filter out sealed cohort labels so sealed labels never reside in memory
     clean_df = pd.read_csv(clean_labels_path)
+    from experiments.research_v2.sealed_guard import SEALED_PIDS
+    clean_df = clean_df[~clean_df['Participant'].isin(SEALED_PIDS)]
     clean_map = dict(zip(clean_df['Participant'], clean_df['Depression_severity']))
     
     # Enforce quarantine
