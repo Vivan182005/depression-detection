@@ -55,19 +55,24 @@ class BertExtractor:
             c_low = col.strip().lower()
             if 'speaker' in c_low:
                 speaker_col = col
-            elif 'value' in c_low or 'text' in c_low or 'transcript' in c_low:
+            elif 'value' in c_low or 'text' in c_low or 'transcript' in c_low or 'utterance' in c_low:
                 value_col = col
 
-        if speaker_col is None or value_col is None:
+        if value_col is None:
+            # Fall back to the third column if 4 columns, or second if 3 columns
             if len(df.columns) >= 4:
-                speaker_col = df.columns[2]
-                value_col = df.columns[3]
+                value_col = df.columns[2]
+            elif len(df.columns) >= 2:
+                value_col = df.columns[-1]
             else:
-                raise ValueError(f"Could not identify speaker/value columns in {transcript_path}: {df.columns}")
+                raise ValueError(f"Could not identify text/value column in {transcript_path}: {df.columns}")
 
-        # Filter strictly for Participant (case-insensitive)
-        mask = df[speaker_col].astype(str).str.strip().str.lower() == 'participant'
-        participant_df = df[mask]
+        # Filter strictly for Participant if speaker column exists; otherwise entire transcript is participant
+        if speaker_col is not None:
+            mask = df[speaker_col].astype(str).str.strip().str.lower() == 'participant'
+            participant_df = df[mask]
+        else:
+            participant_df = df
 
         utterances = participant_df[value_col].dropna().astype(str).tolist()
         cleaned_utterances = []
@@ -93,8 +98,8 @@ class BertExtractor:
         if not text or len(text.strip()) == 0:
             return np.zeros(768, dtype=np.float32)
 
-        # Tokenize entire text into IDs
-        tokens = self.tokenizer.encode(text, add_special_tokens=False)
+        # Tokenize entire text into IDs (silence false-positive max_length warning since we chunk below)
+        tokens = self.tokenizer.encode(text, add_special_tokens=False, verbose=False)
         if len(tokens) == 0:
             return np.zeros(768, dtype=np.float32)
 

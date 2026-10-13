@@ -33,3 +33,4 @@ app/feature_store/*.npz
 
 # Temporary and local test outputs
 app/output/
+experiments/research_v2/feature_cache_avatar_dev/*.npz

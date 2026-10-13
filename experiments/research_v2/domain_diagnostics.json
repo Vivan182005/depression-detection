@@ -1,0 +1,196 @@
+{
+  "demographics": {
+    "woz": {
+      "sessions": 183,
+      "participants": 179,
+      "female_count": 79,
+      "male_count": 104,
+      "female_pct": 43.17,
+      "age_mean": 38.74,
+      "age_std": 12.34,
+      "phq8_mean": 6.61,
+      "phq8_std": 5.81,
+      "class_distribution": [
+        130,
+        29,
+        24
+      ],
+      "depressed_pct": 28.96
+    },
+    "avatar": {
+      "sessions": 61,
+      "participants": 61,
+      "female_count": 5,
+      "male_count": 55,
+      "female_pct": 8.2,
+      "age_mean": 48.43,
+      "age_std": 11.95,
+      "phq8_mean": 7.26,
+      "phq8_std": 6.55,
+      "class_distribution": [
+        40,
+        9,
+        12
+      ],
+      "depressed_pct": 34.43
+    },
+    "tests": {
+      "gender_chi2": 22.7275,
+      "gender_p_value": 1.8667429618081503e-06,
+      "age_t_stat": -5.4019,
+      "age_p_value": 4.1156235397465935e-07,
+      "phq8_mw_u": 5437.0,
+      "phq8_p_value": 0.7621546983718872,
+      "class_chi2": 1.5645,
+      "class_p_value": 0.45737587525225365
+    }
+  },
+  "representations": {
+    "acoustic_154d": {
+      "dim": 154,
+      "centroid_cosine_similarity": 0.9999,
+      "linear_mmd_sq": 3383.6528,
+      "domain_discriminator_auc": 0.8453
+    },
+    "wav2vec_768d": {
+      "dim": 768,
+      "centroid_cosine_similarity": 0.057,
+      "linear_mmd_sq": 21.9333,
+      "domain_discriminator_auc": 1.0
+    },
+    "text_bert_768d": {
+      "dim": 768,
+      "centroid_cosine_similarity": 0.9112,
+      "linear_mmd_sq": 35.888,
+      "domain_discriminator_auc": 1.0
+    },
+    "trimodal_1690d": {
+      "dim": 1690,
+      "centroid_cosine_similarity": 0.9999,
+      "linear_mmd_sq": 3441.4736,
+      "domain_discriminator_auc": 1.0
+    }
+  },
+  "top_divergent_acoustic_features": [
+    {
+      "feature_index": 102,
+      "feature_category": "Temporal_Mean",
+      "sub_index": 14,
+      "cohens_d": 0.8512,
+      "woz_mean": -2.0805,
+      "avatar_mean": 0.2238
+    },
+    {
+      "feature_index": 0,
+      "feature_category": "eGeMAPS",
+      "sub_index": 0,
+      "cohens_d": 0.6782,
+      "woz_mean": -472.8454,
+      "avatar_mean": -510.0042
+    },
+    {
+      "feature_index": 88,
+      "feature_category": "Temporal_Mean",
+      "sub_index": 0,
+      "cohens_d": 0.6694,
+      "woz_mean": -622.6368,
+      "avatar_mean": -660.0469
+    },
+    {
+      "feature_index": 97,
+      "feature_category": "Temporal_Mean",
+      "sub_index": 9,
+      "cohens_d": 0.6356,
+      "woz_mean": 1.0307,
+      "avatar_mean": 3.3925
+    },
+    {
+      "feature_index": 1,
+      "feature_category": "eGeMAPS",
+      "sub_index": 1,
+      "cohens_d": 0.6127,
+      "woz_mean": 103.285,
+      "avatar_mean": 112.8073
+    },
+    {
+      "feature_index": 41,
+      "feature_category": "eGeMAPS",
+      "sub_index": 41,
+      "cohens_d": 0.6002,
+      "woz_mean": 6.2473,
+      "avatar_mean": 5.5438
+    },
+    {
+      "feature_index": 15,
+      "feature_category": "eGeMAPS",
+      "sub_index": 15,
+      "cohens_d": 0.5794,
+      "woz_mean": 32.3654,
+      "avatar_mean": 29.0299
+    },
+    {
+      "feature_index": 89,
+      "feature_category": "Temporal_Mean",
+      "sub_index": 1,
+      "cohens_d": 0.5791,
+      "woz_mean": 103.1392,
+      "avatar_mean": 112.7243
+    },
+    {
+      "feature_index": 9,
+      "feature_category": "eGeMAPS",
+      "sub_index": 9,
+      "cohens_d": 0.5387,
+      "woz_mean": 1.3182,
+      "avatar_mean": 3.4068
+    },
+    {
+      "feature_index": 153,
+      "feature_category": "Temporal_Std",
+      "sub_index": 32,
+      "cohens_d": 0.52,
+      "woz_mean": 0.0081,
+      "avatar_mean": 0.0045
+    },
+    {
+      "feature_index": 58,
+      "feature_category": "eGeMAPS",
+      "sub_index": 58,
+      "cohens_d": 0.5178,
+      "woz_mean": 0.0095,
+      "avatar_mean": 0.0053
+    },
+    {
+      "feature_index": 57,
+      "feature_category": "eGeMAPS",
+      "sub_index": 57,
+      "cohens_d": 0.5059,
+      "woz_mean": 0.0114,
+      "avatar_mean": 0.0064
+    },
+    {
+      "feature_index": 109,
+      "feature_category": "Temporal_Mean",
+      "sub_index": 21,
+      "cohens_d": 0.4903,
+      "woz_mean": 0.0002,
+      "avatar_mean": -0.0004
+    },
+    {
+      "feature_index": 120,
+      "feature_category": "Temporal_Mean",
+      "sub_index": 32,
+      "cohens_d": 0.4808,
+      "woz_mean": 0.008,
+      "avatar_mean": 0.0046
+    },
+    {
+      "feature_index": 12,
+      "feature_category": "eGeMAPS",
+      "sub_index": 12,
+      "cohens_d": 0.4318,
+      "woz_mean": -0.569,
+      "avatar_mean": -1.7807
+    }
+  ]
+}
