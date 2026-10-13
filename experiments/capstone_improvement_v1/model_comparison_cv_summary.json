@@ -1,0 +1,46 @@
+[
+  {
+    "candidate": "Cand 2A (Mild Balanced Weights)",
+    "accuracy_mean": 62.98850574712643,
+    "accuracy_std": 2.8527985393082433,
+    "macro_f1_mean": 52.11894146291564,
+    "macro_f1_std": 8.521750513506648,
+    "balanced_acc_mean": 56.55555555555556,
+    "balanced_acc_std": 8.478568122621116,
+    "mae_mean": 5.463313484191895,
+    "mae_std": 1.017204562090963
+  },
+  {
+    "candidate": "Cand 6 (Projected TriModalNet)",
+    "accuracy_mean": 71.24137931034481,
+    "accuracy_std": 1.4727004485560384,
+    "macro_f1_mean": 35.116089914226556,
+    "macro_f1_std": 6.25591052387946,
+    "balanced_acc_mean": 38.01587301587301,
+    "balanced_acc_std": 4.398286388407079,
+    "mae_mean": 4.978033065795898,
+    "mae_std": 0.4804171720080322
+  },
+  {
+    "candidate": "Cand 7 (ProjectedNet + Mild Balanced)",
+    "accuracy_mean": 70.55172413793102,
+    "accuracy_std": 1.5665954057380014,
+    "macro_f1_mean": 35.215928883630745,
+    "macro_f1_std": 6.214204576173255,
+    "balanced_acc_mean": 38.698412698412696,
+    "balanced_acc_std": 4.9069446008897,
+    "mae_mean": 4.881488227844239,
+    "mae_std": 0.46395621323768876
+  },
+  {
+    "candidate": "Cand 8 (ProjectedNet + MultiTask PHQ)",
+    "accuracy_mean": 71.9310344827586,
+    "accuracy_std": 2.3850505470055947,
+    "macro_f1_mean": 36.8592356573723,
+    "macro_f1_std": 4.695093860516358,
+    "balanced_acc_mean": 39.34920634920635,
+    "balanced_acc_std": 4.291119460377448,
+    "mae_mean": 4.726781177520752,
+    "mae_std": 0.5838120532657415
+  }
+]

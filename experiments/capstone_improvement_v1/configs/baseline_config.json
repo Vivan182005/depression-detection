@@ -1,0 +1,20 @@
+{
+  "experiment_name": "reproduce_baseline",
+  "phase": 2,
+  "model_type": "CompactTriModalMLP",
+  "checkpoint_path": "app/feature_store/best_depression_model.pth",
+  "scaler_path": "app/feature_store/fitted_acoustic_scaler.joblib",
+  "data": {
+    "feature_dim": 1690,
+    "acoustic_dim": 154,
+    "wav2vec_dim": 768,
+    "bert_dim": 768,
+    "label_source": "legacy_corrupted_OFFICIAL_PHQ8_LABELS",
+    "test_split_n": 37
+  },
+  "calibration": {
+    "temperature_scaling": true,
+    "optimal_temperature": 1.2439
+  },
+  "reproduction_command": "python3 reproduce_baseline.py"
+}

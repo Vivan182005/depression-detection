@@ -1,0 +1,19 @@
+==========================================================================
+           REPRODUCING BASELINE: CompactTriModalMLP (Phase 2)             
+==========================================================================
+[SPLIT VERIFICATION] Train: 116 (63.4%) | Val: 30 (16.4%) | Test: 37 (20.2%)
+Dataset Partitions: Train=116 | Val=30 | Test=37
+Loaded Optimal Temperature: 1.2439
+Loaded Optimal Binary Threshold: 0.2100
+Traceback (most recent call last):
+  File "/Users/vivannaik/Desktop/CAPSTONE/experiments/capstone_improvement_v1/reproduce_baseline.py", line 237, in <module>
+    main()
+    ~~~~^^
+  File "/Users/vivannaik/Desktop/CAPSTONE/experiments/capstone_improvement_v1/reproduce_baseline.py", line 95, in main
+    calibrated_model.temperature = torch.tensor([opt_temp], dtype=torch.float32)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1995, in __setattr__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: cannot assign 'torch.FloatTensor' as parameter 'temperature' (torch.nn.Parameter or None expected)

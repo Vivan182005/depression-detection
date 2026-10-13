@@ -1,0 +1,229 @@
+{
+  "candidate_2a_checkpoint": "experiments/capstone_improvement_v1/checkpoints/cand2a_standard_mlp_mild_balanced.pth",
+  "candidate_3a_checkpoint": "experiments/capstone_accuracy_v2/checkpoints/cand3a_standard_mlp_alpha_015.pth",
+  "candidate_3c_checkpoint": "experiments/capstone_accuracy_v2/checkpoints/cand3c_projected_trimodal_net.pth",
+  "candidate_2_checkpoint": "experiments/capstone_improvement_v1/checkpoints/cand2_standard_mlp_balanced.pth",
+  "optimal_ensemble_weights": {
+    "candidate_2a": 0.3173861481417882,
+    "candidate_3a": 5.594642497924505e-16,
+    "candidate_3c": 0.6826138518582113
+  },
+  "development_evaluation": [
+    {
+      "ensemble_id": "E0_Cand2A_Alone",
+      "description": "Candidate 2A alone (Reference)",
+      "oof_accuracy": 65.75342465753424,
+      "cv_acc_mean": 65.72413793103449,
+      "cv_acc_std": 4.541262795352916,
+      "oof_macro_f1": 48.95474373053612,
+      "cv_f1_mean": 44.46780041538734,
+      "cv_f1_std": 8.432004790142932,
+      "oof_bal_acc": 48.46405228758171,
+      "cv_bal_mean": 49.15873015873016,
+      "cv_bal_std": 9.164464106992549,
+      "recall_0": 80.3921568627451,
+      "recall_1": 25.0,
+      "recall_2": 40.0,
+      "binary_f1": 49.101796407185624,
+      "phq_mae": 5.764609336853027,
+      "cv_mae_mean": 5.768544292449951,
+      "confusion_matrix": [
+        [
+          82,
+          14,
+          6
+        ],
+        [
+          14,
+          6,
+          4
+        ],
+        [
+          9,
+          3,
+          8
+        ]
+      ]
+    },
+    {
+      "ensemble_id": "E1_Cand2A_plus_Cand3A",
+      "description": "50% Cand 2A + 50% Cand 3A (Equal Blend)",
+      "oof_accuracy": 65.75342465753424,
+      "cv_acc_mean": 65.72413793103449,
+      "cv_acc_std": 2.520781638965112,
+      "oof_macro_f1": 42.80207930462599,
+      "cv_f1_mean": 40.62174370870023,
+      "cv_f1_std": 9.27961259266831,
+      "oof_bal_acc": 42.59803921568627,
+      "cv_bal_mean": 42.41269841269841,
+      "cv_bal_std": 8.863427252230414,
+      "recall_0": 85.29411764705883,
+      "recall_1": 12.5,
+      "recall_2": 30.0,
+      "binary_f1": 49.03225806451613,
+      "phq_mae": 5.691340446472168,
+      "cv_mae_mean": 5.697048473358154,
+      "confusion_matrix": [
+        [
+          87,
+          8,
+          7
+        ],
+        [
+          17,
+          3,
+          4
+        ],
+        [
+          11,
+          3,
+          6
+        ]
+      ]
+    },
+    {
+      "ensemble_id": "E2_Cand2A_plus_Cand3C",
+      "description": "50% Cand 2A + 50% Cand 3C (Projected Blend)",
+      "oof_accuracy": 69.17808219178082,
+      "cv_acc_mean": 69.17241379310344,
+      "cv_acc_std": 3.7999937417809386,
+      "oof_macro_f1": 40.82362082362083,
+      "cv_f1_mean": 37.27746557560222,
+      "cv_f1_std": 10.115908132935933,
+      "oof_bal_acc": 40.21241830065359,
+      "cv_bal_mean": 40.03174603174604,
+      "cv_bal_std": 7.61534301470029,
+      "recall_0": 93.13725490196079,
+      "recall_1": 12.5,
+      "recall_2": 15.0,
+      "binary_f1": 42.22222222222222,
+      "phq_mae": 4.816367149353027,
+      "cv_mae_mean": 4.821742153167724,
+      "confusion_matrix": [
+        [
+          95,
+          5,
+          2
+        ],
+        [
+          20,
+          3,
+          1
+        ],
+        [
+          14,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "ensemble_id": "E3_Cand2A_plus_Cand2",
+      "description": "50% Cand 2A + 50% Cand 2 (Balanced Blend)",
+      "oof_accuracy": 62.328767123287676,
+      "cv_acc_mean": 62.27586206896551,
+      "cv_acc_std": 6.408971120269764,
+      "oof_macro_f1": 41.95835910121624,
+      "cv_f1_mean": 40.84328130385986,
+      "cv_f1_std": 13.373038315881711,
+      "oof_bal_acc": 41.47058823529411,
+      "cv_bal_mean": 41.492063492063494,
+      "cv_bal_std": 11.81014249958138,
+      "recall_0": 79.41176470588235,
+      "recall_1": 25.0,
+      "recall_2": 20.0,
+      "binary_f1": 49.31506849315068,
+      "phq_mae": 5.421721458435059,
+      "cv_mae_mean": 5.427913188934326,
+      "confusion_matrix": [
+        [
+          81,
+          14,
+          7
+        ],
+        [
+          16,
+          6,
+          2
+        ],
+        [
+          11,
+          5,
+          4
+        ]
+      ]
+    },
+    {
+      "ensemble_id": "E4_Tri_Candidate_2A_3A_3C",
+      "description": "1/3 Cand 2A + 1/3 Cand 3A + 1/3 Cand 3C",
+      "oof_accuracy": 67.8082191780822,
+      "cv_acc_mean": 67.79310344827586,
+      "cv_acc_std": 3.6205254478363256,
+      "oof_macro_f1": 40.40189989039094,
+      "cv_f1_mean": 38.281153642336825,
+      "cv_f1_std": 10.050634767830243,
+      "oof_bal_acc": 39.83660130718954,
+      "cv_bal_mean": 39.698412698412696,
+      "cv_bal_std": 6.725440094866634,
+      "recall_0": 91.17647058823529,
+      "recall_1": 8.333333333333332,
+      "recall_2": 20.0,
+      "binary_f1": 47.524752475247524,
+      "phq_mae": 4.992434978485107,
+      "cv_mae_mean": 4.998113536834717,
+      "confusion_matrix": [
+        [
+          93,
+          7,
+          2
+        ],
+        [
+          20,
+          2,
+          2
+        ],
+        [
+          15,
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "ensemble_id": "E5_Optimal_OOF_Weighted",
+      "description": "OOF-Weighted (0.32*2A + 0.00*3A + 0.68*3C)",
+      "oof_accuracy": 68.4931506849315,
+      "cv_acc_mean": 68.48275862068965,
+      "cv_acc_std": 4.077722896301924,
+      "oof_macro_f1": 38.39737440040394,
+      "cv_f1_mean": 35.864389233954455,
+      "cv_f1_std": 8.20062663996688,
+      "oof_bal_acc": 38.54575163398693,
+      "cv_bal_mean": 38.36507936507936,
+      "cv_bal_std": 5.801277867239263,
+      "recall_0": 93.13725490196079,
+      "recall_1": 12.5,
+      "recall_2": 10.0,
+      "binary_f1": 38.55421686746988,
+      "phq_mae": 4.733577523609539,
+      "cv_mae_mean": 4.73931552390861,
+      "confusion_matrix": [
+        [
+          95,
+          5,
+          2
+        ],
+        [
+          20,
+          3,
+          1
+        ],
+        [
+          16,
+          2,
+          2
+        ]
+      ]
+    }
+  ]
+}

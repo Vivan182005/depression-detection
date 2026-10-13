@@ -1,0 +1,22 @@
+{
+  "candidate_name": "Candidate 2A: Standard MLP (Mild Balanced Weights alpha=0.25)",
+  "architecture": "StandardTriModalMLP",
+  "in_dim": 1690,
+  "hidden_dim": 128,
+  "dropout": 0.3,
+  "alpha_weighting": 0.25,
+  "class_weights": [
+    0.7508168340356831,
+    1.116069508855591,
+    1.133113657108726
+  ],
+  "lambda_phq": 0.1,
+  "lambda_bin": 0.2,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.001,
+  "scheduler": "CosineAnnealingLR",
+  "epochs": 40,
+  "best_epoch": 14,
+  "optimal_temperature": 1.4541850090026855
+}

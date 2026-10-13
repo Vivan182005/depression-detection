@@ -1,0 +1,39 @@
+{
+  "model_identifier": "Candidate_2A_StandardTriModalMLP",
+  "architecture": "StandardTriModalMLP",
+  "modalities": [
+    "acoustic_egemaps_and_temporal",
+    "audio_embeddings_wav2vec2",
+    "text_embeddings_bert"
+  ],
+  "feature_dimensions": {
+    "acoustic_dim": 154,
+    "wav2vec_dim": 768,
+    "bert_dim": 768,
+    "fused_input_dim": 1690
+  },
+  "hidden_layers": [128, 64],
+  "dropout_rate": 0.3,
+  "batch_normalization": true,
+  "activation": "ReLU",
+  "output_heads": {
+    "severity_classification": 3,
+    "continuous_phq8_regression": 1,
+    "binary_depression_screening": 1
+  },
+  "class_balancing": {
+    "method": "smoothed_inverse_frequency",
+    "alpha_power": 0.25,
+    "weights": [0.7508168340356831, 1.116069508855591, 1.133113657108726]
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.001,
+    "scheduler": "CosineAnnealingLR",
+    "t_max": 40,
+    "batch_size": 16,
+    "best_epoch": 14,
+    "seed": 42
+  }
+}

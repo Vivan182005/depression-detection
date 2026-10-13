@@ -1,0 +1,166 @@
+{
+  "model_architecture": "CompactTriModalMLP",
+  "checkpoint_path": "/Users/vivannaik/Desktop/CAPSTONE/app/feature_store/best_depression_model.pth",
+  "input_dimensions": 1690,
+  "modalities": [
+    "Acoustic (154d)",
+    "Wav2Vec2 (768d)",
+    "BERT (768d)"
+  ],
+  "optimal_temperature": 1.2439374923706055,
+  "optimal_binary_threshold": 0.21000000000000002,
+  "test_metrics": {
+    "split": "test",
+    "samples": 37,
+    "three_class_accuracy": 83.78378378378379,
+    "macro_f1": 42.36111111111111,
+    "balanced_accuracy": 48.924731182795696,
+    "weighted_f1": 80.34909909909909,
+    "per_class_precision": [
+      90.9090909090909,
+      0.0,
+      25.0
+    ],
+    "per_class_recall": [
+      96.7741935483871,
+      0.0,
+      50.0
+    ],
+    "per_class_f1": [
+      93.75,
+      0.0,
+      33.33333333333333
+    ],
+    "confusion_matrix": [
+      [
+        30,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        2
+      ],
+      [
+        1,
+        0,
+        1
+      ]
+    ],
+    "binary_accuracy": 67.56756756756756,
+    "binary_precision": 28.57142857142857,
+    "binary_recall": 66.66666666666666,
+    "binary_f1": 40.0,
+    "binary_pr_auc": 43.569465665053905,
+    "phq8_mae": 4.229950904846191,
+    "phq8_rmse": 6.194171430029189,
+    "ece": 16.597837854076076,
+    "brier_score": 0.30647138786770317,
+    "majority_baseline_accuracy": 83.78378378378379,
+    "majority_baseline_macro_f1": 30.392156862745097
+  },
+  "val_metrics": {
+    "split": "val",
+    "samples": 30,
+    "three_class_accuracy": 70.0,
+    "macro_f1": 47.585275244849704,
+    "balanced_accuracy": 67.0,
+    "weighted_f1": 72.2965214454576,
+    "per_class_precision": [
+      86.36363636363636,
+      33.33333333333333,
+      20.0
+    ],
+    "per_class_recall": [
+      76.0,
+      25.0,
+      100.0
+    ],
+    "per_class_f1": [
+      80.85106382978722,
+      28.57142857142857,
+      33.33333333333333
+    ],
+    "confusion_matrix": [
+      [
+        19,
+        2,
+        4
+      ],
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "binary_accuracy": 50.0,
+    "binary_precision": 22.22222222222222,
+    "binary_recall": 80.0,
+    "binary_f1": 34.78260869565217,
+    "binary_pr_auc": 20.952178895273526,
+    "phq8_mae": 4.116427898406982,
+    "phq8_rmse": 5.831806564346513,
+    "ece": 13.489909867445633,
+    "brier_score": 0.4190076021834815,
+    "majority_baseline_accuracy": 83.33333333333334,
+    "majority_baseline_macro_f1": 30.303030303030305
+  },
+  "train_metrics": {
+    "split": "train",
+    "samples": 116,
+    "three_class_accuracy": 100.0,
+    "macro_f1": 100.0,
+    "balanced_accuracy": 100.0,
+    "weighted_f1": 100.0,
+    "per_class_precision": [
+      100.0,
+      100.0,
+      100.0
+    ],
+    "per_class_recall": [
+      100.0,
+      100.0,
+      100.0
+    ],
+    "per_class_f1": [
+      100.0,
+      100.0,
+      100.0
+    ],
+    "confusion_matrix": [
+      [
+        98,
+        0,
+        0
+      ],
+      [
+        0,
+        12,
+        0
+      ],
+      [
+        0,
+        0,
+        6
+      ]
+    ],
+    "binary_accuracy": 98.27586206896551,
+    "binary_precision": 90.0,
+    "binary_recall": 100.0,
+    "binary_f1": 94.73684210526315,
+    "binary_pr_auc": 100.0,
+    "phq8_mae": 3.6908326148986816,
+    "phq8_rmse": 5.711003627994369,
+    "ece": 17.366437665347394,
+    "brier_score": 0.049674207181807845,
+    "majority_baseline_accuracy": 84.48275862068965,
+    "majority_baseline_macro_f1": 30.529595015576323
+  },
+  "verification_status": "EXACT_MATCH"
+}

@@ -1,0 +1,12 @@
+{
+  "calibration_method": "temperature_scaling",
+  "temperature": 1.4541850090026855,
+  "loss_criterion": "negative_log_likelihood",
+  "optimizer": "L-BFGS",
+  "calibration_split": "development_validation_split",
+  "calibration_samples": 30,
+  "calibration_participants": 30,
+  "bounds": [0.1, 5.0],
+  "pre_calibration_ece": 14.82,
+  "post_calibration_ece": 5.46
+}

@@ -1,0 +1,290 @@
+{
+  "model_identifier": "Candidate_2A_StandardTriModalMLP",
+  "checkpoint_file": "/Users/vivannaik/Desktop/CAPSTONE/artifacts/final_model/model_checkpoint.pth",
+  "temperature": 1.4541850090026855,
+  "unseen_cohort_total_n33": {
+    "num_participants": 33,
+    "classification": {
+      "accuracy": 60.60606060606061,
+      "macro_f1": 35.055724417426546,
+      "weighted_f1": 57.1244358478401,
+      "balanced_accuracy": 36.7965367965368,
+      "per_class_precision": [
+        72.0,
+        0.0,
+        28.57142857142857
+      ],
+      "per_class_recall": [
+        81.81818181818183,
+        0.0,
+        28.57142857142857
+      ],
+      "per_class_f1": [
+        76.59574468085107,
+        0.0,
+        28.57142857142857
+      ],
+      "support": [
+        22,
+        4,
+        7
+      ],
+      "confusion_matrix": [
+        [
+          18,
+          1,
+          3
+        ],
+        [
+          2,
+          0,
+          2
+        ],
+        [
+          5,
+          0,
+          2
+        ]
+      ],
+      "majority_baseline_accuracy": 66.66666666666666,
+      "majority_baseline_macro_f1": 26.666666666666668
+    },
+    "binary_screening": {
+      "binary_accuracy": 57.57575757575758,
+      "binary_precision": 42.10526315789473,
+      "binary_recall": 72.72727272727273,
+      "binary_f1": 53.333333333333336,
+      "sensitivity": 72.72727272727273,
+      "specificity": 50.0,
+      "roc_auc": 58.67768595041323,
+      "pr_auc": 35.79382577509259,
+      "confusion_matrix": [
+        [
+          11,
+          11
+        ],
+        [
+          3,
+          8
+        ]
+      ]
+    },
+    "continuous_phq8": {
+      "expected_phq": {
+        "mae": 5.917116165161133,
+        "rmse": 6.953355421041565,
+        "r2": -0.14158594608306885
+      },
+      "raw_head": {
+        "mae": 6.7070746421813965,
+        "rmse": 8.836479730268016,
+        "r2": -0.8436493873596191
+      },
+      "mean_predictor_baseline": {
+        "mae": 5.460055076714718,
+        "rmse": 6.50788883432176
+      }
+    },
+    "reliability_and_calibration": {
+      "ece_10_bins": 12.505162394408021,
+      "brier_score": 0.5687502026557922,
+      "confidence_mean": 52.04588317871094,
+      "confidence_min": 34.89136505126953,
+      "confidence_max": 83.82463073730469,
+      "confidence_std": 14.535972595214844,
+      "margin_mean": 0.24748024344444275,
+      "margin_min": 0.00787004828453064,
+      "margin_max": 0.7519178986549377
+    }
+  },
+  "woz_human_subcohort_n9": {
+    "num_participants": 9,
+    "classification": {
+      "accuracy": 55.55555555555556,
+      "macro_f1": 35.55555555555556,
+      "weighted_f1": 50.37037037037037,
+      "balanced_accuracy": 37.77777777777778,
+      "per_class_precision": [
+        57.14285714285714,
+        0.0,
+        50.0
+      ],
+      "per_class_recall": [
+        80.0,
+        0.0,
+        33.33333333333333
+      ],
+      "per_class_f1": [
+        66.66666666666666,
+        0.0,
+        40.0
+      ],
+      "support": [
+        5,
+        1,
+        3
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          1
+        ]
+      ],
+      "majority_baseline_accuracy": 55.55555555555556,
+      "majority_baseline_macro_f1": 23.80952380952381
+    },
+    "binary_screening": {
+      "binary_accuracy": 55.55555555555556,
+      "binary_precision": 50.0,
+      "binary_recall": 75.0,
+      "binary_f1": 60.0,
+      "sensitivity": 75.0,
+      "specificity": 40.0,
+      "roc_auc": 45.0,
+      "pr_auc": 37.23214285714286,
+      "confusion_matrix": [
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    "continuous_phq8": {
+      "expected_phq": {
+        "mae": 5.982681751251221,
+        "rmse": 6.668343460290159,
+        "r2": 0.08537042140960693
+      },
+      "raw_head": {
+        "mae": 6.970524311065674,
+        "rmse": 9.14173963222635,
+        "r2": -0.7189649343490601
+      },
+      "mean_predictor_baseline": {
+        "mae": 6.246913592020671,
+        "rmse": 6.972609550994326
+      }
+    },
+    "reliability_and_calibration": {
+      "ece_10_bins": 21.14045288827684,
+      "brier_score": 0.5879411697387695,
+      "confidence_mean": 48.597412109375,
+      "confidence_min": 35.59600067138672,
+      "confidence_max": 83.82463073730469,
+      "confidence_std": 15.7854642868042,
+      "margin_mean": 0.20684713125228882,
+      "margin_min": 0.012404173612594604,
+      "margin_max": 0.7519178986549377
+    }
+  },
+  "autonomous_ai_subcohort_n24": {
+    "num_participants": 24,
+    "classification": {
+      "accuracy": 62.5,
+      "macro_f1": 34.074074074074076,
+      "weighted_f1": 60.370370370370374,
+      "balanced_accuracy": 35.78431372549019,
+      "per_class_precision": [
+        77.77777777777779,
+        0.0,
+        20.0
+      ],
+      "per_class_recall": [
+        82.35294117647058,
+        0.0,
+        25.0
+      ],
+      "per_class_f1": [
+        80.0,
+        0.0,
+        22.22222222222222
+      ],
+      "support": [
+        17,
+        3,
+        4
+      ],
+      "confusion_matrix": [
+        [
+          14,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          3,
+          0,
+          1
+        ]
+      ],
+      "majority_baseline_accuracy": 70.83333333333334,
+      "majority_baseline_macro_f1": 27.64227642276423
+    },
+    "binary_screening": {
+      "binary_accuracy": 58.333333333333336,
+      "binary_precision": 38.46153846153847,
+      "binary_recall": 71.42857142857143,
+      "binary_f1": 50.0,
+      "sensitivity": 71.42857142857143,
+      "specificity": 52.94117647058824,
+      "roc_auc": 57.14285714285714,
+      "pr_auc": 31.551966661804077,
+      "confusion_matrix": [
+        [
+          9,
+          8
+        ],
+        [
+          2,
+          5
+        ]
+      ]
+    },
+    "continuous_phq8": {
+      "expected_phq": {
+        "mae": 5.892529010772705,
+        "rmse": 7.057268213512306,
+        "r2": -0.2505534887313843
+      },
+      "raw_head": {
+        "mae": 6.608280181884766,
+        "rmse": 8.7192522676788,
+        "r2": -0.9089192152023315
+      },
+      "mean_predictor_baseline": {
+        "mae": 5.152777751286824,
+        "rmse": 6.310815231718396
+      }
+    },
+    "reliability_and_calibration": {
+      "ece_10_bins": 16.75751022994518,
+      "brier_score": 0.5615536570549011,
+      "confidence_mean": 53.33905029296875,
+      "confidence_min": 34.89136505126953,
+      "confidence_max": 81.26753997802734,
+      "confidence_std": 13.818656921386719,
+      "margin_mean": 0.2627176344394684,
+      "margin_min": 0.00787004828453064,
+      "margin_max": 0.6978747248649597
+    }
+  }
+}

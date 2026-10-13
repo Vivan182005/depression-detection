@@ -1,0 +1,47 @@
+{
+  "modality_permutation_importance": {
+    "Acoustic_154d": {
+      "macro_f1_drop": 1.4531421292427555,
+      "mae_increase": -0.10368962287902832
+    },
+    "Wav2Vec2_768d": {
+      "macro_f1_drop": 4.113130042739998,
+      "mae_increase": 0.27439930438995364
+    },
+    "BERT_Text_768d": {
+      "macro_f1_drop": 19.154206125819677,
+      "mae_increase": 1.2268108129501343
+    }
+  },
+  "acoustic_subvector_attribution": {
+    "egemaps_88d": 0.008653629571199417,
+    "temporal_mean_33d": 0.012447189539670944,
+    "temporal_std_33d": 0.017684487625956535
+  },
+  "top_acoustic_feature_indices": [
+    134,
+    149,
+    146,
+    150,
+    22,
+    130,
+    133,
+    48,
+    25,
+    28,
+    97,
+    115,
+    51,
+    26,
+    8
+  ],
+  "error_analysis": {
+    "moderate_rescued_count": 1,
+    "severe_rescued_count": 0,
+    "moderate_rescued_pids": [
+      339
+    ],
+    "severe_rescued_pids": []
+  },
+  "clinical_disclaimer": "IMPORTANT: This multimodal system is an investigational research prototype designed for automated depression screening and severity estimation. It is NOT a diagnostic tool and does not replace clinical evaluation by a licensed mental health professional."
+}

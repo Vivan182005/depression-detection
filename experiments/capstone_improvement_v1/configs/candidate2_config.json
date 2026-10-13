@@ -1,0 +1,38 @@
+{
+  "experiment_name": "candidate2_standard_mlp_balanced",
+  "phase": 6,
+  "model_type": "StandardTriModalMLP",
+  "checkpoint_path": "experiments/capstone_improvement_v1/checkpoints/cand2_standard_mlp_balanced.pth",
+  "scalers_path": "experiments/capstone_improvement_v1/checkpoints/feature_scalers.joblib",
+  "architecture": {
+    "in_dim": 1690,
+    "hidden_dim": 128,
+    "num_classes": 3,
+    "dropout": 0.3
+  },
+  "training": {
+    "epochs": 100,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "batch_size": 16,
+    "optimizer": "AdamW",
+    "loss": "Multitask CrossEntropy (Smoothed Inverse Class Frequencies) + 0.5 * SmoothL1Loss",
+    "class_weights": [0.638, 1.487, 1.831],
+    "early_stopping_patience": 15,
+    "early_stopping_metric": "val_macro_f1",
+    "random_seed": 42
+  },
+  "data": {
+    "total_participants": 275,
+    "train_n": 174,
+    "val_n": 37,
+    "test_n": 37,
+    "unseen_reserved_n": 33,
+    "label_source": "verified_detailed_lables_ground_truth"
+  },
+  "calibration": {
+    "temperature_scaling": true,
+    "optimal_temperature": 1.2586
+  },
+  "reproduction_command": "python3 train_improvements.py"
+}

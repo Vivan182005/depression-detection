@@ -1,0 +1,53 @@
+{
+  "model_manifest_version": "1.0.0",
+  "model_identifier": "Candidate_2A_StandardTriModalMLP",
+  "canonical_checkpoint_file": "artifacts/final_model/model_checkpoint.pth",
+  "canonical_scalers_file": "artifacts/final_model/feature_scalers.joblib",
+  "checkpoint_sha256": "32968e86d2dbaf31019eb01e3f6dde7bda87fb8236b9861b8e8bcb7a52f355cd",
+  "scalers_sha256": "9ae631cd1750a078505e7c3defa0575b06f2dc799941fe4e9dfd15d1f25cf39b",
+  "git_commit": "9fd65d8631507ac0c8c6290e30dbad612bf9b65f",
+  "git_branch": "main",
+  "architecture": "StandardTriModalMLP",
+  "input_modalities": ["acoustic_154d", "wav2vec2_768d", "bert_768d"],
+  "total_input_dimensions": 1690,
+  "parameter_count": 224965,
+  "training_seed": 42,
+  "cohort_sample_counts": {
+    "development_train_sessions": 116,
+    "development_train_unique_participants": 114,
+    "development_val_sessions": 30,
+    "development_val_unique_participants": 30,
+    "canonical_test_sessions": 37,
+    "canonical_test_unique_participants": 35,
+    "reserved_unseen_sessions": 33,
+    "reserved_unseen_unique_participants": 33
+  },
+  "development_5fold_cross_validation_metrics": {
+    "cv_accuracy_mean": 65.72,
+    "cv_accuracy_std": 4.54,
+    "cv_macro_f1_mean": 44.47,
+    "cv_balanced_accuracy_mean": 49.16,
+    "cv_moderate_recall": 25.0,
+    "cv_severe_recall": 40.0,
+    "cv_binary_f1": 41.51,
+    "cv_expected_phq_mae": 5.55,
+    "cv_expected_phq_rmse": 6.33
+  },
+  "canonical_held_out_test_metrics_n37": {
+    "accuracy": 78.38,
+    "macro_f1": 57.80,
+    "balanced_accuracy": 59.76,
+    "binary_f1": 50.00,
+    "moderate_recall": 40.0,
+    "severe_recall": 50.0,
+    "continuous_phq_mae": 4.67
+  },
+  "calibration_method": "post_hoc_temperature_scaling",
+  "optimal_temperature": 1.4542,
+  "reason_for_selection": "Candidate 2A delivers the highest development cross-validation balanced accuracy (49.16%) and highest minority-class recall (25% moderate, 40% severe) while avoiding majority-class collapse on autonomous AI interviews ([18, 1, 5] predicted distribution). It provides the optimal clinical balance between nominal accuracy (78.38%) and life-critical depression detection without test-label overfitting.",
+  "known_limitations": [
+    "The canonical test set (N=37) and unseen cohort (N=33) were observed during earlier capstone milestones; while model selection in this cycle was strictly development-driven, these cohorts must be understood as reserved historical cohorts rather than completely untouched benchmarks.",
+    "Acoustic domain shift remains detectable between human WoZ interviews and autonomous avatar interviews; native avatar training data collection is recommended for future work.",
+    "Predictions are clinical decision-support screening scores and must not be used as standalone automated medical diagnoses."
+  ]
+}

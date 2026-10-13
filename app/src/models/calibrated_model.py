@@ -105,11 +105,15 @@ if HAS_TORCH:
 
             def eval_fn():
                 optimizer.zero_grad()
+                with torch.no_grad():
+                    self.temperature.data.clamp_(min=0.1, max=5.0)
                 loss = nll_criterion(logits / self.temperature, labels)
                 loss.backward()
                 return loss
 
             optimizer.step(eval_fn)
+            with torch.no_grad():
+                self.temperature.data.clamp_(min=0.1, max=5.0)
             print(f"[CALIBRATION COMPLETE] Fitted Optimal Temperature T = {self.temperature.item():.4f}")
             return self.temperature.item()
 
