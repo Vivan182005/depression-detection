@@ -40,6 +40,10 @@ class TestExtractorsV2(unittest.TestCase):
         cleaned = normalize_text_for_bert(raw)
         self.assertEqual(cleaned, "yes i have been feeling down lately and tired")
         self.assertEqual(normalize_text_for_bert(""), "")
+        # Verify apostrophe retention (Task A3)
+        raw_apostrophe = "I don't think it's fair that they wouldn't listen."
+        cleaned_apostrophe = normalize_text_for_bert(raw_apostrophe)
+        self.assertEqual(cleaned_apostrophe, "i don't think it's fair that they wouldn't listen")
 
     def test_bert_empty_raises(self):
         ext = BertExtractorV2()
@@ -65,6 +69,13 @@ class TestExtractorsV2(unittest.TestCase):
         egemaps = vec[:88]
         # Assert dims 62-87 are non-zero (proving real OpenSMILE ran)
         self.assertFalse(np.all(egemaps[62:88] == 0.0), "Dims 62-87 must NOT be all zero!")
+
+    def test_acoustic_robust_135d(self):
+        ext = AcousticExtractorV2(sr=self.sr)
+        rob = ext.extract_robust(self.test_sig)
+        self.assertEqual(rob.shape, (135,))
+        self.assertTrue(np.isfinite(rob).all())
+        self.assertGreater(np.linalg.norm(rob), 0.0)
 
     def test_wav2vec2_extraction_valid(self):
         ext = Wav2Vec2ExtractorV2()

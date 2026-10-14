@@ -1,0 +1,12 @@
+participant_id,chunk_index,start_time,stop_time,text,source_flag
+631,0,0.0,87.0,"Hi, I'm Ellie, thanks for coming today. I've screened a tattoo on the safe and secure environment. I'm not a therapist, but I'm here learn about people and we'd love to learn about you. I'll ask a few questions to get started. And please feel free to talk to anybody. Your answers are totally confidential. Are you okay with this? OK, so are you doing to them? That's great. Where are you from originally? Where are some things you really like about LA? Do you travel a lot? What's one of your most memorable experiences? Leva comes to your mind. What's your study at school? What do you do now? What's your dream job? Do you consider yourself more shy or outgoing? I'll tell you about your relationship with your family. Sometimes when I'm feeling tense, I turn on the fish tank screen saber. Hey, I know it's not Hawaii, but it's the best I've got. And what do you do to relax? What was that like? Tell me about a situation that you wish you would handle differently. You've ever come to your mind. What's something you feel guilty about? Tell me about the hardest decision you've ever had to make, right? Tell me about me that, or something that you wish you could raise from them. And the other served in military, tell me when you joined the military. Why should a side turn with the military? Are you happy you did that? OK, did you ever see combat? How easy was it for you to go back to civilian? What did you do after the military? How did serving in the military change? Sorry, how have you been feeling lately? Tell me more about that. Have you noticed any changes in your behavior? How easy is it for you to get a good next sleep? What are you like when you do sleep well?",whisper_tiny_avatar_dev
+631,1,87.0,89.0,I think the diagnosis of depression.,whisper_tiny_avatar_dev
+631,2,89.0,90.0,What is the last time?,whisper_tiny_avatar_dev
+631,3,90.0,91.0,Can you tell me about that?,whisper_tiny_avatar_dev
+631,4,91.0,93.0,There's some of it's been a positive influence in the life.,whisper_tiny_avatar_dev
+631,5,93.0,94.0,Tell me more about that.,whisper_tiny_avatar_dev
+631,6,94.0,95.0,How are your best friend describe?,whisper_tiny_avatar_dev
+631,7,95.0,97.0,Something you did recently.,whisper_tiny_avatar_dev
+631,8,97.0,98.0,I really enjoyed that.,whisper_tiny_avatar_dev
+631,9,98.0,99.0,I think I've asked her.,whisper_tiny_avatar_dev
+631,10,99.0,100.0,Thanks for sharing thoughts.,whisper_tiny_avatar_dev

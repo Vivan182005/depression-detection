@@ -1,0 +1,195 @@
+{
+  "model_comparison": {
+    "openai/whisper-tiny": {
+      "params": "39M",
+      "disk_mb": 151,
+      "ram_profile": "Safe (~500 MB)",
+      "mean_wer": 0.2807,
+      "speed_factor": null,
+      "mean_speed_factor": 11.78
+    },
+    "openai/whisper-base": {
+      "params": "74M",
+      "disk_mb": 290,
+      "ram_profile": "Moderate (~1 GB)",
+      "mean_wer": null,
+      "speed_factor": null
+    },
+    "openai/whisper-small": {
+      "params": "244M",
+      "disk_mb": 960,
+      "ram_profile": "Prohibitive (4-6 GB activation memory on 8 GB Mac)",
+      "status": "excluded_resource_constraint"
+    }
+  },
+  "session_details": [
+    {
+      "participant_id": 600,
+      "audio_duration_sec": 104.47,
+      "wer_tiny": 0.3357,
+      "wer_base": null,
+      "tiny_time_sec": 9.28
+    },
+    {
+      "participant_id": 601,
+      "audio_duration_sec": 134.65,
+      "wer_tiny": 0.1738,
+      "wer_base": null,
+      "tiny_time_sec": 9.52
+    },
+    {
+      "participant_id": 603,
+      "audio_duration_sec": 777.1,
+      "wer_tiny": 0.1929,
+      "wer_base": null,
+      "tiny_time_sec": 64.97
+    },
+    {
+      "participant_id": 604,
+      "audio_duration_sec": 117.85,
+      "wer_tiny": 0.2628,
+      "wer_base": null,
+      "tiny_time_sec": 9.71
+    },
+    {
+      "participant_id": 605,
+      "audio_duration_sec": 205.34,
+      "wer_tiny": 0.2332,
+      "wer_base": null,
+      "tiny_time_sec": 13.5
+    },
+    {
+      "participant_id": 607,
+      "audio_duration_sec": 239.52,
+      "wer_tiny": 0.1504,
+      "wer_base": null,
+      "tiny_time_sec": 13.89
+    },
+    {
+      "participant_id": 615,
+      "audio_duration_sec": 576.95,
+      "wer_tiny": 0.1785,
+      "wer_base": null,
+      "tiny_time_sec": 42.49
+    },
+    {
+      "participant_id": 619,
+      "audio_duration_sec": 557.42,
+      "wer_tiny": 0.1317,
+      "wer_base": null,
+      "tiny_time_sec": 44.78
+    },
+    {
+      "participant_id": 623,
+      "audio_duration_sec": 769.26,
+      "wer_tiny": 0.1783,
+      "wer_base": null,
+      "tiny_time_sec": 62.41
+    },
+    {
+      "participant_id": 624,
+      "audio_duration_sec": 178.47,
+      "wer_tiny": 0.3027,
+      "wer_base": null,
+      "tiny_time_sec": 22.96
+    },
+    {
+      "participant_id": 626,
+      "audio_duration_sec": 88.49,
+      "wer_tiny": 0.2226,
+      "wer_base": null,
+      "tiny_time_sec": 11.88
+    },
+    {
+      "participant_id": 628,
+      "audio_duration_sec": 570.77,
+      "wer_tiny": 0.1789,
+      "wer_base": null,
+      "tiny_time_sec": 65.88
+    },
+    {
+      "participant_id": 632,
+      "audio_duration_sec": 581.46,
+      "wer_tiny": 0.1206,
+      "wer_base": null,
+      "tiny_time_sec": 62.92
+    },
+    {
+      "participant_id": 633,
+      "audio_duration_sec": 1080.02,
+      "wer_tiny": 0.1377,
+      "wer_base": null,
+      "tiny_time_sec": 122.42
+    },
+    {
+      "participant_id": 634,
+      "audio_duration_sec": 344.16,
+      "wer_tiny": 0.1214,
+      "wer_base": null,
+      "tiny_time_sec": 39.49
+    },
+    {
+      "participant_id": 635,
+      "audio_duration_sec": 98.5,
+      "wer_tiny": 0.8673,
+      "wer_base": null,
+      "tiny_time_sec": 12.91
+    },
+    {
+      "participant_id": 637,
+      "audio_duration_sec": 742.06,
+      "wer_tiny": 0.0872,
+      "wer_base": null,
+      "tiny_time_sec": 54.19
+    },
+    {
+      "participant_id": 638,
+      "audio_duration_sec": 81.86,
+      "wer_tiny": 0.8648,
+      "wer_base": null,
+      "tiny_time_sec": 7.88
+    },
+    {
+      "participant_id": 649,
+      "audio_duration_sec": 354.69,
+      "wer_tiny": 0.2796,
+      "wer_base": null,
+      "tiny_time_sec": 24.91
+    },
+    {
+      "participant_id": 653,
+      "audio_duration_sec": 159.75,
+      "wer_tiny": 0.3763,
+      "wer_base": null,
+      "tiny_time_sec": 15.75
+    },
+    {
+      "participant_id": 654,
+      "audio_duration_sec": 123.23,
+      "wer_tiny": 0.4041,
+      "wer_base": null,
+      "tiny_time_sec": 7.53
+    },
+    {
+      "participant_id": 655,
+      "audio_duration_sec": 235.81,
+      "wer_tiny": 0.2903,
+      "wer_base": null,
+      "tiny_time_sec": 16.45
+    },
+    {
+      "participant_id": 656,
+      "audio_duration_sec": 294.61,
+      "wer_tiny": 0.349,
+      "wer_base": null,
+      "tiny_time_sec": 27.14
+    },
+    {
+      "participant_id": 662,
+      "audio_duration_sec": 320.02,
+      "wer_tiny": 0.2976,
+      "wer_base": null,
+      "tiny_time_sec": 22.57
+    }
+  ]
+}

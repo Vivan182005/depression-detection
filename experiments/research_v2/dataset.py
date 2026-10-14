@@ -20,6 +20,7 @@ if _REPO_ROOT not in sys.path:
     sys.path.insert(0, _REPO_ROOT)
 
 from experiments.research_v2.sealed_guard import assert_no_sealed_ids, SEALED_PIDS
+from experiments.research_v2.extractors_v2 import get_robust_acoustic_135d, ROBUST_ACOUSTIC_MASK
 
 OFFICIAL_LABELS_PATH = os.path.join(_REPO_ROOT, 'experiments', 'research_v2', 'labels_official.csv')
 
@@ -63,7 +64,7 @@ def get_official_label_for_pid(pid: int, labels_df: Optional[pd.DataFrame] = Non
         'is_sealed': bool(row['is_sealed'])
     }
 
-def load_development_dataset(cohort: str = 'woz_only', feature_version: str = 'v1') -> Dict[str, Any]:
+def load_development_dataset(cohort: str = 'woz_only', feature_version: str = 'v2', acoustic_set: str = 'robust', text_variant: str = 'T1', boundary_filter: Optional[str] = None) -> Dict[str, Any]:
     """
     Loads development dataset with strict isolation of sealed PIDs.
     cohort: 'woz_only', 'avatar_only', or 'combined'
@@ -90,7 +91,7 @@ def load_development_dataset(cohort: str = 'woz_only', feature_version: str = 'v
             if not os.path.exists(manifest_v2_path):
                 raise FileNotFoundError(f"v2 feature manifest not found at {manifest_v2_path}")
             df_v2 = pd.read_csv(manifest_v2_path)
-            woz_target = df_v2[(df_v2['domain'] == 'woz') & (~df_v2['is_sealed'])]
+            woz_target = df_v2[(df_v2['domain'] == 'woz') & (~df_v2['is_sealed']) & (df_v2['feature_file'] != 'none')]
             assert_no_sealed_ids(woz_target['participant_id'].values, context='load_development_dataset_woz_v2')
             
             ac_list, w2v_list, bert_list, meta_list = [], [], [], []
@@ -103,9 +104,19 @@ def load_development_dataset(cohort: str = 'woz_only', feature_version: str = 'v
                 feat_path = os.path.join(v2_dir, r['feature_file'])
                 data = np.load(feat_path)
                 
-                ac_list.append(data['acoustic_154d'].astype(np.float32))
+                if acoustic_set == 'robust':
+                    ac = data['acoustic_robust_135d'].astype(np.float32) if 'acoustic_robust_135d' in data else get_robust_acoustic_135d(data['acoustic_154d'])
+                else:
+                    ac = data['acoustic_154d'].astype(np.float32)
+                if text_variant == 'T2' and 'bert_t2_768d' in data:
+                    bert = data['bert_t2_768d'].astype(np.float32)
+                elif 'bert_t1_768d' in data:
+                    bert = data['bert_t1_768d'].astype(np.float32)
+                else:
+                    bert = data['bert_768d'].astype(np.float32)
+                ac_list.append(ac)
                 w2v_list.append(data['wav2vec_768d'].astype(np.float32))
-                bert_list.append(data['bert_768d'].astype(np.float32))
+                bert_list.append(bert)
                 meta_list.append(data.get('meta_7d', np.zeros(7, dtype=np.float32)))
                 
                 meta = get_official_label_for_pid(pid, df_labels)
@@ -234,7 +245,9 @@ def load_development_dataset(cohort: str = 'woz_only', feature_version: str = 'v
             if not os.path.exists(manifest_v2_path):
                 raise FileNotFoundError(f"v2 feature manifest not found at {manifest_v2_path}")
             df_v2 = pd.read_csv(manifest_v2_path)
-            avatar_target = df_v2[(df_v2['domain'] == 'avatar') & (~df_v2['is_sealed'])]
+            avatar_target = df_v2[(df_v2['domain'] == 'avatar') & (~df_v2['is_sealed']) & (df_v2['feature_file'] != 'none')]
+            trim_path = os.path.join(_REPO_ROOT, 'experiments', 'research_v2', 'trimming_audit_manifest.csv')
+            trim_df = pd.read_csv(trim_path).set_index('participant_id') if os.path.exists(trim_path) else None
             assert_no_sealed_ids(avatar_target['participant_id'].values, context='load_development_dataset_avatar_v2')
             
             ac_list, w2v_list, bert_list, meta_list = [], [], [], []
@@ -244,12 +257,24 @@ def load_development_dataset(cohort: str = 'woz_only', feature_version: str = 'v
             for _, r in avatar_target.iterrows():
                 pid = int(r['participant_id'])
                 sid = str(r['session_id'])
+                if boundary_filter == 'exclude_undetected' and trim_df is not None and pid in trim_df.index:
+                    if trim_df.loc[pid, 'status'] in ['not_detected', 'uncertain']:
+                        continue
                 feat_path = os.path.join(v2_dir, r['feature_file'])
                 data = np.load(feat_path)
-                
-                ac_list.append(data['acoustic_154d'].astype(np.float32))
+                if acoustic_set == 'robust':
+                    ac = data['acoustic_robust_135d'].astype(np.float32) if 'acoustic_robust_135d' in data else get_robust_acoustic_135d(data['acoustic_154d'])
+                else:
+                    ac = data['acoustic_154d'].astype(np.float32)
+                if text_variant == 'T2' and 'bert_t2_768d' in data:
+                    bert = data['bert_t2_768d'].astype(np.float32)
+                elif 'bert_t1_768d' in data:
+                    bert = data['bert_t1_768d'].astype(np.float32)
+                else:
+                    bert = data['bert_768d'].astype(np.float32)
+                ac_list.append(ac)
                 w2v_list.append(data['wav2vec_768d'].astype(np.float32))
-                bert_list.append(data['bert_768d'].astype(np.float32))
+                bert_list.append(bert)
                 meta_list.append(data.get('meta_7d', np.zeros(7, dtype=np.float32)))
                 
                 meta = get_official_label_for_pid(pid, df_labels)

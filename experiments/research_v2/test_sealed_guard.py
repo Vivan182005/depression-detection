@@ -62,12 +62,18 @@ class TestSealedGuard(unittest.TestCase):
 
     def test_entrypoint_load_development_dataset_zero_sealed(self):
         """Integration test: verify load_development_dataset() output has zero sealed IDs."""
-        data = load_development_dataset()
+        data = load_development_dataset(cohort='woz_only')
         loaded_pids = set(data['pids'])
         overlap = loaded_pids.intersection(SEALED_PIDS)
         self.assertEqual(len(overlap), 0, f'Sealed participants found in loaded dataset: {overlap}')
-        self.assertEqual(len(loaded_pids), 179)
-        self.assertEqual(len(data['sids']), 183)
+        self.assertEqual(len(loaded_pids), 178)
+        self.assertEqual(len(data['sids']), 178)
+
+        data_all = load_development_dataset(cohort='combined')
+        loaded_pids_all = set(data_all['pids'])
+        overlap_all = loaded_pids_all.intersection(SEALED_PIDS)
+        self.assertEqual(len(overlap_all), 0, f'Sealed participants found in loaded dataset: {overlap_all}')
+        self.assertEqual(len(loaded_pids_all), 239)
 
     def test_entrypoint_rejects_injected_sealed_id(self):
         """Verify that injectively passing a sealed PID into assert_no_sealed_ids triggers RuntimeError."""

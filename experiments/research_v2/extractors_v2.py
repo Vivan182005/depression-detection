@@ -46,7 +46,7 @@ def normalize_text_for_bert(text: str) -> str:
     text = re.sub(r'\[[^\]]+\]', ' ', text)
     text = re.sub(r'\bxxx\b', ' ', text, flags=re.IGNORECASE)
     text = text.lower()
-    text = re.sub(r'[^\w\s]', ' ', text)
+    text = re.sub(r"[^\w\s']", ' ', text)
     text = ' '.join(text.split())
     return text
 
@@ -112,6 +112,33 @@ class Wav2Vec2ExtractorV2:
             raise RuntimeError(f"Expected (768,) Wav2Vec2 vector, got {full_vec.shape}")
         return full_vec
 
+
+# ---------------------------------------------------------
+# Acoustic Robust Feature Subset (Task A2)
+# Drops 19 amplitude/timing-dependent features from the 154-d vector:
+# - 17 eGeMAPSv02 features (indices 0..87):
+#     10-19: loudness_sma3_* (10 features)
+#     81: loudnessPeaksPerSec
+#     82: VoicedSegmentsPerSec
+#     83: MeanVoicedSegmentLengthSec
+#     84: StddevVoicedSegmentLengthSec
+#     85: MeanUnvoicedSegmentLength
+#     86: StddevUnvoicedSegmentLength
+#     87: equivalentSoundLevel_dBp
+# - 2 temporal features (indices 88..153):
+#     120: temporal RMS mean
+#     153: temporal RMS std
+# Total remaining: 135 features (acoustic_robust_135d).
+# ---------------------------------------------------------
+DROPPED_ACOUSTIC_INDICES = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 81, 82, 83, 84, 85, 86, 87, 120, 153]
+ROBUST_ACOUSTIC_MASK = np.array([i not in DROPPED_ACOUSTIC_INDICES for i in range(154)], dtype=bool)
+
+def get_robust_acoustic_135d(ac_154: np.ndarray) -> np.ndarray:
+    """Extracts the 135-d amplitude/timing-invariant robust acoustic feature subset from a 154-d vector."""
+    if ac_154.shape != (154,):
+        raise ValueError(f'Expected (154,) acoustic vector, got {ac_154.shape}')
+    return ac_154[ROBUST_ACOUSTIC_MASK].astype(np.float32)
+
 class AcousticExtractorV2:
     def __init__(self, sr: int = 16000):
         self.sr = sr
@@ -161,6 +188,10 @@ class AcousticExtractorV2:
         if ac_154.shape != (154,):
             raise RuntimeError(f"Expected (154,) acoustic vector, got {ac_154.shape}")
         return ac_154
+
+    def extract_robust(self, y: np.ndarray) -> np.ndarray:
+        ac_154 = self.extract(y)
+        return get_robust_acoustic_135d(ac_154)
 
 class BertExtractorV2:
     def __init__(self, model_name: str = "bert-base-uncased", device: Optional[str] = None):
