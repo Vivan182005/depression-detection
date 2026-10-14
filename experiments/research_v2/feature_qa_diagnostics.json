@@ -1,0 +1,55 @@
+{
+  "qa_metrics": [
+    {
+      "feature_name": "Acoustic_Robust_135d",
+      "n_samples": 239,
+      "n_dimensions": 135,
+      "non_finite_values": 0,
+      "constant_dimensions": 0,
+      "near_constant_dimensions": 0,
+      "exact_duplicate_rows": 0,
+      "near_duplicate_pairs_sampled": 746
+    },
+    {
+      "feature_name": "Acoustic_Canonical_154d",
+      "n_samples": 239,
+      "n_dimensions": 154,
+      "non_finite_values": 0,
+      "constant_dimensions": 0,
+      "near_constant_dimensions": 0,
+      "exact_duplicate_rows": 0,
+      "near_duplicate_pairs_sampled": 746
+    },
+    {
+      "feature_name": "Wav2Vec2_768d",
+      "n_samples": 239,
+      "n_dimensions": 768,
+      "non_finite_values": 0,
+      "constant_dimensions": 0,
+      "near_constant_dimensions": 8,
+      "exact_duplicate_rows": 0,
+      "near_duplicate_pairs_sampled": 0
+    },
+    {
+      "feature_name": "BERT_T2_768d",
+      "n_samples": 116,
+      "n_dimensions": 768,
+      "non_finite_values": 0,
+      "constant_dimensions": 0,
+      "near_constant_dimensions": 0,
+      "exact_duplicate_rows": 0,
+      "near_duplicate_pairs_sampled": 0
+    }
+  ],
+  "domain_auc": {
+    "acoustic_135d": 0.7920887824645423,
+    "wav2vec_768d": 0.7477435991895376,
+    "bert_t2_768d": 1.0
+  },
+  "speech_duration_stats": {
+    "mean_s": 490.29,
+    "median_s": 452.08,
+    "p10_s": 184.15,
+    "p90_s": 844.07
+  }
+}

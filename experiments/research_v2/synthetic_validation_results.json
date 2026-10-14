@@ -1,0 +1,19 @@
+{
+  "leakage_assertions_passed": true,
+  "sensitivity": {
+    "control_auc": 0.513,
+    "control_p": 0.41,
+    "injected_auc": 0.776,
+    "injected_p": 0.01
+  },
+  "calibration": {
+    "n_datasets": 40,
+    "n_permutations": 99,
+    "rejections": 3,
+    "fpr": 0.075,
+    "ci_low": 0.026,
+    "ci_high": 0.199,
+    "mean_auc": 0.502,
+    "mean_p": 0.476
+  }
+}

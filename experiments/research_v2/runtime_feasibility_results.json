@@ -1,0 +1,30 @@
+{
+  "hardware": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "processor": "arm",
+    "python_version": "3.12.8",
+    "cores": 8
+  },
+  "v2": {
+    "variant": "V2_Audio_Handcrafted_eGeMAPS",
+    "feature_dim": 300,
+    "n_participants": 239,
+    "baseline_time_sec": 0.954,
+    "avg_perm_sec": 0.0775,
+    "extrapolated_r999_sec": 78.38,
+    "extrapolated_r999_hours": 0.0218,
+    "exceeds_48h": false
+  },
+  "v10": {
+    "variant": "V10_Audio_Pretrained_Multimodal",
+    "feature_dim": 1671,
+    "n_participants": 239,
+    "baseline_time_sec": 0.095,
+    "avg_perm_sec": 0.1161,
+    "extrapolated_r999_sec": 116.05,
+    "extrapolated_r999_hours": 0.0322,
+    "exceeds_48h": false
+  },
+  "stop_condition_triggered": false
+}
