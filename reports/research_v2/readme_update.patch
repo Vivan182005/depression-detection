@@ -1,0 +1,142 @@
+diff --git a/README.md b/README.md
+index 2f29cf2..652e976 100644
+--- a/README.md
++++ b/README.md
+@@ -4,11 +4,11 @@
+ [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red.svg)](https://pytorch.org/)
+ [![HuggingFace](https://img.shields.io/badge/HuggingFace-Wav2Vec2%20%7C%20BERT-yellow.svg)](https://huggingface.co/)
+ [![Dataset](https://img.shields.io/badge/Dataset-DAIC--WOZ%20%7C%20E--DAIC%202019-green.svg)](https://dcapswoz.ict.usc.edu/)
+-[![Zero-Leakage](https://img.shields.io/badge/Validation-Subject--Independent%20Stratified%20CV-purple.svg)]()
+-[![Status](https://img.shields.io/badge/Release-Submission--Ready-success.svg)]()
++[![Validation](https://img.shields.io/badge/Validation-Subject--Independent%20Grouped%20CV-purple.svg)]()
++[![Status](https://img.shields.io/badge/Status-Under%20Research%20Audit%20%26%20Repair-orange.svg)]()
+ 
+ > **B.Tech Final Year Capstone Project**  
+-> An explainable, leak-free, multi-modal clinical depression screening system predicting continuous **PHQ-8 scores ($0.0 - 24.0$)** and **Clinical Severity Categories** from semi-clinical human speech interviews.
++> A multi-modal clinical depression screening research prototype estimating continuous **PHQ-8 scores ($0.0 - 24.0$)** and **3-class severity categories** from semi-clinical speech interviews and transcripts.
+ 
+ ---
+ 
+@@ -16,13 +16,15 @@
+ 
+ This system analyzes semi-clinical interviews from the **DAIC-WOZ** and extended **E-DAIC (2019)** corpora to detect depression severity. By fusing **acoustic vocal biomarkers**, **self-supervised deep speech representations**, and **clinical linguistic cues**, the system overcomes the limitations of unimodal speech models.
+ 
+-### 🌟 Headline Benchmark Results
+-* **3-Class Severity Accuracy**: **`83.78%`** (Minimal/Mild vs. Moderate vs. Severe)
+-* **3-Class Macro-F1**: **`42.36%`** (Robust balance across severe and moderate minority classes)
+-* **Out-of-Sample 5-Fold Stratified Accuracy**: **`81.42% ± 4.30%`**
+-* **Continuous PHQ-8 MAE**: **`3.51 ± 0.14 points`** (on $0 - 24$ clinical score scale)
+-* **Calibrated Expected Calibration Error (ECE)**: Reduced to **`15.22%`** using post-hoc Temperature Scaling ($T^* = 1.24 - 1.82$)
+-* **Reserved Unseen Cohort Accuracy**: Evaluated against **33 strictly isolated holdout sessions** covering both human Wizard-of-Oz and autonomous AI interviewers.
++> [!WARNING]
++> ### ⚠️ Historical Metrics Notice (Superseded & Invalidated)
++> All headline metrics reported prior to Phase 4 (including the historical **`83.78%`** 3-class accuracy and **`81.42%`** CV numbers) have been **superseded and invalidated**.
++> A forensic code audit (October 2026) confirmed three critical historical defects:
++> 1. **Wav2Vec2 Extractor Fallback:** Silently generated scaled Gaussian noise (`randn(768)`) when dependencies failed.
++> 2. **Missing OpenSMILE Execution:** eGeMAPS extraction fell back to Librosa with 26 padded zeros (dimensions 62–87 were identically zero).
++> 3. **Clinical Label Inconsistencies:** The historical `app/label_mapper.py` diverged for 66/189 PHQ scores and 101/189 genders vs. challenge ground truth.
++> 
++> Detailed forensic proofs and repair specifications are documented in [`reports/research_v2/PHASE4_REPAIR.md`](reports/research_v2/PHASE4_REPAIR.md) and [`reports/research_v2/PHASE4B_HARMONIZATION.md`](reports/research_v2/PHASE4B_HARMONIZATION.md). Canonical Feature Store v2 re-extraction is complete, and acoustic/text harmonization has been verified.
+ 
+ ---
+ 
+@@ -58,37 +60,44 @@ graph TD
+ 
+ ---
+ 
+-## 📊 Comprehensive Ablation Study (Top Experimental Architectures)
++## 🧪 Canonical V2 Feature Pipeline & Harmonization (Phase 4B)
+ 
+-To ensure scientific defensibility, all individual modalities and fusion strategies were benchmarked under identical leak-free participant splits:
++Following the Phase 4 forensic audit, the entire feature extraction and validation pipeline was rebuilt from scratch to eliminate silent fallbacks and harmonize cross-domain acoustic/text representations:
+ 
+-| # | Architecture | Features | 3-Class Acc | Macro-F1 | Bal. Acc | Binary F1 | PHQ MAE |
+-|---|---|---|:---:|:---:|:---:|:---:|:---:|
+-| — | *Majority Baseline (Class 0)* | None | 83.78% | 30.39% | 33.33% | 0.00% | 3.32 pts |
+-| 1 | **Acoustic Baseline** (Random Forest) | eGeMAPS 88d + MFCC 66d | 72.97% | 28.12% | 29.03% | 0.00% | 5.26 pts |
+-| 2 | **Speech Context Only** (MLP) | Wav2Vec2 768d | 72.97% | 28.12% | 29.03% | 26.32% | 4.79 pts |
+-| 3 | **Clinical Text Only** (MLP) | BERT 768d | 81.08% | 43.54% | 47.85% | 28.57% | 3.69 pts |
+-| 4 | **Audio + Text Fusion** | Wav2Vec2 + BERT | 78.38% | 29.29% | 31.18% | 22.22% | 2.98 pts |
+-| 5 | **BiLSTM + Attention Network** | eGeMAPS + Wav2Vec2 | 81.48% | 29.93% | 33.33% | 0.00% | 4.17 pts |
+-| 6 | **Hierarchical Two-Stage Classifier** | Tri-Modal (Binary ➔ Severity) | 74.07% | 28.37% | 33.33% | 0.00% | 5.12 pts |
+-| 🏆 | **Compact Tri-Modal MLP** *(Production)* | **Acoustic + Wav2Vec2 + BERT** | **`83.78%`** | **`42.36%`** | **`48.92%`** | **`40.00%`** | **`4.23 pts`** |
++### 1. Ground-Truth Clinical Labels
++- **Reconciliation Source**: [`experiments/research_v2/labels_official.csv`](experiments/research_v2/labels_official.csv) covering all 275 participants (189 WoZ, 86 E-DAIC).
++- Resolves all 66 historical PHQ-8 score mismatches, 101 gender discrepancies, and recovers 6 missing WoZ participants previously omitted.
++- 3-class clinical boundaries: **Minimal** (PHQ-8: 0–9), **Moderate** (PHQ-8: 10–14), **Severe** (PHQ-8: 15–24).
++
++### 2. Feature Extractor V2 Canonical Pipeline
++- **Acoustic Robust (135d)**: Standardized OpenSMILE eGeMAPSv02 (88d) + spectral/MFCC summary (librosa 66d), dropping 19 amplitude- and pause-dependent features (`loudness_*`, `equivalentSoundLevel_dBp`, voiced/unvoiced segment lengths and rates, temporal RMS mean/std) to mitigate domain shifts from stitched WoZ audio.
++- **Wav2Vec2 Speech Representations (768d)**: True contextual self-supervised embeddings from `facebook/wav2vec2-base-960h` (replacing the historical Gaussian noise fallback).
++- **Linguistic Representations (768d)**: Contextual sentence embeddings from `bert-base-uncased` with apostrophe-preserving text normalization (`re.sub(r"[^\w\s']", ' ', text)`), ensuring psychiatric contractions (*"I'm"*, *"don't"*, *"can't"*) are preserved.
++- **Speech-to-Text Harmonization**: Standardized on `openai/whisper-tiny` (WER = 28.07% on sealed E-DAIC reference sessions), eliminating transcription format divergence between human and automated transcripts.
++
++### 3. Empirical Domain Separability (Development Cohort, 5-Fold Grouped CV)
++
++| Modality Representation | Dimensionality | Centroid Cosine | Linear MMD | Domain AUC (5-Fold CV) | Primary Selection |
++|---|:---:|:---:|:---:|:---:|:---:|
++| **Acoustic Full** | 154d | 0.9998 | 5423.35 | 0.8238 | Secondary |
++| **Acoustic Robust** | **135d** | **0.9998** | **5404.08** | **0.8070** | **Primary** |
++| **Wav2Vec 2.0** | **768d** | **0.9988** | **0.10** | **0.6899** | **Primary** |
++| **BERT Variant T1** *(Manual WoZ)* | 768d | 0.9830 | 7.13 | 0.9994 | Primary (Normalized) |
++| **BERT Variant T2** *(Whisper Everywhere)* | 768d | — | — | Harmonized | Sensitivity Analysis |
+ 
+ ---
+ 
+-## 🔒 Rigorous Validation & Zero Data Leakage Standards
++## 🔒 Validation Protocol & Cohort Isolation Standards
+ 
+ 1. **Strict Subject-Level Isolation**:
+-   - Zero participant overlap across training, validation, and test sets.
+-   - Splits are stratified jointly by **PHQ-8 severity tier** and **self-reported gender** to avoid gender confounding.
+-2. **Structurally Isolated Unseen Cohort**:
+-   - **33 reserved participants** (9 from WoZ human interviews + 24 from autonomous AI interviews) are held out in [`unseen/`](./unseen).
+-   - These files are physically removed from training directories and excluded during feature indexing.
+-3. **Probability Calibration**:
+-   - Standard neural networks output overconfident 99% predictions on test data.
+-   - Our system optimizes an empirical Temperature Scalar $T^*$ on validation logits via Negative Log-Likelihood (NLL), scaling confidence scores to genuine clinical confidence ranges (38%–85%) without altering prediction accuracy.
++   - Validation uses `StratifiedGroupKFold` strictly grouped by `participant_id` to guarantee that repeated interview sessions from the same individual never leak across training and validation folds.
++2. **Quarantine of the Reserved Cohort (33 Sessions)**:
++   - 33 sessions (9 DAIC-WOZ + 24 E-DAIC) are held strictly label-blind in [`unseen/`](./unseen).
++   - Audio and transcripts are transcribed with `openai/whisper-tiny` and extracted with Extractor V2 for evaluation, but clinical labels are never loaded or accessed during feature engineering or tuning.
++3. **Session Boundary Quality Audit**:
++   - Avatar development interviews undergo automated boundary detection to isolate setup dialogue. 37 sessions are confirmed clinical interviews, and 24 sessions with undetected boundaries can be filtered using `boundary_filter='exclude_undetected'` for sensitivity analyses.
+ 
+ ---
+-
+ ## 📁 Repository Directory Structure
+ 
+ ```text
+@@ -119,7 +128,7 @@ CAPSTONE/
+     ├── feature_store/                  # Model weights & training index
+     │   ├── best_depression_model.pth   # Production CompactTriModalMLP PyTorch weights
+     │   ├── best_depression_model_temperature.json # Fitted optimal calibration temperature
+-    │   └── master_dataset_index.csv    # Filtered leak-free training dataset catalog
++    │   └── master_dataset_index.csv    # Historical training dataset catalog
+     └── src/
+         ├── preprocessing/              # Audio cleaning & speaker turn isolation
+         ├── features/                   # eGeMAPS, MFCC, Wav2Vec2, and BERT extractors
+@@ -143,15 +152,17 @@ pip install --upgrade pip
+ pip install -r app/requirements.txt
+ ```
+ 
+-### 2. Train the Production Model (Leak-Free Tri-Modal)
+-To train the winning `CompactTriModalMLP` with balanced sampling and temperature calibration:
++### 2. Load Harmonized V2 Features
++To inspect the harmonized V2 feature store and development dataset:
+ 
+-```bash
+-cd app
+-python3 src/models/train_leak_free.py 30 --full-report
++```python
++from experiments.research_v2.dataset import load_development_dataset
++
++data = load_development_dataset(cohort="combined", feature_version="v2", acoustic_set="robust")
++print("Loaded development participants:", len(data["pids"]), "Acoustic shape:", data["X_ac"].shape)
+ ```
+ 
+-### 3. Evaluate on the Reserved Unseen Cohort
++### 3. Evaluate on the Reserved Unseen Cohort (Label-Blind Sanity Check)
+ To test the saved checkpoint on the held-out audio recordings and transcripts in `unseen/`:
+ 
+ ```bash

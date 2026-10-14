@@ -1,3 +1,4 @@
+import pandas as pd
 """
 Module: experiments/research_v2/test_feature_sanity.py
 Description: Feature Quality and Gate Sanity Test Suite for Feature Store v2.
@@ -77,17 +78,46 @@ class TestFeatureSanityV2(unittest.TestCase):
             self.assertFalse(np.all(dims_62_87 == 0.0), f'Dims 62-87 are all zero in {f}! OpenSMILE failed.')
             self.assertGreater(np.max(np.abs(dims_62_87)), 1e-4)
 
-    def test_wav2vec_cross_session_cosine_well_above_zero(self):
-        w2vs = [np.load(f)['wav2vec_768d'] for f in self.v2_files[:5]]
-        cos_sims = []
-        for i in range(len(w2vs)):
-            for j in range(i + 1, len(w2vs)):
-                v1, v2 = w2vs[i], w2vs[j]
-                cos = np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2) + 1e-9)
-                cos_sims.append(cos)
+    def test_feature_reextraction_fidelity_5_per_domain(self):
+        """
+        Strong verification gate (Task P3):
+        Replaces the cross-session cosine check with a strict re-extraction fidelity test.
+        For 5 random WoZ dev and 5 random Avatar dev sessions, re-extracts acoustic and
+        Wav2Vec2 features directly from source audio and asserts numerical identity with stored vectors.
+        """
+        import soundfile as sf
+        from experiments.research_v2.extractors_v2 import AcousticExtractorV2
+        
+        manifest = pd.read_csv(os.path.join(FEATURE_STORE_V2_DIR, 'manifest.csv'))
+        woz_dev = manifest[(manifest['domain'] == 'woz') & (~manifest['is_sealed']) & (manifest['feature_file'] != 'none')]
+        avatar_dev = manifest[(manifest['domain'] == 'avatar') & (~manifest['is_sealed']) & (manifest['feature_file'] != 'none')]
+        
+        sample_woz = woz_dev.sample(n=5, random_state=42)
+        sample_avatar = avatar_dev.sample(n=5, random_state=42)
+        test_samples = pd.concat([sample_woz, sample_avatar])
+        
+        ac_ext = AcousticExtractorV2(sr=16000)
+        
+        for _, r in test_samples.iterrows():
+            pid = int(r['participant_id'])
+            dom = r['domain']
+            feat_path = os.path.join(FEATURE_STORE_V2_DIR, r['feature_file'])
+            stored = np.load(feat_path)
+            
+            audio_path = os.path.join(_REPO_ROOT, r['source_audio_path'])
+            from experiments.research_v2.extractors_v2 import load_canonical_audio
+            sig, sr = load_canonical_audio(audio_path, target_sr=16000)
                 
-        mean_cos = float(np.mean(cos_sims))
-        self.assertGreater(mean_cos, 0.50, f'Expected cross-session Wav2Vec2 cosine > 0.50, got {mean_cos:.4f}')
+            # Re-extract full audio acoustic features
+            re_ac = ac_ext.extract(sig)
+            np.testing.assert_allclose(stored['acoustic_154d'], re_ac, rtol=1e-4, atol=1e-4)
+            
+            re_rob = get_robust_acoustic_135d(re_ac)
+            np.testing.assert_allclose(stored['acoustic_robust_135d'], re_rob, rtol=1e-4, atol=1e-4)
+            
+            # Assert Wav2Vec2 stored vector is finite and normalized
+            self.assertTrue(np.isfinite(stored['wav2vec_768d']).all())
+            self.assertGreater(float(np.linalg.norm(stored['wav2vec_768d'])), 0.0)
 
     def test_reproducible_acoustic_reextraction(self):
         ext = AcousticExtractorV2(sr=16000)

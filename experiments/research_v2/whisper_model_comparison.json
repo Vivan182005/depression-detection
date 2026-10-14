@@ -1,0 +1,78 @@
+{
+  "openai/whisper-tiny": {
+    "mean_wer": 0.2231,
+    "mean_speed_factor": 14.58,
+    "load_time_sec": 0.85,
+    "peak_rss_mb": 682.4,
+    "repetition_loops": false,
+    "status": "selected",
+    "details": {
+      "600": {
+        "wer": 0.3357,
+        "speed": 11.4
+      },
+      "601": {
+        "wer": 0.1738,
+        "speed": 15.0
+      },
+      "605": {
+        "wer": 0.2332,
+        "speed": 16.6
+      },
+      "607": {
+        "wer": 0.1504,
+        "speed": 17.8
+      },
+      "626": {
+        "wer": 0.2226,
+        "speed": 12.1
+      }
+    }
+  },
+  "openai/whisper-base": {
+    "mean_wer": 0.4168,
+    "mean_speed_factor": 6.02,
+    "load_time_sec": 1.42,
+    "peak_rss_mb": 1280.1,
+    "repetition_loops": true,
+    "status": "rejected",
+    "details": {
+      "600": {
+        "wer": 1.3077,
+        "speed": 2.0,
+        "note": "catastrophic repetition loop on silence intervals"
+      },
+      "601": {
+        "wer": 0.1738,
+        "speed": 7.2
+      },
+      "605": {
+        "wer": 0.2257,
+        "speed": 6.1
+      },
+      "607": {
+        "wer": 0.1541,
+        "speed": 8.9
+      },
+      "626": {
+        "wer": 0.2226,
+        "speed": 5.9
+      }
+    }
+  },
+  "openai/whisper-small": {
+    "mean_wer": 0.3392,
+    "mean_speed_factor": 0.3,
+    "load_time_sec": 12.8,
+    "peak_rss_mb": 2950.0,
+    "repetition_loops": false,
+    "status": "rejected",
+    "details": {
+      "600": {
+        "wer": 0.3392,
+        "speed": 0.3,
+        "note": "exceeds practical runtime on 8 GB Mac (0.3x RT)"
+      }
+    }
+  }
+}
