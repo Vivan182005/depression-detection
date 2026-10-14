@@ -5,10 +5,10 @@
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Wav2Vec2%20%7C%20BERT-yellow.svg)](https://huggingface.co/)
 [![Dataset](https://img.shields.io/badge/Dataset-DAIC--WOZ%20%7C%20E--DAIC%202019-green.svg)](https://dcapswoz.ict.usc.edu/)
 [![Zero-Leakage](https://img.shields.io/badge/Validation-Subject--Independent%20Stratified%20CV-purple.svg)]()
-[![Status](https://img.shields.io/badge/Release-Submission--Ready-success.svg)]()
+[![Status](https://img.shields.io/badge/Status-Under%20Research%20Audit%20%26%20Repair-orange.svg)]()
 
 > **B.Tech Final Year Capstone Project**  
-> An explainable, leak-free, multi-modal clinical depression screening system predicting continuous **PHQ-8 scores ($0.0 - 24.0$)** and **Clinical Severity Categories** from semi-clinical human speech interviews.
+> A multi-modal clinical depression screening research prototype estimating continuous **PHQ-8 scores ($0.0 - 24.0$)** and **3-class severity categories** from semi-clinical speech interviews and transcripts.
 
 ---
 
@@ -16,13 +16,15 @@
 
 This system analyzes semi-clinical interviews from the **DAIC-WOZ** and extended **E-DAIC (2019)** corpora to detect depression severity. By fusing **acoustic vocal biomarkers**, **self-supervised deep speech representations**, and **clinical linguistic cues**, the system overcomes the limitations of unimodal speech models.
 
-### 🌟 Headline Benchmark Results
-* **3-Class Severity Accuracy**: **`83.78%`** (Minimal/Mild vs. Moderate vs. Severe)
-* **3-Class Macro-F1**: **`42.36%`** (Robust balance across severe and moderate minority classes)
-* **Out-of-Sample 5-Fold Stratified Accuracy**: **`81.42% ± 4.30%`**
-* **Continuous PHQ-8 MAE**: **`3.51 ± 0.14 points`** (on $0 - 24$ clinical score scale)
-* **Calibrated Expected Calibration Error (ECE)**: Reduced to **`15.22%`** using post-hoc Temperature Scaling ($T^* = 1.24 - 1.82$)
-* **Reserved Unseen Cohort Accuracy**: Evaluated against **33 strictly isolated holdout sessions** covering both human Wizard-of-Oz and autonomous AI interviewers.
+> [!WARNING]
+> ### ⚠️ Historical Metrics Notice (Superseded & Invalidated)
+> All headline metrics reported prior to Phase 4 (including the historical **`83.78%`** 3-class accuracy and **`81.42%`** CV numbers) have been **superseded and invalidated**.
+> A forensic code audit (October 2026) confirmed three critical historical defects:
+> 1. **Wav2Vec2 Extractor Fallback:** Silently generated scaled Gaussian noise (`randn(768)`) when dependencies failed.
+> 2. **Missing OpenSMILE Execution:** eGeMAPS extraction fell back to Librosa with 26 padded zeros (dimensions 62–87 were identically zero).
+> 3. **Clinical Label Inconsistencies:** The historical `app/label_mapper.py` diverged for 66/189 PHQ scores and 101/189 genders vs. challenge ground truth.
+> 
+> Detailed forensic proofs and repair specifications are documented in [`reports/research_v2/PHASE4_REPAIR.md`](reports/research_v2/PHASE4_REPAIR.md). Feature Store v2 re-extraction is active; baseline models are being retrained under strict zero-leakage protocols.
 
 ---
 

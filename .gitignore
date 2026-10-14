@@ -34,3 +34,9 @@ app/feature_store/*.npz
 # Temporary and local test outputs
 app/output/
 experiments/research_v2/feature_cache_avatar_dev/*.npz
+
+# Dedicated OpenSMILE environment
+.venv_opensmile/
+
+# Feature store v2 binary NPZs (manifest.csv is tracked)
+experiments/research_v2/feature_store_v2/*.npz
