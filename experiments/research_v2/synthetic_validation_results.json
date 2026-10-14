@@ -1,19 +1,23 @@
 {
-  "leakage_assertions_passed": true,
-  "sensitivity": {
-    "control_auc": 0.513,
-    "control_p": 0.41,
-    "injected_auc": 0.776,
-    "injected_p": 0.01
-  },
   "calibration": {
     "n_datasets": 40,
     "n_permutations": 99,
     "rejections": 3,
     "fpr": 0.075,
-    "ci_low": 0.026,
-    "ci_high": 0.199,
-    "mean_auc": 0.502,
-    "mean_p": 0.476
-  }
+    "ci_low": 0.026038317772658866,
+    "ci_high": 0.19864295964893797,
+    "mean_auc": 0.502315,
+    "mean_p": 0.47625
+  },
+  "sensitivity": {
+    "control_auc": 0.5134,
+    "control_p": 0.41,
+    "injected_auc": 0.7761,
+    "injected_p": 0.01
+  },
+  "holm_control": {
+    "unadjusted_fwer": 0.132,
+    "holm_fwer": 0.05
+  },
+  "leakage_assertions_passed": true
 }

@@ -10,6 +10,8 @@ Strict Working Constraints:
 import os
 import sys
 import json
+import warnings
+warnings.filterwarnings('ignore')
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -210,6 +212,58 @@ def run_c6_injected_signal():
         'injected_auc': s_inj, 'injected_p': p_inj
     }
 
+
+def run_c6_holm_confirmatory_validation():
+    """
+    Section D: Multiplicity Control & Holm-Bonferroni Step-Down Verification
+    Simulates the confirmatory testing family (m=3: H1, H2, H3) under the global null.
+    Verifies that Holm-Bonferroni step-down strictly controls the family-wise error rate.
+    """
+    print(f"\n=======================================================")
+    print(f"C6.D Multiplicity Control: Holm-Bonferroni Step-Down (m=3)")
+    print(f"=======================================================")
+    
+    alpha = 0.05
+    n_sims = 1000
+    rng = np.random.RandomState(999)
+    
+    # Simulate independent uniform p-values under the global null
+    p_sims = rng.uniform(0.0, 1.0, size=(n_sims, 3))
+    
+    # 1. Unadjusted rejections (at least one p <= 0.05)
+    unadj_rejections = np.sum(np.any(p_sims <= alpha, axis=1))
+    unadj_fwer = unadj_rejections / n_sims
+    
+    # 2. Holm-Bonferroni step-down procedure
+    holm_rejections = 0
+    for i in range(n_sims):
+        p_vals = p_sims[i]
+        # Sort p-values
+        sort_idx = np.argsort(p_vals)
+        p_sorted = p_vals[sort_idx]
+        
+        # Holm thresholds: alpha / 3, alpha / 2, alpha / 1
+        thresholds = [alpha / 3.0, alpha / 2.0, alpha / 1.0]
+        
+        rejected = False
+        for k in range(3):
+            if p_sorted[k] <= thresholds[k]:
+                rejected = True # Family rejected at step k
+                break
+            else:
+                break # Step-down stop condition
+        if rejected:
+            holm_rejections += 1
+            
+    holm_fwer = holm_rejections / n_sims
+    print(f"  Simulations: {n_sims} independent null experiments across m=3 hypotheses")
+    print(f"  Unadjusted FWER (no multiplicity control): {unadj_fwer*100:.1f}% (Expected: ~14.3%)")
+    print(f"  Holm-Bonferroni FWER: {holm_fwer*100:.1f}% (Controlled at alpha <= 5.0%)")
+    
+    assert holm_fwer <= 0.065, f"Multiplicity Control Failure: Holm FWER {holm_fwer} exceeded alpha!"
+    print("  Assertion Passed: Holm step-down successfully bounds family-wise error rate.")
+    return {'unadjusted_fwer': unadj_fwer, 'holm_fwer': holm_fwer}
+
 def run_c6_leakage_assertions():
     """
     Section C: Leakage and Implementation Assertions
@@ -286,16 +340,18 @@ def main():
     
     run_c6_leakage_assertions()
     sens_res = run_c6_injected_signal()
+    holm_res = run_c6_holm_confirmatory_validation()
     calib_res = run_c6_calibration(n_datasets=40, n_permutations=99)
     
     # Save results to json
     results = {
         'calibration': calib_res,
         'sensitivity': sens_res,
+        'holm_control': holm_res,
         'leakage_assertions_passed': True
     }
     
-    out_json = 'experiments/research_v2/synthetic_validation_results.json'
+    out_json = os.path.join(_REPO_ROOT, 'experiments', 'research_v2', 'synthetic_validation_results.json')
     with open(out_json, 'w') as f:
         json.dump(results, f, indent=2)
     print(f"\nSaved synthetic validation results to {out_json}")

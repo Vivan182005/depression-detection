@@ -1,29 +1,92 @@
 {
   "hardware": {
     "system": "Darwin",
+    "node": "Vivans-MacBook-Air.local",
+    "release": "27.0.0",
     "machine": "arm64",
     "processor": "arm",
-    "python_version": "3.12.8",
-    "cores": 8
+    "python_version": "3.12.8"
+  },
+  "benchmark_protocol": {
+    "n_participants": 239,
+    "n_runs_measured": 5,
+    "outer_cv": "StratifiedKFold(n_splits=5)",
+    "inner_cv": "StratifiedKFold(n_splits=4)",
+    "hyperparameter_grid": {
+      "C": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0
+      ]
+    },
+    "selection_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "stratum_permutation": "Within domain x gender strata (WoZ F, WoZ M, Avatar F, Avatar M)",
+    "label_blindness": "Permuted labels only; zero observed predictive evaluation on real PHQ"
   },
   "v2": {
-    "variant": "V2_Audio_Handcrafted_eGeMAPS",
-    "feature_dim": 300,
+    "variant": "V2_Handcrafted_VAD_Aggregated_LogisticRegression_330d",
+    "feature_dim": 330,
     "n_participants": 239,
-    "baseline_time_sec": 0.954,
-    "avg_perm_sec": 0.0775,
-    "extrapolated_r999_sec": 78.38,
-    "extrapolated_r999_hours": 0.0218,
+    "n_runs": 5,
+    "measured_run_times_sec": [
+      1.6158,
+      1.5761,
+      1.625,
+      1.6445,
+      1.601
+    ],
+    "total_5_runs_sec": 8.0624,
+    "avg_run_sec": 1.6125,
+    "std_run_sec": 0.023,
+    "avg_stage_times_sec": {
+      "fold_generation": 0.0031,
+      "preprocessing": 0.0335,
+      "nested_tuning": 1.5735,
+      "model_fitting": 0.0,
+      "oof_scoring": 0.0017,
+      "seed_aggregation": 0.0,
+      "statistic_calc": 0.0006
+    },
+    "extrapolated_r999_sec": 1612.49,
+    "extrapolated_r999_hours": 0.4479,
+    "extrapolated_r999_minutes": 26.87,
     "exceeds_48h": false
   },
   "v10": {
-    "variant": "V10_Audio_Pretrained_Multimodal",
-    "feature_dim": 1671,
+    "variant": "V10_WavLM_Layer8_MeanPooled_LogisticRegression_768d",
+    "feature_dim": 768,
     "n_participants": 239,
-    "baseline_time_sec": 0.095,
-    "avg_perm_sec": 0.1161,
-    "extrapolated_r999_sec": 116.05,
-    "extrapolated_r999_hours": 0.0322,
+    "n_runs": 5,
+    "measured_run_times_sec": [
+      1.2402,
+      1.2372,
+      1.2327,
+      1.2534,
+      1.244
+    ],
+    "total_5_runs_sec": 6.2074,
+    "avg_run_sec": 1.2415,
+    "std_run_sec": 0.007,
+    "avg_stage_times_sec": {
+      "fold_generation": 0.0013,
+      "preprocessing": 0.0181,
+      "nested_tuning": 1.2196,
+      "model_fitting": 0.0,
+      "oof_scoring": 0.0018,
+      "seed_aggregation": 0.0,
+      "statistic_calc": 0.0006
+    },
+    "extrapolated_r999_sec": 1241.49,
+    "extrapolated_r999_hours": 0.3449,
+    "extrapolated_r999_minutes": 20.69,
     "exceeds_48h": false
   },
   "stop_condition_triggered": false
