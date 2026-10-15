@@ -1,0 +1,76 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 43559.49it/s]
+[transformers] [1mHubertModel LOAD REPORT[0m from: superb/hubert-base-superb-er
+Key               | Status     |  | 
+------------------+------------+--+-
+classifier.bias   | UNEXPECTED |  | 
+projector.bias    | UNEXPECTED |  | 
+classifier.weight | UNEXPECTED |  | 
+projector.weight  | UNEXPECTED |  | 
+layer_weights     | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Loading weights:   0%|          | 0/422 [00:00<?, ?it/s]Loading weights: 100%|██████████| 422/422 [00:00<00:00, 31902.17it/s]
+[transformers] [1mHubertModel LOAD REPORT[0m from: superb/hubert-large-superb-er
+Key               | Status     |  | 
+------------------+------------+--+-
+classifier.bias   | UNEXPECTED |  | 
+projector.bias    | UNEXPECTED |  | 
+classifier.weight | UNEXPECTED |  | 
+projector.weight  | UNEXPECTED |  | 
+layer_weights     | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[2/120] PID 305 (woz) in 231.4s
+[3/120] PID 308 (woz) in 134.9s
+[4/120] PID 310 (woz) in 77.4s
+[5/120] PID 312 (woz) in 64.5s
+[6/120] PID 314 (woz) in 186.0s
+[7/120] PID 316 (woz) in 61.4s
+[8/120] PID 318 (woz) in 48.3s
+[9/120] PID 320 (woz) in 55.6s
+[10/120] PID 323 (woz) in 81.4s
+[11/120] PID 325 (woz) in 106.9s
+[12/120] PID 327 (woz) in 78.6s
+[13/120] PID 329 (woz) in 76.3s
+[14/120] PID 331 (woz) in 88.6s
+[15/120] PID 333 (woz) in 101.1s
+[16/120] PID 335 (woz) in 73.4s
+[17/120] PID 337 (woz) in 254.8s
+[18/120] PID 340 (woz) in 38.7s
+[19/120] PID 343 (woz) in 43.0s
+[20/120] PID 345 (woz) in 110.5s
+[21/120] PID 347 (woz) in 24.0s
+[22/120] PID 349 (woz) in 93.4s
+[23/120] PID 351 (woz) in 97.3s
+[24/120] PID 353 (woz) in 97.8s
+[25/120] PID 355 (woz) in 73.3s
+[26/120] PID 357 (woz) in 49.0s
+[27/120] PID 359 (woz) in 110.6s
+[28/120] PID 361 (woz) in 95.7s
+[29/120] PID 363 (woz) in 134.8s
+[30/120] PID 365 (woz) in 132.1s
+[31/120] PID 367 (woz) in 187.7s
+[32/120] PID 369 (woz) in 155.7s
+[33/120] PID 371 (woz) in 41.6s
+[34/120] PID 373 (woz) in 189.2s
+[35/120] PID 375 (woz) in 30.9s
+[36/120] PID 377 (woz) in 148.6s
+[37/120] PID 379 (woz) in 133.4s
+[38/120] PID 381 (woz) in 85.0s
+[39/120] PID 383 (woz) in 134.4s
+[40/120] PID 385 (woz) in 11.4s
+[41/120] PID 387 (woz) in 36.3s
+[42/120] PID 389 (woz) in 38.5s
+[43/120] PID 391 (woz) in 54.2s
+[44/120] PID 393 (woz) in 43.5s
+[45/120] PID 396 (woz) in 55.5s
+[46/120] PID 400 (woz) in 86.3s
+[47/120] PID 402 (woz) in 94.6s
+[48/120] PID 404 (woz) in 89.1s
+[49/120] PID 406 (woz) in 78.1s
+[50/120] PID 410 (woz) in 95.0s
+[51/120] PID 412 (woz) in 69.3s
+[52/120] PID 415 (woz) in 105.3s
