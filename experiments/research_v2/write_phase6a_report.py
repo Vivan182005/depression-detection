@@ -6,7 +6,7 @@ Reports ALL 19 variants (prereg v1.1 sec 6.3 mandatory reporting), including nul
 import os
 import json
 
-_REPO_ROOT = '/Users/vivannaik/Desktop/CAPSTONE_RESEARCH_COPY_2026-10-13'
+_REPO_ROOT = '/Users/vivannaik/Desktop/CAPSTONE'
 RES = os.path.join(_REPO_ROOT, 'experiments', 'research_v2', 'phase6a_results.json')
 OUT = os.path.join(_REPO_ROOT, 'reports', 'research_v2', 'PHASE6A_RESULTS.md')
 

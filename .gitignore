@@ -47,3 +47,4 @@ experiments/research_v2/feature_store_v3/*.npz
 # Participant transcripts are licensed DAIC-WOZ / E-DAIC data: never push new ones
 experiments/research_v2/transcripts_v2/vad_chunked/
 experiments/research_v2/transcripts_v2/woz_whisper/*_RETRANS_TEST.csv
+experiments/research_v2/feature_store_6c/*.npz

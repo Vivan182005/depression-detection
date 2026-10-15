@@ -1,0 +1,55 @@
+Part 1: descriptive per-candidate AUC (5-seed OOF, Phase 6A engine)
+  w2v2_L1: AUC=0.5350 [0.455, 0.621]
+  w2v2_L2: AUC=0.5270 [0.450, 0.611]
+  w2v2_L3: AUC=0.5690 [0.490, 0.651]
+  w2v2_L4: AUC=0.5768 [0.494, 0.655]
+  w2v2_L5: AUC=0.6751 [0.598, 0.748]
+  w2v2_L6: AUC=0.7120 [0.640, 0.779]
+  w2v2_L7: AUC=0.6649 [0.591, 0.735]
+  w2v2_L8: AUC=0.7089 [0.637, 0.775]
+  w2v2_L9: AUC=0.6897 [0.619, 0.757]
+  w2v2_L10: AUC=0.6889 [0.616, 0.755]
+  w2v2_L11: AUC=0.6727 [0.595, 0.743]
+  w2v2_L12: AUC=0.5733 [0.494, 0.649]
+  w2v2_L6_ms: AUC=0.6736 [0.599, 0.746]
+  w2v2_L7_ms: AUC=0.5877 [0.509, 0.667]
+  w2v2_L8_ms: AUC=0.6375 [0.562, 0.715]
+  w2v2_L9_ms: AUC=0.6234 [0.547, 0.700]
+  w2v2_L10_ms: AUC=0.5450 [0.468, 0.624]
+  whisper_L1: AUC=0.4739 [0.400, 0.550]
+  whisper_L2: AUC=0.5250 [0.447, 0.603]
+  whisper_L3: AUC=0.5532 [0.475, 0.629]
+  whisper_L4: AUC=0.6088 [0.528, 0.687]
+  whisper_L5: AUC=0.6591 [0.579, 0.736]
+  whisper_L6: AUC=0.6624 [0.584, 0.738]
+Part 2: nested selection (audio pool C1-C6, fusion C7)
+  seed 0 fold 0: pick=w2v2_L8 (inner AUC 0.682) meta=[+1.16,+1.78] 8s
+  seed 0 fold 1: pick=ens_w2v2_L6-10 (inner AUC 0.726) meta=[+1.46,+1.41] 9s
+  seed 0 fold 2: pick=w2v2_L8 (inner AUC 0.703) meta=[+1.17,+1.38] 8s
+  seed 0 fold 3: pick=w2v2_L6_ms (inner AUC 0.619) meta=[+1.16,+1.45] 9s
+  seed 0 fold 4: pick=ens_w2v2_L6-10 (inner AUC 0.701) meta=[+1.44,+1.54] 9s
+  seed 1 fold 0: pick=w2v2_L6_ms (inner AUC 0.708) meta=[+1.90,+1.78] 9s
+  seed 1 fold 1: pick=w2v2_L8 (inner AUC 0.712) meta=[+1.49,+1.88] 8s
+  seed 1 fold 2: pick=ens_w2v2_L6-10 (inner AUC 0.694) meta=[+1.53,+1.49] 9s
+  seed 1 fold 3: pick=ens_L8+best_whisper (inner AUC 0.702) meta=[+1.73,+0.86] 9s
+  seed 1 fold 4: pick=w2v2_L6 (inner AUC 0.663) meta=[+1.38,+1.19] 8s
+  seed 2 fold 0: pick=ens_w2v2_L6-10 (inner AUC 0.684) meta=[+1.30,+1.28] 9s
+  seed 2 fold 1: pick=ens_w2v2_L6-10 (inner AUC 0.719) meta=[+1.89,+1.22] 9s
+  seed 2 fold 2: pick=w2v2_L6 (inner AUC 0.662) meta=[+1.25,+1.83] 8s
+  seed 2 fold 3: pick=w2v2_L6 (inner AUC 0.721) meta=[+1.98,+0.75] 8s
+  seed 2 fold 4: pick=w2v2_L8 (inner AUC 0.745) meta=[+1.92,+1.39] 9s
+  seed 3 fold 0: pick=w2v2_L8 (inner AUC 0.689) meta=[+1.46,+1.38] 9s
+  seed 3 fold 1: pick=w2v2_L6 (inner AUC 0.692) meta=[+1.16,+1.32] 8s
+  seed 3 fold 2: pick=w2v2_L8 (inner AUC 0.772) meta=[+1.86,+1.82] 8s
+  seed 3 fold 3: pick=ens_w2v2_L6-10 (inner AUC 0.686) meta=[+1.38,+1.76] 9s
+  seed 3 fold 4: pick=w2v2_L6 (inner AUC 0.722) meta=[+1.61,+1.04] 8s
+  seed 4 fold 0: pick=w2v2_L8 (inner AUC 0.662) meta=[+1.09,+0.86] 8s
+  seed 4 fold 1: pick=w2v2_L6 (inner AUC 0.661) meta=[+1.41,+0.86] 8s
+  seed 4 fold 2: pick=w2v2_L8 (inner AUC 0.689) meta=[+1.54,+0.57] 8s
+  seed 4 fold 3: pick=ens_w2v2_L6-10 (inner AUC 0.663) meta=[+1.64,+1.53] 9s
+  seed 4 fold 4: pick=w2v2_L6_ms (inner AUC 0.753) meta=[+1.83,+1.64] 9s
+  nested_audio: AUC=0.6942 [0.623, 0.761] | vs V7: -0.0163 [-0.048, +0.015] p=0.843 | {'sensitivity': 0.5648648648648649, 'specificity': 0.6678787878787878, 'balanced_accuracy': 0.6163718263718264, 'accuracy': 0.6359832635983264}
+  nested_fusion: AUC=0.7235 [0.654, 0.790] | vs V19: +0.0099 [-0.017, +0.038] p=0.239 | {'sensitivity': 0.6324324324324324, 'specificity': 0.623030303030303, 'balanced_accuracy': 0.6277313677313676, 'accuracy': 0.6259414225941423}
+pick counts: {'w2v2_L8': 8, 'ens_w2v2_L6-10': 7, 'w2v2_L6': 6, 'w2v2_L6_ms': 3, 'ens_L8+best_whisper': 1}
+Saved /Users/vivannaik/Desktop/CAPSTONE_RESEARCH_COPY_2026-10-13/experiments/research_v2/phase6c_results.json
+exit 0

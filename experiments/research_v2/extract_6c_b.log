@@ -1,0 +1,131 @@
+Loading weights:   0%|          | 0/210 [00:00<?, ?it/s]Loading weights: 100%|██████████| 210/210 [00:00<00:00, 8230.12it/s]
+[transformers] [1mWav2Vec2Model LOAD REPORT[0m from: facebook/wav2vec2-base-960h
+Key               | Status     | 
+------------------+------------+-
+lm_head.weight    | UNEXPECTED | 
+lm_head.bias      | UNEXPECTED | 
+masked_spec_embed | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights:   0%|          | 0/245 [00:00<?, ?it/s]Loading weights: 100%|██████████| 245/245 [00:00<00:00, 7501.53it/s]
+[1/119] PID 302 (woz) segs=58 in 21.1s
+[2/119] PID 307 (woz) segs=74 in 76.2s
+[3/119] PID 309 (woz) segs=41 in 22.5s
+[4/119] PID 311 (woz) segs=75 in 26.1s
+[5/119] PID 313 (woz) segs=57 in 31.2s
+[6/119] PID 315 (woz) segs=95 in 54.7s
+[7/119] PID 317 (woz) segs=48 in 24.4s
+[8/119] PID 319 (woz) segs=62 in 21.9s
+[9/119] PID 322 (woz) segs=172 in 34.6s
+[10/119] PID 324 (woz) segs=57 in 24.9s
+[11/119] PID 326 (woz) segs=47 in 15.9s
+[12/119] PID 328 (woz) segs=123 in 53.6s
+[13/119] PID 330 (woz) segs=47 in 22.1s
+[14/119] PID 332 (woz) segs=139 in 32.6s
+[15/119] PID 334 (woz) segs=103 in 34.1s
+[16/119] PID 336 (woz) segs=97 in 28.1s
+[17/119] PID 339 (woz) segs=135 in 33.6s
+[18/119] PID 341 (woz) segs=90 in 38.5s
+[19/119] PID 344 (woz) segs=141 in 62.1s
+[20/119] PID 346 (woz) segs=186 in 68.8s
+[21/119] PID 348 (woz) segs=65 in 36.8s
+[22/119] PID 350 (woz) segs=98 in 55.8s
+[23/119] PID 352 (woz) segs=110 in 54.9s
+[24/119] PID 354 (woz) segs=42 in 18.4s
+[25/119] PID 356 (woz) segs=202 in 56.8s
+[26/119] PID 358 (woz) segs=59 in 25.1s
+[27/119] PID 360 (woz) segs=36 in 24.8s
+[28/119] PID 362 (woz) segs=83 in 32.2s
+[29/119] PID 364 (woz) segs=392 in 133.9s
+[30/119] PID 366 (woz) segs=255 in 86.0s
+[31/119] PID 368 (woz) segs=246 in 97.7s
+[32/119] PID 370 (woz) segs=122 in 91.1s
+[33/119] PID 372 (woz) segs=202 in 69.9s
+[34/119] PID 374 (woz) segs=209 in 58.4s
+[35/119] PID 376 (woz) segs=60 in 53.0s
+[36/119] PID 378 (woz) segs=102 in 48.0s
+[37/119] PID 380 (woz) segs=262 in 132.5s
+[38/119] PID 382 (woz) segs=83 in 43.3s
+[39/119] PID 384 (woz) segs=103 in 41.0s
+[40/119] PID 386 (woz) segs=135 in 52.1s
+[41/119] PID 388 (woz) segs=34 in 12.5s
+[42/119] PID 390 (woz) segs=195 in 60.6s
+[43/119] PID 392 (woz) segs=53 in 27.2s
+[44/119] PID 395 (woz) segs=93 in 42.7s
+[45/119] PID 399 (woz) segs=78 in 33.6s
+[46/119] PID 401 (woz) segs=129 in 44.3s
+[47/119] PID 403 (woz) segs=51 in 57.8s
+[48/119] PID 405 (woz) segs=277 in 69.3s
+[49/119] PID 407 (woz) segs=250 in 92.6s
+[50/119] PID 411 (woz) segs=136 in 98.1s
+[51/119] PID 413 (woz) segs=125 in 46.0s
+[52/119] PID 416 (woz) segs=106 in 42.9s
+[53/119] PID 418 (woz) segs=158 in 51.6s
+[54/119] PID 420 (woz) segs=86 in 33.9s
+[55/119] PID 422 (woz) segs=236 in 59.1s
+[56/119] PID 424 (woz) segs=118 in 73.7s
+[57/119] PID 426 (woz) segs=154 in 26.8s
+[58/119] PID 428 (woz) segs=72 in 19.8s
+[59/119] PID 430 (woz) segs=98 in 44.3s
+[60/119] PID 432 (woz) segs=147 in 26.2s
+[61/119] PID 434 (woz) segs=216 in 62.9s
+[62/119] PID 436 (woz) segs=70 in 37.1s
+[63/119] PID 438 (woz) segs=267 in 117.7s
+[64/119] PID 440 (woz) segs=194 in 70.8s
+[65/119] PID 442 (woz) segs=149 in 54.4s
+[66/119] PID 444 (woz) segs=307 in 89.8s
+[67/119] PID 446 (woz) segs=166 in 69.2s
+[68/119] PID 448 (woz) segs=184 in 98.6s
+[69/119] PID 450 (woz) segs=207 in 81.5s
+[70/119] PID 452 (woz) segs=54 in 22.9s
+[71/119] PID 454 (woz) segs=63 in 37.3s
+[72/119] PID 456 (woz) segs=93 in 42.7s
+[73/119] PID 459 (woz) segs=101 in 38.0s
+[74/119] PID 462 (woz) segs=130 in 70.0s
+[75/119] PID 464 (woz) segs=283 in 56.2s
+[76/119] PID 466 (woz) segs=318 in 99.9s
+[77/119] PID 468 (woz) segs=150 in 49.5s
+[78/119] PID 470 (woz) segs=102 in 56.7s
+[79/119] PID 472 (woz) segs=104 in 40.1s
+[80/119] PID 474 (woz) segs=145 in 58.9s
+[81/119] PID 476 (woz) segs=43 in 24.8s
+[82/119] PID 478 (woz) segs=80 in 41.8s
+[83/119] PID 480 (woz) segs=116 in 25.7s
+[84/119] PID 482 (woz) segs=224 in 54.6s
+[85/119] PID 484 (woz) segs=153 in 49.8s
+[86/119] PID 486 (woz) segs=66 in 35.4s
+[87/119] PID 488 (woz) segs=100 in 48.8s
+[88/119] PID 490 (woz) segs=36 in 19.5s
+[89/119] PID 492 (woz) segs=159 in 52.2s
+[90/119] PID 608 (avatar) segs=129 in 70.8s
+[91/119] PID 612 (avatar) segs=66 in 26.5s
+[92/119] PID 618 (avatar) segs=34 in 12.2s
+[93/119] PID 622 (avatar) segs=19 in 28.6s
+[94/119] PID 627 (avatar) segs=183 in 52.8s
+[95/119] PID 631 (avatar) segs=27 in 7.3s
+[96/119] PID 640 (avatar) segs=87 in 41.2s
+[97/119] PID 650 (avatar) segs=139 in 41.9s
+[98/119] PID 652 (avatar) segs=79 in 25.3s
+[99/119] PID 658 (avatar) segs=87 in 32.3s
+[100/119] PID 660 (avatar) segs=117 in 43.5s
+[101/119] PID 663 (avatar) segs=67 in 31.9s
+[102/119] PID 666 (avatar) segs=115 in 46.5s
+[103/119] PID 669 (avatar) segs=171 in 52.7s
+[104/119] PID 673 (avatar) segs=34 in 10.0s
+[105/119] PID 677 (avatar) segs=93 in 33.4s
+[106/119] PID 680 (avatar) segs=228 in 42.8s
+[107/119] PID 683 (avatar) segs=138 in 36.8s
+[108/119] PID 687 (avatar) segs=45 in 26.7s
+[109/119] PID 689 (avatar) segs=90 in 17.8s
+[110/119] PID 692 (avatar) segs=29 in 7.8s
+[111/119] PID 695 (avatar) segs=113 in 34.3s
+[112/119] PID 697 (avatar) segs=162 in 34.4s
+[113/119] PID 699 (avatar) segs=40 in 7.6s
+[114/119] PID 703 (avatar) segs=23 in 9.3s
+[115/119] PID 707 (avatar) segs=55 in 18.2s
+[116/119] PID 709 (avatar) segs=67 in 14.0s
+[117/119] PID 712 (avatar) segs=156 in 41.6s
+[118/119] PID 715 (avatar) segs=120 in 34.6s
+[119/119] PID 717 (avatar) segs=118 in 30.1s

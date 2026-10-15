@@ -24,7 +24,7 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
 
-_REPO_ROOT = '/Users/vivannaik/Desktop/CAPSTONE_RESEARCH_COPY_2026-10-13'
+_REPO_ROOT = '/Users/vivannaik/Desktop/CAPSTONE'
 if _REPO_ROOT not in sys.path:
     sys.path.insert(0, _REPO_ROOT)
 if os.path.join(_REPO_ROOT, 'experiments', 'research_v2') not in sys.path:

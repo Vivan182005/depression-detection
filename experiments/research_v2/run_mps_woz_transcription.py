@@ -10,7 +10,7 @@ import soundfile as sf
 import torch
 from transformers import pipeline
 
-_REPO_ROOT = '/Users/vivannaik/Desktop/CAPSTONE_RESEARCH_COPY_2026-10-13'
+_REPO_ROOT = '/Users/vivannaik/Desktop/CAPSTONE'
 if _REPO_ROOT not in sys.path:
     sys.path.insert(0, _REPO_ROOT)
 

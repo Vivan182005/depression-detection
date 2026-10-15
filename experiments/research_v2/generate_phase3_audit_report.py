@@ -49,7 +49,7 @@ def generate_report():
     lines.append("# Phase 3 Results-Verification Audit Report")
     lines.append("")
     lines.append("**Date**: 2026-10-14  ")
-    lines.append("**Working Directory**: `/Users/vivannaik/Desktop/CAPSTONE_RESEARCH_COPY_2026-10-13`  ")
+    lines.append("**Working Directory**: `/Users/vivannaik/Desktop/CAPSTONE`  ")
     lines.append("**Git Branch**: `research-upgrade-2026-10-13`  ")
     lines.append("**Audit Scope**: Independent verification of Phase 3 experiments, metrics reproduction, domain discriminator investigation, 24 deferred-session contradiction, focal-loss bootstrap evaluation, and feature provenance.  ")
     lines.append("**Status**: COMPLETED — AWAITING REVIEW  ")

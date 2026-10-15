@@ -27,7 +27,7 @@ import soundfile as sf
 import librosa
 import torch
 
-_REPO_ROOT = '/Users/vivannaik/Desktop/CAPSTONE_RESEARCH_COPY_2026-10-13'
+_REPO_ROOT = '/Users/vivannaik/Desktop/CAPSTONE'
 if _REPO_ROOT not in sys.path:
     sys.path.insert(0, _REPO_ROOT)
 if os.path.join(_REPO_ROOT, 'experiments', 'research_v2') not in sys.path:

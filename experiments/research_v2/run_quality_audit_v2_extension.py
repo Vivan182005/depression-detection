@@ -28,7 +28,7 @@ from parselmouth.praat import call
 import torch
 import silero_vad
 
-os.chdir('/Users/vivannaik/Desktop/CAPSTONE_RESEARCH_COPY_2026-10-13')
+os.chdir('/Users/vivannaik/Desktop/CAPSTONE')
 
 def sample_stratified_cohort(seed=42):
     labels_df = pd.read_csv('experiments/research_v2/labels_official.csv')

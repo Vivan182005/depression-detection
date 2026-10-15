@@ -1,0 +1,19 @@
+{
+  "protocol_version": "prereg-v1.1-amended-v1.3",
+  "freeze_date": "2026-10-15 19:40:32",
+  "primary_audio_config": {
+    "variant_id": "V7",
+    "observed_auc": 0.7104832104832105,
+    "dimensions": 768,
+    "designation": "exploratory-derived"
+  },
+  "fusion_config": {
+    "variant_id": "V19",
+    "observed_auc": 0.7135954135954136,
+    "designation": "exploratory-derived"
+  },
+  "active_cohort_size": 239,
+  "sealed_cohort_status": "UNTOUCHED_AND_QUARANTINED",
+  "confirmation_seeds_status": "SEEDS_100_104_UNTOUCHED",
+  "next_authorized_action": "Write PHASE6A_RESULTS.md and STOP"
+}

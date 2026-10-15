@@ -1,0 +1,175 @@
+======================================================================
+Phase 6A Execution Protocol: Real-Label Evaluation & Hypothesis Tests
+Execution Gate: AUTHORIZED EXECUTION (prereg v1.1 + amendment v1.2 & v1.3)
+======================================================================
+Loaded 239 active development participants (Labels: 165 non-depressed, 74 depressed).
+
+======================================================================
+PART 1: Evaluating Observed Participant-Level AUC for all 19 Variants
+======================================================================
+
+[Evaluating V1] Loading feature matrix...
+  V1 (Exploratory): Observed AUC = 0.4782 (95% CI: [0.4001, 0.5578]) | Time: 18.33s
+       Subgroups: WoZ=0.45252830188679244, Avatar=0.5321428571428571, Female=0.4098557692307692, Male=0.4679730299199326
+       3-Class Macro-F1=0.3070, Severe Recall=0.0556
+
+[Evaluating V2] Loading feature matrix...
+  V2 (Confirmatory): Observed AUC = 0.5044 (95% CI: [0.4261, 0.5831]) | Time: 1.85s
+       Subgroups: WoZ=0.5426415094339623, Avatar=0.3797619047619048, Female=0.6304086538461539, Male=0.4161399072903497
+       3-Class Macro-F1=0.3035, Severe Recall=0.2500
+
+[Evaluating V3] Loading feature matrix...
+  V3 (Exploratory): Observed AUC = 0.5050 (95% CI: [0.4232, 0.5875]) | Time: 93.18s
+       Subgroups: WoZ=0.5097358490566039, Avatar=0.47738095238095235, Female=0.5150240384615384, Male=0.47534766118836913
+       3-Class Macro-F1=0.3579, Severe Recall=0.0556
+
+[Evaluating V4] Loading feature matrix...
+  V4 (Exploratory): Observed AUC = 0.4472 (95% CI: [0.3694, 0.5237]) | Time: 1.58s
+       Subgroups: WoZ=0.4646037735849057, Avatar=0.40119047619047615, Female=0.5018028846153846, Male=0.41234723978086807
+       3-Class Macro-F1=0.3357, Severe Recall=0.0000
+
+[Evaluating V5] Loading feature matrix...
+  V5 (Exploratory): Observed AUC = 0.5070 (95% CI: [0.4248, 0.5878]) | Time: 100.47s
+       Subgroups: WoZ=0.515320754716981, Avatar=0.4726190476190476, Female=0.5426682692307692, Male=0.4696586599241466
+       3-Class Macro-F1=0.3579, Severe Recall=0.0278
+
+[Evaluating V6] Loading feature matrix...
+  V6 (Exploratory): Observed AUC = 0.5777 (95% CI: [0.4964, 0.6569]) | Time: 2.78s
+       Subgroups: WoZ=0.5382641509433962, Avatar=0.6821428571428572, Female=0.5721153846153847, Male=0.5564686051411716
+       3-Class Macro-F1=0.3749, Severe Recall=0.5000
+
+[Evaluating V7] Loading feature matrix...
+  V7 (Exploratory): Observed AUC = 0.7105 (95% CI: [0.6393, 0.7771]) | Time: 2.84s
+       Subgroups: WoZ=0.6547924528301887, Avatar=0.8678571428571429, Female=0.6706730769230769, Male=0.724188790560472
+       3-Class Macro-F1=0.4600, Severe Recall=0.6111
+
+[Evaluating V8] Loading feature matrix...
+  V8 (Exploratory): Observed AUC = 0.5717 (95% CI: [0.4918, 0.6483]) | Time: 4.98s
+       Subgroups: WoZ=0.5817358490566038, Avatar=0.5476190476190476, Female=0.5564903846153846, Male=0.5678466076696165
+       3-Class Macro-F1=0.3664, Severe Recall=0.3889
+
+[Evaluating V9] Loading feature matrix...
+  V9 (Exploratory): Observed AUC = 0.5206 (95% CI: [0.4380, 0.6045]) | Time: 2.76s
+       Subgroups: WoZ=0.4745660377358491, Avatar=0.6642857142857143, Female=0.5078125, Male=0.5025284450063212
+       3-Class Macro-F1=0.3642, Severe Recall=0.1944
+
+[Evaluating V10] Loading feature matrix...
+  V10 (Confirmatory): Observed AUC = 0.6443 (95% CI: [0.5657, 0.7214]) | Time: 3.09s
+       Subgroups: WoZ=0.6326037735849057, Avatar=0.6988095238095238, Female=0.6231971153846154, Male=0.6455962916139908
+       3-Class Macro-F1=0.4436, Severe Recall=0.4167
+
+[Evaluating V11] Loading feature matrix...
+  V11 (Exploratory): Observed AUC = 0.5712 (95% CI: [0.4919, 0.6489]) | Time: 3.05s
+       Subgroups: WoZ=0.5580377358490566, Avatar=0.625, Female=0.6237980769230769, Male=0.5185419300463547
+       3-Class Macro-F1=0.3481, Severe Recall=0.1944
+
+[Evaluating V12] Loading feature matrix...
+  V12 (Exploratory): Observed AUC = 0.4826 (95% CI: [0.4011, 0.5577]) | Time: 111.88s
+       Subgroups: WoZ=0.44845283018867926, Avatar=0.5702380952380952, Female=0.3942307692307693, Male=0.4848293299620733
+       3-Class Macro-F1=0.3093, Severe Recall=0.0833
+
+[Evaluating V13] Loading feature matrix...
+  V13 (Exploratory): Observed AUC = 0.5904 (95% CI: [0.5103, 0.6687]) | Time: 162.30s
+       Subgroups: WoZ=0.5477735849056604, Avatar=0.7119047619047619, Female=0.5480769230769231, Male=0.5655288664138222
+       3-Class Macro-F1=0.3662, Severe Recall=0.1111
+
+[Evaluating V14] Loading feature matrix...
+  V14 (Exploratory): Observed AUC = 0.7037 (95% CI: [0.6321, 0.7728]) | Time: 2.71s
+       Subgroups: WoZ=0.6944905660377358, Avatar=0.7309523809523809, Female=0.6881009615384615, Male=0.7058575642646439
+       3-Class Macro-F1=0.4338, Severe Recall=0.4444
+
+[Evaluating V15] Loading feature matrix...
+  V15 (Control): Observed AUC = 0.5738 (95% CI: [0.4961, 0.6488]) | Time: 0.98s
+       Subgroups: WoZ=0.5612075471698112, Avatar=0.6035714285714285, Female=0.6298076923076923, Male=0.5465655288664137
+       3-Class Macro-F1=0.4024, Severe Recall=0.0000
+
+[Evaluating V16] Loading feature matrix...
+  V16 (Control): Observed AUC = 0.4793 (95% CI: [0.3986, 0.5568]) | Time: 0.12s
+       Subgroups: WoZ=0.48316981132075476, Avatar=0.43452380952380953, Female=0.3016826923076923, Male=0.3653603034134007
+       3-Class Macro-F1=0.3249, Severe Recall=0.0000
+
+[Evaluating V17] Loading feature matrix...
+  V17 (Control): Observed AUC = 0.4189 (95% CI: [0.3396, 0.4985]) | Time: 0.12s
+       Subgroups: WoZ=0.3575094339622641, Avatar=0.14404761904761906, Female=0.44831730769230765, Male=0.4105562579013906
+       3-Class Macro-F1=0.3108, Severe Recall=0.0000
+
+[Evaluating V18] Loading feature matrix...
+  V18 (Confirmatory): Observed AUC = 0.6853 (95% CI: [0.6090, 0.7583]) | Time: 19.17s
+       Subgroups: WoZ=0.6751698113207546, Avatar=0.7142857142857142, Female=0.703125, Male=0.6628739991571849
+       3-Class Macro-F1=0.3948, Severe Recall=0.0278
+
+[Evaluating V19] Loading feature matrix...
+  V19 (Exploratory): Observed AUC = 0.7136 (95% CI: [0.6398, 0.7810]) | Time: 282.72s
+       Subgroups: WoZ=0.6735094339622641, Avatar=0.8119047619047619, Female=0.6887019230769231, Male=0.7085967130214919
+       3-Class Macro-F1=0.4887, Severe Recall=0.3333
+
+======================================================================
+PART 2: Confirmatory Permutation Tests (R=999 Replications within Strata)
+======================================================================
+Feasibility gate: 1.9s/perm (V2), 3.3s/perm (V10) -> projected 1.45 h for R=999 -> CONFIRMATORY
+
+[H1 Permutation Test] Running 999 stratified permutations for Variant V2...
+  V2 Permutation [100/999]: Null AUC = 0.4806 | >= Obs (43/100) | Elapsed: 3.0m
+  V2 Permutation [200/999]: Null AUC = 0.5505 | >= Obs (91/200) | Elapsed: 6.3m
+  V2 Permutation [300/999]: Null AUC = 0.5023 | >= Obs (144/300) | Elapsed: 10.5m
+  V2 Permutation [400/999]: Null AUC = 0.5689 | >= Obs (195/400) | Elapsed: 14.2m
+  V2 Permutation [500/999]: Null AUC = 0.4980 | >= Obs (252/500) | Elapsed: 18.4m
+  V2 Permutation [600/999]: Null AUC = 0.5183 | >= Obs (297/600) | Elapsed: 23.0m
+  V2 Permutation [700/999]: Null AUC = 0.5952 | >= Obs (346/700) | Elapsed: 27.6m
+  V2 Permutation [800/999]: Null AUC = 0.5125 | >= Obs (389/800) | Elapsed: 32.0m
+  V2 Permutation [900/999]: Null AUC = 0.5240 | >= Obs (438/900) | Elapsed: 36.3m
+  V2 Permutation [999/999]: Null AUC = 0.4657 | >= Obs (488/999) | Elapsed: 40.4m
+--> H1 Verdict: Observed=0.5044, Null Mean=0.5024, Empirical p = 0.4890
+
+[H2 Permutation Test] Running 999 stratified permutations for Variant V10...
+  V10 Permutation [100/999]: Null AUC = 0.4766 | >= Obs (0/100) | Elapsed: 6.9m
+  V10 Permutation [200/999]: Null AUC = 0.5181 | >= Obs (0/200) | Elapsed: 13.4m
+  V10 Permutation [300/999]: Null AUC = 0.3709 | >= Obs (0/300) | Elapsed: 20.5m
+  V10 Permutation [400/999]: Null AUC = 0.4620 | >= Obs (1/400) | Elapsed: 27.6m
+  V10 Permutation [500/999]: Null AUC = 0.5800 | >= Obs (1/500) | Elapsed: 35.5m
+  V10 Permutation [600/999]: Null AUC = 0.5677 | >= Obs (1/600) | Elapsed: 42.6m
+  V10 Permutation [700/999]: Null AUC = 0.6676 | >= Obs (2/700) | Elapsed: 49.2m
+  V10 Permutation [800/999]: Null AUC = 0.4096 | >= Obs (2/800) | Elapsed: 55.8m
+  V10 Permutation [900/999]: Null AUC = 0.4862 | >= Obs (2/900) | Elapsed: 62.1m
+  V10 Permutation [999/999]: Null AUC = 0.5426 | >= Obs (2/999) | Elapsed: 67.5m
+--> H2 Verdict: Observed=0.6443, Null Mean=0.5031, Empirical p = 0.0030
+
+======================================================================
+PART 3: Confirmatory Intersection-Union Test for H3 (V18 Stacking)
+======================================================================
+H3 Incremental Synergy Test (B=10000):
+  V18 vs V14 (Text): Delta = -0.0183 (95% CI: [-0.0468, +0.0106]), one-sided p = 0.8930
+  V18 vs V2  (Voice): Delta = +0.1809 (95% CI: [+0.0869, +0.2758]), one-sided p = 0.0002
+  --> Intersection-Union p-value: max(0.8930, 0.0002) = 0.8930
+
+======================================================================
+PART 4: Holm-Bonferroni Multiplicity Adjustment (m=3, alpha=0.05)
+======================================================================
+  Step 1: H2 (WavLM Layer 8 V10 vs Null)
+         Raw p = 0.0030 vs Holm threshold 0.0167 (alpha/3) -> SUPPORTED (Statistically Significant)
+  Step 2: H1 (Handcrafted Voice V2 vs Null)
+         Raw p = 0.4890 vs Holm threshold 0.0250 (alpha/2) -> NOT SUPPORTED (Failed to exceed threshold)
+  Step 3: H3 (Multimodal Synergy V18 vs Constituents)
+         Raw p = 0.8930 vs Holm threshold 0.0500 (alpha/1) -> NOT SUPPORTED (Failed to exceed threshold)
+
+======================================================================
+PART 5: Applying Pre-Stated Freeze Rule for Phase 6B Transition
+======================================================================
+Primary Audio Candidate Ranking (V1-V13):
+  #1: V7 -> AUC = 0.7105 (Dims: 768)
+  #2: V10 -> AUC = 0.6443 (Dims: 768)
+  #3: V13 -> AUC = 0.5904 (Dims: 768)
+  #4: V6 -> AUC = 0.5777 (Dims: 768)
+  #5: V8 -> AUC = 0.5717 (Dims: 768)
+--> FROZEN PRIMARY AUDIO: V7 (AUC = 0.7105, Designation: 'exploratory-derived')
+Fusion Candidate Comparison:
+  V18 (Confirmatory Stacking V2+V14): AUC = 0.6853
+  V19 (Exploratory Stacking Best+V14): AUC = 0.7136
+--> FROZEN FUSION: V19 (AUC = 0.7136, Designation: 'exploratory-derived')
+
+Saved frozen configuration to /Users/vivannaik/Desktop/CAPSTONE_RESEARCH_COPY_2026-10-13/experiments/research_v2/frozen_config.json.
+Saved complete numerical results to /Users/vivannaik/Desktop/CAPSTONE_RESEARCH_COPY_2026-10-13/experiments/research_v2/phase6a_results.json.
+
+======================================================================
+PHASE 6A COMPLETE: All 19 variants evaluated in 123.37 minutes.
+======================================================================

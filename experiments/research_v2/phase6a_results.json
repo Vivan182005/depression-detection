@@ -1,0 +1,1052 @@
+{
+  "execution_timestamp": "2026-10-15 19:40:32",
+  "total_execution_time_sec": 7402.375558853149,
+  "cohort": {
+    "n_total": 239,
+    "n_woz": 178,
+    "n_avatar": 61,
+    "n_female": 84,
+    "n_male": 155,
+    "n_depressed": 74,
+    "n_non_depressed": 165
+  },
+  "variants": {
+    "V1": {
+      "variant_id": "V1",
+      "role": "Exploratory",
+      "observed_auc": 0.4782145782145782,
+      "bootstrap_ci_95": [
+        0.4001068593226266,
+        0.5577896715876611
+      ],
+      "seed_aucs": [
+        0.4982391482391482,
+        0.5355855855855856,
+        0.4813267813267813,
+        0.478050778050778,
+        0.4436117936117936
+      ],
+      "elapsed_sec": 18.33387303352356,
+      "secondary": {
+        "subgroup_woz_auc": 0.45252830188679244,
+        "subgroup_woz_ci": [
+          0.3584316596434734,
+          0.5373060237784814
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.5321428571428571,
+        "subgroup_avatar_ci": [
+          0.3692551817551817,
+          0.6904911735861392
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.4098557692307692,
+        "subgroup_female_ci": [
+          0.2917621703853956,
+          0.5337858739940489
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.4679730299199326,
+        "subgroup_male_ci": [
+          0.3604788587848933,
+          0.5866592166566601
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.05555555555555555,
+        "n_severe": 36,
+        "macro_f1_3class": 0.3070407504142444
+      }
+    },
+    "V2": {
+      "variant_id": "V2",
+      "role": "Confirmatory",
+      "observed_auc": 0.5044226044226044,
+      "bootstrap_ci_95": [
+        0.42605581715142926,
+        0.5831440762328597
+      ],
+      "seed_aucs": [
+        0.514086814086814,
+        0.5072891072891074,
+        0.4544635544635545,
+        0.5421785421785422,
+        0.5122031122031122
+      ],
+      "elapsed_sec": 1.8487999439239502,
+      "secondary": {
+        "subgroup_woz_auc": 0.5426415094339623,
+        "subgroup_woz_ci": [
+          0.4480981751416425,
+          0.6406680017440896
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.3797619047619048,
+        "subgroup_avatar_ci": [
+          0.23663015905662962,
+          0.5250908521303258
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.6304086538461539,
+        "subgroup_female_ci": [
+          0.5124768518518518,
+          0.7455516581632653
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.4161399072903497,
+        "subgroup_male_ci": [
+          0.3165571547768043,
+          0.5200018674136322
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.25,
+        "n_severe": 36,
+        "macro_f1_3class": 0.30345718538489624
+      }
+    },
+    "V3": {
+      "variant_id": "V3",
+      "role": "Exploratory",
+      "observed_auc": 0.5049959049959051,
+      "bootstrap_ci_95": [
+        0.4232458674823543,
+        0.5875083114349418
+      ],
+      "seed_aucs": [
+        0.4941850941850942,
+        0.5733824733824734,
+        0.4488943488943489,
+        0.5022113022113022,
+        0.5099099099099099
+      ],
+      "elapsed_sec": 93.18434691429138,
+      "secondary": {
+        "subgroup_woz_auc": 0.5097358490566039,
+        "subgroup_woz_ci": [
+          0.4153839915621704,
+          0.6058561708100643
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.47738095238095235,
+        "subgroup_avatar_ci": [
+          0.32856516290726817,
+          0.6399350649350648
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.5150240384615384,
+        "subgroup_female_ci": [
+          0.3915423343021711,
+          0.6367427971188475
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.47534766118836913,
+        "subgroup_male_ci": [
+          0.36983849244418693,
+          0.5846674735811206
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.05555555555555555,
+        "n_severe": 36,
+        "macro_f1_3class": 0.35791464225199165
+      }
+    },
+    "V4": {
+      "variant_id": "V4",
+      "role": "Exploratory",
+      "observed_auc": 0.4471744471744472,
+      "bootstrap_ci_95": [
+        0.3693572993518544,
+        0.5237145435031642
+      ],
+      "seed_aucs": [
+        0.5106470106470106,
+        0.5063063063063064,
+        0.516052416052416,
+        0.45372645372645376,
+        0.5135135135135135
+      ],
+      "elapsed_sec": 1.583122968673706,
+      "secondary": {
+        "subgroup_woz_auc": 0.4646037735849057,
+        "subgroup_woz_ci": [
+          0.3752445913461539,
+          0.5517615229110511
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.40119047619047615,
+        "subgroup_avatar_ci": [
+          0.2553751839781329,
+          0.5500742894056847
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.5018028846153846,
+        "subgroup_female_ci": [
+          0.37994472616632863,
+          0.6232724452674198
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.41234723978086807,
+        "subgroup_male_ci": [
+          0.31191645021645015,
+          0.5083640200128233
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.0,
+        "n_severe": 36,
+        "macro_f1_3class": 0.3357410995965213
+      }
+    },
+    "V5": {
+      "variant_id": "V5",
+      "role": "Exploratory",
+      "observed_auc": 0.506961506961507,
+      "bootstrap_ci_95": [
+        0.4247959768304496,
+        0.5878284887155855
+      ],
+      "seed_aucs": [
+        0.4506961506961507,
+        0.5054873054873055,
+        0.5325143325143324,
+        0.4683865683865684,
+        0.545126945126945
+      ],
+      "elapsed_sec": 100.47041392326355,
+      "secondary": {
+        "subgroup_woz_auc": 0.515320754716981,
+        "subgroup_woz_ci": [
+          0.41407127594627596,
+          0.6144755576649263
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.4726190476190476,
+        "subgroup_avatar_ci": [
+          0.31803023182957396,
+          0.6291990980034456
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.5426682692307692,
+        "subgroup_female_ci": [
+          0.4071059038344491,
+          0.6664593962585034
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.4696586599241466,
+        "subgroup_male_ci": [
+          0.3607691667013701,
+          0.5752044276027123
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.027777777777777776,
+        "n_severe": 36,
+        "macro_f1_3class": 0.35791464225199165
+      }
+    },
+    "V6": {
+      "variant_id": "V6",
+      "role": "Exploratory",
+      "observed_auc": 0.5777231777231777,
+      "bootstrap_ci_95": [
+        0.4964467048172926,
+        0.6568613229608231
+      ],
+      "seed_aucs": [
+        0.6101556101556102,
+        0.5462735462735463,
+        0.5607698607698607,
+        0.5705159705159705,
+        0.5708026208026208
+      ],
+      "elapsed_sec": 2.7828757762908936,
+      "secondary": {
+        "subgroup_woz_auc": 0.5382641509433962,
+        "subgroup_woz_ci": [
+          0.44047792539875547,
+          0.6329398939624421
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.6821428571428572,
+        "subgroup_avatar_ci": [
+          0.538715436285379,
+          0.8161247603672686
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.5721153846153847,
+        "subgroup_female_ci": [
+          0.4343296146044624,
+          0.7005967389608363
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.5564686051411716,
+        "subgroup_male_ci": [
+          0.4477680401186199,
+          0.6582396965865992
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.5,
+        "n_severe": 36,
+        "macro_f1_3class": 0.3748925773022158
+      }
+    },
+    "V7": {
+      "variant_id": "V7",
+      "role": "Exploratory",
+      "observed_auc": 0.7104832104832105,
+      "bootstrap_ci_95": [
+        0.6392887389205493,
+        0.7770744075011505
+      ],
+      "seed_aucs": [
+        0.6906633906633907,
+        0.6964782964782965,
+        0.6728910728910729,
+        0.6641277641277641,
+        0.7157248157248158
+      ],
+      "elapsed_sec": 2.8366639614105225,
+      "secondary": {
+        "subgroup_woz_auc": 0.6547924528301887,
+        "subgroup_woz_ci": [
+          0.5625618475424098,
+          0.7365664982438688
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.8678571428571429,
+        "subgroup_avatar_ci": [
+          0.7677558275058275,
+          0.9434897025171625
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.6706730769230769,
+        "subgroup_female_ci": [
+          0.5407011289364231,
+          0.7894274625609582
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.724188790560472,
+        "subgroup_male_ci": [
+          0.6304187508015904,
+          0.8114046077146455
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.6111111111111112,
+        "n_severe": 36,
+        "macro_f1_3class": 0.4599638647831419
+      }
+    },
+    "V8": {
+      "variant_id": "V8",
+      "role": "Exploratory",
+      "observed_auc": 0.5716625716625716,
+      "bootstrap_ci_95": [
+        0.4917860399914945,
+        0.6482770224469258
+      ],
+      "seed_aucs": [
+        0.5974610974610974,
+        0.5933660933660934,
+        0.5180180180180181,
+        0.5512694512694513,
+        0.5867321867321867
+      ],
+      "elapsed_sec": 4.981817960739136,
+      "secondary": {
+        "subgroup_woz_auc": 0.5817358490566038,
+        "subgroup_woz_ci": [
+          0.4961745873394785,
+          0.6665243685317642
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.5476190476190476,
+        "subgroup_avatar_ci": [
+          0.3894108437705999,
+          0.703012544730811
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.5564903846153846,
+        "subgroup_female_ci": [
+          0.43671263286459366,
+          0.6740612457563547
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.5678466076696165,
+        "subgroup_male_ci": [
+          0.47285837272225656,
+          0.6674498219848687
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.3888888888888889,
+        "n_severe": 36,
+        "macro_f1_3class": 0.3664036097771038
+      }
+    },
+    "V9": {
+      "variant_id": "V9",
+      "role": "Exploratory",
+      "observed_auc": 0.5205569205569206,
+      "bootstrap_ci_95": [
+        0.43804058020014014,
+        0.6044728896637105
+      ],
+      "seed_aucs": [
+        0.45880425880425874,
+        0.540950040950041,
+        0.4660933660933661,
+        0.5711711711711711,
+        0.5329238329238329
+      ],
+      "elapsed_sec": 2.759232997894287,
+      "secondary": {
+        "subgroup_woz_auc": 0.4745660377358491,
+        "subgroup_woz_ci": [
+          0.3773775503615702,
+          0.5748023715415019
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.6642857142857143,
+        "subgroup_avatar_ci": [
+          0.5134881756756756,
+          0.8053792352550381
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.5078125,
+        "subgroup_female_ci": [
+          0.3630374372552094,
+          0.642431327441691
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.5025284450063212,
+        "subgroup_male_ci": [
+          0.3953199727774196,
+          0.6136914425641994
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.19444444444444445,
+        "n_severe": 36,
+        "macro_f1_3class": 0.3641793280347498
+      }
+    },
+    "V10": {
+      "variant_id": "V10",
+      "role": "Confirmatory",
+      "observed_auc": 0.6443079443079442,
+      "bootstrap_ci_95": [
+        0.5656804516378297,
+        0.7213747150271245
+      ],
+      "seed_aucs": [
+        0.6373464373464373,
+        0.6355446355446354,
+        0.578050778050778,
+        0.6393120393120393,
+        0.6401310401310402
+      ],
+      "elapsed_sec": 3.0852322578430176,
+      "secondary": {
+        "subgroup_woz_auc": 0.6326037735849057,
+        "subgroup_woz_ci": [
+          0.5324347143488661,
+          0.7242551537609677
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.6988095238095238,
+        "subgroup_avatar_ci": [
+          0.5666290726817043,
+          0.8211581486042693
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.6231971153846154,
+        "subgroup_female_ci": [
+          0.4907305304566968,
+          0.7444876700680271
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.6455962916139908,
+        "subgroup_male_ci": [
+          0.5437052173913043,
+          0.7424424395663334
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.4166666666666667,
+        "n_severe": 36,
+        "macro_f1_3class": 0.44364684846612557
+      }
+    },
+    "V11": {
+      "variant_id": "V11",
+      "role": "Exploratory",
+      "observed_auc": 0.5711711711711711,
+      "bootstrap_ci_95": [
+        0.49185418918159673,
+        0.648889839766239
+      ],
+      "seed_aucs": [
+        0.5475020475020475,
+        0.5628173628173627,
+        0.5533988533988534,
+        0.6105651105651105,
+        0.5515151515151515
+      ],
+      "elapsed_sec": 3.052030324935913,
+      "secondary": {
+        "subgroup_woz_auc": 0.5580377358490566,
+        "subgroup_woz_ci": [
+          0.45582116765095204,
+          0.6555999279222514
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.625,
+        "subgroup_avatar_ci": [
+          0.4874014519995642,
+          0.7648462301587301
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.6237980769230769,
+        "subgroup_female_ci": [
+          0.4917726907268396,
+          0.738926282051282
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.5185419300463547,
+        "subgroup_male_ci": [
+          0.410825869887984,
+          0.6256150573436923
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.19444444444444445,
+        "n_severe": 36,
+        "macro_f1_3class": 0.34811507100663724
+      }
+    },
+    "V12": {
+      "variant_id": "V12",
+      "role": "Exploratory",
+      "observed_auc": 0.4826371826371827,
+      "bootstrap_ci_95": [
+        0.40114804266727727,
+        0.5577044650751547
+      ],
+      "seed_aucs": [
+        0.4697788697788698,
+        0.5297297297297298,
+        0.4683046683046683,
+        0.5097461097461098,
+        0.44103194103194104
+      ],
+      "elapsed_sec": 111.88274908065796,
+      "secondary": {
+        "subgroup_woz_auc": 0.44845283018867926,
+        "subgroup_woz_ci": [
+          0.3561646282347677,
+          0.5381080070084006
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.5702380952380952,
+        "subgroup_avatar_ci": [
+          0.40997036474164134,
+          0.7238663419913419
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.3942307692307693,
+        "subgroup_female_ci": [
+          0.27160164867061415,
+          0.5242097531653354
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.4848293299620733,
+        "subgroup_male_ci": [
+          0.38150512128476355,
+          0.5927651693335905
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.08333333333333333,
+        "n_severe": 36,
+        "macro_f1_3class": 0.30926503215659845
+      }
+    },
+    "V13": {
+      "variant_id": "V13",
+      "role": "Exploratory",
+      "observed_auc": 0.5904176904176903,
+      "bootstrap_ci_95": [
+        0.5102644879980123,
+        0.6686760224262913
+      ],
+      "seed_aucs": [
+        0.590990990990991,
+        0.6053235053235053,
+        0.5481572481572481,
+        0.6217854217854217,
+        0.568058968058968
+      ],
+      "elapsed_sec": 162.2996220588684,
+      "secondary": {
+        "subgroup_woz_auc": 0.5477735849056604,
+        "subgroup_woz_ci": [
+          0.4502395990456798,
+          0.634756127550058
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.7119047619047619,
+        "subgroup_avatar_ci": [
+          0.5536015343236139,
+          0.8433893009550905
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.5480769230769231,
+        "subgroup_female_ci": [
+          0.41747058823529415,
+          0.6798956049340925
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.5655288664138222,
+        "subgroup_male_ci": [
+          0.4616545008790742,
+          0.6679927397052846
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.1111111111111111,
+        "n_severe": 36,
+        "macro_f1_3class": 0.3662482096217036
+      }
+    },
+    "V14": {
+      "variant_id": "V14",
+      "role": "Exploratory",
+      "observed_auc": 0.7036855036855036,
+      "bootstrap_ci_95": [
+        0.632069179153439,
+        0.7727525079541208
+      ],
+      "seed_aucs": [
+        0.6758394758394758,
+        0.6497133497133496,
+        0.7171171171171171,
+        0.7105651105651106,
+        0.681981981981982
+      ],
+      "elapsed_sec": 2.7077157497406006,
+      "secondary": {
+        "subgroup_woz_auc": 0.6944905660377358,
+        "subgroup_woz_ci": [
+          0.6121374526654283,
+          0.7712465938032648
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.7309523809523809,
+        "subgroup_avatar_ci": [
+          0.5839490029421379,
+          0.862307293924941
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.6881009615384615,
+        "subgroup_female_ci": [
+          0.5714730275075411,
+          0.7999116336725849
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.7058575642646439,
+        "subgroup_male_ci": [
+          0.609722102552985,
+          0.7965905479741981
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.4444444444444444,
+        "n_severe": 36,
+        "macro_f1_3class": 0.43384727722077115
+      }
+    },
+    "V15": {
+      "variant_id": "V15",
+      "role": "Control",
+      "observed_auc": 0.5737919737919738,
+      "bootstrap_ci_95": [
+        0.49607256434703595,
+        0.648755345071825
+      ],
+      "seed_aucs": [
+        0.5873873873873875,
+        0.5798525798525798,
+        0.52006552006552,
+        0.5683046683046683,
+        0.5827190827190826
+      ],
+      "elapsed_sec": 0.9823112487792969,
+      "secondary": {
+        "subgroup_woz_auc": 0.5612075471698112,
+        "subgroup_woz_ci": [
+          0.4670441185897066,
+          0.6563632133995037
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.6035714285714285,
+        "subgroup_avatar_ci": [
+          0.44873458155191903,
+          0.7483147804576376
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.6298076923076923,
+        "subgroup_female_ci": [
+          0.5044628480629539,
+          0.7553052596038415
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.5465655288664137,
+        "subgroup_male_ci": [
+          0.45107189807435094,
+          0.6389918831168833
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.0,
+        "n_severe": 36,
+        "macro_f1_3class": 0.4023684481515806
+      }
+    },
+    "V16": {
+      "variant_id": "V16",
+      "role": "Control",
+      "observed_auc": 0.47927927927927927,
+      "bootstrap_ci_95": [
+        0.39857722334332124,
+        0.5567635672808087
+      ],
+      "seed_aucs": [
+        0.5139639639639639,
+        0.5266175266175266,
+        0.532022932022932,
+        0.5351351351351352,
+        0.521007371007371
+      ],
+      "elapsed_sec": 0.12184596061706543,
+      "secondary": {
+        "subgroup_woz_auc": 0.48316981132075476,
+        "subgroup_woz_ci": [
+          0.39261930235240067,
+          0.5693770610333215
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.43452380952380953,
+        "subgroup_avatar_ci": [
+          0.2556058789214415,
+          0.6154983660130717
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.3016826923076923,
+        "subgroup_female_ci": [
+          0.19576820500927644,
+          0.43263609339839826
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.3653603034134007,
+        "subgroup_male_ci": [
+          0.27320503176060523,
+          0.46011924147250494
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.0,
+        "n_severe": 36,
+        "macro_f1_3class": 0.3249211297404068
+      }
+    },
+    "V17": {
+      "variant_id": "V17",
+      "role": "Control",
+      "observed_auc": 0.41887796887796885,
+      "bootstrap_ci_95": [
+        0.33955096574759724,
+        0.49851882606358305
+      ],
+      "seed_aucs": [
+        0.416912366912367,
+        0.39868959868959875,
+        0.49344799344799345,
+        0.49823914823914817,
+        0.4978296478296478
+      ],
+      "elapsed_sec": 0.12046623229980469,
+      "secondary": {
+        "subgroup_woz_auc": 0.3575094339622641,
+        "subgroup_woz_ci": [
+          0.27012618810021727,
+          0.44593829131293905
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.14404761904761906,
+        "subgroup_avatar_ci": [
+          0.05609756097560977,
+          0.24212479655893965
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.44831730769230765,
+        "subgroup_female_ci": [
+          0.3184767746469874,
+          0.5730714974680492
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.4105562579013906,
+        "subgroup_male_ci": [
+          0.31597385170152875,
+          0.5147852377063873
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.0,
+        "n_severe": 36,
+        "macro_f1_3class": 0.31082839516574456
+      }
+    },
+    "V18": {
+      "variant_id": "V18",
+      "role": "Confirmatory",
+      "observed_auc": 0.6853398853398852,
+      "bootstrap_ci_95": [
+        0.6090446403307674,
+        0.7583289776675928
+      ],
+      "seed_aucs": [
+        0.6734643734643734,
+        0.6363636363636365,
+        0.6834561834561834,
+        0.6893529893529894,
+        0.6377559377559378
+      ],
+      "elapsed_sec": 19.170907735824585,
+      "secondary": {
+        "subgroup_woz_auc": 0.6751698113207546,
+        "subgroup_woz_ci": [
+          0.5880815394025669,
+          0.7562468120277535
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.7142857142857142,
+        "subgroup_avatar_ci": [
+          0.5694926349680112,
+          0.8430604023646072
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.703125,
+        "subgroup_female_ci": [
+          0.5901089521011396,
+          0.812920148644974
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.6628739991571849,
+        "subgroup_male_ci": [
+          0.5640955208971495,
+          0.761291800274851
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.027777777777777776,
+        "n_severe": 36,
+        "macro_f1_3class": 0.3948418382153322
+      }
+    },
+    "V19": {
+      "variant_id": "V19",
+      "role": "Exploratory",
+      "observed_auc": 0.7135954135954136,
+      "bootstrap_ci_95": [
+        0.6398389933094502,
+        0.7810340799184884
+      ],
+      "seed_aucs": [
+        0.7238329238329239,
+        0.6805896805896806,
+        0.6613431613431614,
+        0.7062244062244062,
+        0.702948402948403
+      ],
+      "elapsed_sec": 282.7234878540039,
+      "secondary": {
+        "subgroup_woz_auc": 0.6735094339622641,
+        "subgroup_woz_ci": [
+          0.5861594057509218,
+          0.749519163465059
+        ],
+        "subgroup_woz_n": 178,
+        "subgroup_woz_n_pos": 53,
+        "subgroup_avatar_auc": 0.8119047619047619,
+        "subgroup_avatar_ci": [
+          0.6958247180451128,
+          0.9109173126614986
+        ],
+        "subgroup_avatar_n": 61,
+        "subgroup_avatar_n_pos": 21,
+        "subgroup_female_auc": 0.6887019230769231,
+        "subgroup_female_ci": [
+          0.5787386727068133,
+          0.7973235632252494
+        ],
+        "subgroup_female_n": 84,
+        "subgroup_female_n_pos": 32,
+        "subgroup_male_auc": 0.7085967130214919,
+        "subgroup_male_ci": [
+          0.6091263887405192,
+          0.7973510688214539
+        ],
+        "subgroup_male_n": 155,
+        "subgroup_male_n_pos": 42,
+        "severe_recall": 0.3333333333333333,
+        "n_severe": 36,
+        "macro_f1_3class": 0.4887128935321707
+      }
+    }
+  },
+  "confirmatory_tests": {
+    "H1_permutation": {
+      "hypothesis": "H1: AUC(V2) > AUC_null",
+      "observed_auc": 0.5044226044226044,
+      "replications": 999,
+      "null_exceed_count": 488,
+      "null_mean_auc": 0.5023729298504073,
+      "null_p95_auc": 0.5906060606060606,
+      "empirical_p_value": 0.489
+    },
+    "H2_permutation": {
+      "hypothesis": "H2: AUC(V10) > AUC_null",
+      "observed_auc": 0.6443079443079442,
+      "replications": 999,
+      "null_exceed_count": 2,
+      "null_mean_auc": 0.503110235542668,
+      "null_p95_auc": 0.5857985257985258,
+      "empirical_p_value": 0.003
+    },
+    "H3_intersection_union": {
+      "hypothesis": "H3: V18 beats V14 AND V18 beats V2",
+      "observed_auc_v18": 0.6853398853398852,
+      "observed_auc_v14": 0.7036855036855036,
+      "observed_auc_v2": 0.5044226044226044,
+      "delta_v18_minus_v14": -0.01834561834561843,
+      "delta_v18_minus_v14_ci": [
+        -0.046790563825256384,
+        0.010562414673113996
+      ],
+      "p_v18_gt_v14": 0.893010698930107,
+      "delta_v18_minus_v2": 0.18091728091728076,
+      "delta_v18_minus_v2_ci": [
+        0.08686207805907185,
+        0.275788376586204
+      ],
+      "p_v18_gt_v2": 0.00019998000199980003,
+      "iut_p_value": 0.893010698930107
+    },
+    "holm_bonferroni": {
+      "H2": {
+        "id": "H2",
+        "name": "H2 (WavLM Layer 8 V10 vs Null)",
+        "raw_p": 0.003,
+        "step": 1,
+        "denom": 3,
+        "threshold": 0.016666666666666666,
+        "decision": "SUPPORTED (Statistically Significant)"
+      },
+      "H1": {
+        "id": "H1",
+        "name": "H1 (Handcrafted Voice V2 vs Null)",
+        "raw_p": 0.489,
+        "step": 2,
+        "denom": 2,
+        "threshold": 0.025,
+        "decision": "NOT SUPPORTED (Failed to exceed threshold)"
+      },
+      "H3": {
+        "id": "H3",
+        "name": "H3 (Multimodal Synergy V18 vs Constituents)",
+        "raw_p": 0.893010698930107,
+        "step": 3,
+        "denom": 1,
+        "threshold": 0.05,
+        "decision": "NOT SUPPORTED (Failed to exceed threshold)"
+      }
+    }
+  },
+  "frozen_config": {
+    "protocol_version": "prereg-v1.1-amended-v1.3",
+    "freeze_date": "2026-10-15 19:40:32",
+    "primary_audio_config": {
+      "variant_id": "V7",
+      "observed_auc": 0.7104832104832105,
+      "dimensions": 768,
+      "designation": "exploratory-derived"
+    },
+    "fusion_config": {
+      "variant_id": "V19",
+      "observed_auc": 0.7135954135954136,
+      "designation": "exploratory-derived"
+    },
+    "active_cohort_size": 239,
+    "sealed_cohort_status": "UNTOUCHED_AND_QUARANTINED",
+    "confirmation_seeds_status": "SEEDS_100_104_UNTOUCHED",
+    "next_authorized_action": "Write PHASE6A_RESULTS.md and STOP"
+  }
+}
