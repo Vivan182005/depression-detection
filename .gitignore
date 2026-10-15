@@ -48,3 +48,6 @@ experiments/research_v2/feature_store_v3/*.npz
 experiments/research_v2/transcripts_v2/vad_chunked/
 experiments/research_v2/transcripts_v2/woz_whisper/*_RETRANS_TEST.csv
 experiments/research_v2/feature_store_6c/*.npz
+experiments/research_v2/feature_store_6d/*.npz
+experiments/research_v2/feature_store_sealed/
+experiments/research_v2/feature_store_selftest/

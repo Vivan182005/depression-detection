@@ -105,11 +105,40 @@ def has_loop(text):
     return len(collapse_repeats(words)) < len(words)
 
 
+def transcribe_array(y, sr, pipe, vad_model):
+    """Amendment v1.3c transcription of one 16 kHz mono float32 recording.
+    Returns (segs, chunks, n_redecoded, raw_text, words, clean_words, clean_text)."""
+    from extract_features_v3 import get_silero_vad_segments
+    segs = get_silero_vad_segments(y, sr, vad_model)
+    chunks = pack_segments(segs, sr)
+    gen_kwargs = {'language': 'english', 'task': 'transcribe', 'do_sample': False, 'num_beams': 1}
+
+    def decode(spans):
+        if not spans:
+            return []
+        res = pipe([{'raw': y[a:b], 'sampling_rate': sr} for a, b in spans],
+                   batch_size=8, generate_kwargs=gen_kwargs)
+        return [r.get('text', '').strip() for r in res]
+
+    texts = decode([(a, b) for a, b, _ in chunks])
+    # Deterministic fallback: a chunk whose decode loops is re-decoded
+    # segment-by-segment (shorter context, no silence padding).
+    n_redecoded = 0
+    for ci, (a, b, members) in enumerate(chunks):
+        if has_loop(texts[ci]) and len(members) > 1:
+            texts[ci] = ' '.join(t for t in decode(members) if t)
+            n_redecoded += 1
+
+    raw_text = ' '.join(t for t in texts if t)
+    words = raw_text.split()
+    clean_words = collapse_repeats(words)
+    return segs, chunks, n_redecoded, raw_text, words, clean_words, ' '.join(clean_words)
+
+
 def worker_fn(worker_id, tasks, num_threads, overwrite):
     torch.set_num_threads(num_threads)
     import silero_vad
     from transformers import pipeline
-    from extract_features_v3 import get_silero_vad_segments
 
     vad_model = silero_vad.load_silero_vad()
     pipe = pipeline('automatic-speech-recognition', model='openai/whisper-tiny', device='cpu')
@@ -130,30 +159,7 @@ def worker_fn(worker_id, tasks, num_threads, overwrite):
             sr = 16000
         y = y.astype(np.float32)
 
-        segs = get_silero_vad_segments(y, sr, vad_model)
-        chunks = pack_segments(segs, sr)
-        gen_kwargs = {'language': 'english', 'task': 'transcribe', 'do_sample': False, 'num_beams': 1}
-
-        def decode(spans):
-            if not spans:
-                return []
-            res = pipe([{'raw': y[a:b], 'sampling_rate': sr} for a, b in spans],
-                       batch_size=8, generate_kwargs=gen_kwargs)
-            return [r.get('text', '').strip() for r in res]
-
-        texts = decode([(a, b) for a, b, _ in chunks])
-        # Deterministic fallback: a chunk whose decode loops is re-decoded
-        # segment-by-segment (shorter context, no silence padding).
-        n_redecoded = 0
-        for ci, (a, b, members) in enumerate(chunks):
-            if has_loop(texts[ci]) and len(members) > 1:
-                texts[ci] = ' '.join(t for t in decode(members) if t)
-                n_redecoded += 1
-
-        raw_text = ' '.join(t for t in texts if t)
-        words = raw_text.split()
-        clean_words = collapse_repeats(words)
-        clean_text = ' '.join(clean_words)
+        segs, chunks, n_redecoded, raw_text, words, clean_words, clean_text = transcribe_array(y, sr, pipe, vad_model)
 
         tmp_csv = f'{out_csv}.tmp_{worker_id}'
         pd.DataFrame([{
