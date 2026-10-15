@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-10-15 17:34:38",
+  "amendment": "v1.3c",
+  "transcription": "whisper-tiny, Silero-VAD chunks <= 28 s, per-segment re-decode on loop, n-gram repeat collapse (>3 consecutive -> 3)",
+  "gates": {
+    "near_empty_pct": 0.0,
+    "repetition_loop_pct_after_filter": 0.8368200836820083,
+    "repetition_loop_pct_before_filter": 2.510460251046025,
+    "woz_wer_median": 0.2018684553394779,
+    "woz_wer_iqr": [
+      0.16673689416169818,
+      0.24885530751555607
+    ]
+  },
+  "stop_reasons": [],
+  "passed": true,
+  "text_domain_auc_t2_vad": 0.8997973844170196,
+  "text_domain_auc_t2_fulllen": 1.0,
+  "bert_t2_rebuilt": true
+}

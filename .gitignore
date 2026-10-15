@@ -43,3 +43,7 @@ experiments/research_v2/feature_store_v2/*.npz
 
 # Feature store v3 binary NPZs (manifest_v3.csv is tracked)
 experiments/research_v2/feature_store_v3/*.npz
+
+# Participant transcripts are licensed DAIC-WOZ / E-DAIC data: never push new ones
+experiments/research_v2/transcripts_v2/vad_chunked/
+experiments/research_v2/transcripts_v2/woz_whisper/*_RETRANS_TEST.csv

@@ -1,0 +1,124 @@
+{
+  "timestamp": "2026-10-15 14:59:51",
+  "provenance_table": {
+    "avatar_61": {
+      "n": 61,
+      "script": "experiments/research_v2/run_whisper_transcription.py",
+      "hardware": "Apple Silicon CPU",
+      "model": "openai/whisper-tiny",
+      "decoding": "Greedy (temperature=0.0, do_sample=False)",
+      "chunk_length_s": 30,
+      "batch_size": 8,
+      "library": "transformers-whisper-tiny (pipeline)",
+      "matches_amendment_v1_3b": true
+    },
+    "woz_earlier_76": {
+      "n": 76,
+      "script": "experiments/research_v2/run_mps_woz_transcription.py",
+      "hardware": "Apple Silicon MPS (Metal Performance Shaders GPU)",
+      "model": "openai/whisper-tiny",
+      "decoding": "Greedy (pipeline default temperature=0.0)",
+      "chunk_length_s": 30,
+      "batch_size": 16,
+      "library": "transformers 5.19.0, torch 2.14.1 (MPS)",
+      "matches_amendment_v1_3b": true
+    },
+    "woz_new_102": {
+      "n": 102,
+      "script": "experiments/research_v2/transcribe_remaining_woz.py",
+      "hardware": "Apple Silicon CPU (3 workers, torch threads=2)",
+      "model": "openai/whisper-tiny",
+      "decoding": "Greedy (temperature=0.0, condition_on_previous_text=False)",
+      "chunk_length_s": 30,
+      "batch_size": 8,
+      "library": "transformers 5.19.0, torch 2.14.1 (CPU)",
+      "matches_amendment_v1_3b": true
+    }
+  },
+  "consistency_check": {
+    "evaluated_pids": [
+      301,
+      302,
+      305,
+      307,
+      308
+    ],
+    "details": [
+      {
+        "participant_id": 301,
+        "wer_old_vs_new": 0.0,
+        "bert_cosine_distance": 0.0
+      },
+      {
+        "participant_id": 302,
+        "wer_old_vs_new": 0.0,
+        "bert_cosine_distance": 0.0
+      },
+      {
+        "participant_id": 305,
+        "wer_old_vs_new": 0.0,
+        "bert_cosine_distance": 0.0
+      },
+      {
+        "participant_id": 307,
+        "wer_old_vs_new": 0.0,
+        "bert_cosine_distance": 0.0
+      },
+      {
+        "participant_id": 308,
+        "wer_old_vs_new": 0.0,
+        "bert_cosine_distance": 0.0
+      }
+    ],
+    "mean_wer": 0.0,
+    "mean_bert_cosine_distance": 1.1920928955078126e-08,
+    "threshold_wer": 0.15,
+    "passed": true
+  },
+  "batch_leakage_diagnostic": {
+    "earlier_mps_n": 76,
+    "new_cpu_n": 102,
+    "batch_auc": 0.5238648090815274,
+    "threshold_auc": 0.7,
+    "passed": true
+  },
+  "quality_gates": {
+    "empty_sessions": {
+      "count": 0,
+      "pct": 0.0,
+      "threshold_pct": 5.0,
+      "passed": true
+    },
+    "repetition_loops": {
+      "count": 42,
+      "pct": 17.573221757322173,
+      "threshold_pct": 5.0,
+      "passed": false
+    },
+    "woz_manual_wer": {
+      "median": 0.19719953131012424,
+      "q25": 0.16425524338567815,
+      "q75": 0.2432711829679438,
+      "threshold_median": 0.6,
+      "passed": true
+    },
+    "text_domain_auc_t2": 1.0
+  },
+  "word_counts": {
+    "woz": {
+      "mean": 1359.3932584269662,
+      "median": 1169.5
+    },
+    "avatar": {
+      "mean": 1316.1147540983607,
+      "median": 1326.0
+    }
+  },
+  "verdict": {
+    "stop_triggered": true,
+    "stop_reasons": [
+      "Repetition loops (17.57%) exceeded 5.0%"
+    ],
+    "proceed_authorized": false
+  }
+}

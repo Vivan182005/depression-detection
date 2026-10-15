@@ -73,6 +73,12 @@ def load_development_dataset(cohort: str = 'woz_only', feature_version: str = 'v
     """
     if cohort not in ['woz_only', 'avatar_only', 'combined']:
         raise ValueError(f"cohort must be 'woz_only', 'avatar_only', or 'combined', got {cohort}")
+    if feature_version not in ['v1', 'v2']:
+        raise ValueError(f"feature_version must be 'v1' or 'v2', got '{feature_version}'")
+    if acoustic_set not in ['robust', 'full']:
+        raise ValueError(f"acoustic_set must be 'robust' or 'full', got '{acoustic_set}'")
+    if text_variant not in ['T1', 'T2']:
+        raise ValueError(f"text_variant must be 'T1' or 'T2', got '{text_variant}'")
 
     if not os.path.exists(OFFICIAL_LABELS_PATH):
         raise FileNotFoundError(f"Authoritative label file not found at {OFFICIAL_LABELS_PATH}")
@@ -104,20 +110,46 @@ def load_development_dataset(cohort: str = 'woz_only', feature_version: str = 'v
                 feat_path = os.path.join(v2_dir, r['feature_file'])
                 data = np.load(feat_path)
                 
+                # 1. Acoustic feature loading (zero fallback)
                 if acoustic_set == 'robust':
-                    ac = data['acoustic_robust_135d'].astype(np.float32) if 'acoustic_robust_135d' in data else get_robust_acoustic_135d(data['acoustic_154d'])
-                else:
+                    if 'acoustic_robust_135d' in data:
+                        ac = data['acoustic_robust_135d'].astype(np.float32)
+                    elif 'acoustic_154d' in data:
+                        ac = get_robust_acoustic_135d(data['acoustic_154d'])
+                    else:
+                        raise KeyError(f"Requested acoustic_set='robust' but neither 'acoustic_robust_135d' nor 'acoustic_154d' is present for PID {pid} in {feat_path}")
+                elif acoustic_set == 'full':
+                    if 'acoustic_154d' not in data:
+                        raise KeyError(f"Requested acoustic_set='full' but 'acoustic_154d' is missing for PID {pid} in {feat_path}")
                     ac = data['acoustic_154d'].astype(np.float32)
-                if text_variant == 'T2' and 'bert_t2_768d' in data:
-                    bert = data['bert_t2_768d'].astype(np.float32)
-                elif 'bert_t1_768d' in data:
-                    bert = data['bert_t1_768d'].astype(np.float32)
                 else:
-                    bert = data['bert_768d'].astype(np.float32)
+                    raise ValueError(f"Unknown acoustic_set '{acoustic_set}'. Must be 'robust' or 'full'.")
+
+                # 2. Text feature loading (zero fallback)
+                if text_variant == 'T2':
+                    if 'bert_t2_768d' not in data:
+                        raise KeyError(f"Requested text_variant='T2' but 'bert_t2_768d' is missing for PID {pid} in {feat_path}. Silent fallback prohibited.")
+                    bert = data['bert_t2_768d'].astype(np.float32)
+                elif text_variant == 'T1':
+                    if 'bert_t1_768d' in data:
+                        bert = data['bert_t1_768d'].astype(np.float32)
+                    elif 'bert_768d' in data:
+                        bert = data['bert_768d'].astype(np.float32)
+                    else:
+                        raise KeyError(f"Requested text_variant='T1' but neither 'bert_t1_768d' nor 'bert_768d' is present for PID {pid} in {feat_path}")
+                else:
+                    raise ValueError(f"Unknown text_variant '{text_variant}'. Must be 'T1' or 'T2'.")
+
+                # 3. Audio & metadata features (zero fallback)
+                if 'wav2vec_768d' not in data:
+                    raise KeyError(f"'wav2vec_768d' is missing for PID {pid} in {feat_path}")
+                if 'meta_7d' not in data:
+                    raise KeyError(f"'meta_7d' is missing for PID {pid} in {feat_path}. Zero substitution prohibited.")
+
                 ac_list.append(ac)
                 w2v_list.append(data['wav2vec_768d'].astype(np.float32))
                 bert_list.append(bert)
-                meta_list.append(data.get('meta_7d', np.zeros(7, dtype=np.float32)))
+                meta_list.append(data['meta_7d'].astype(np.float32))
                 
                 meta = get_official_label_for_pid(pid, df_labels)
                 y_class.append(meta['class_id'])
@@ -171,7 +203,7 @@ def load_development_dataset(cohort: str = 'woz_only', feature_version: str = 'v
                     if os.path.exists(alt):
                         npz_file = alt
                     else:
-                        continue
+                        raise FileNotFoundError(f"Feature file not found for PID {pid}: tried {npz_file} and {alt}")
                         
                 data = np.load(npz_file, allow_pickle=True)
                 t = data['temporal_33d']
@@ -179,7 +211,9 @@ def load_development_dataset(cohort: str = 'woz_only', feature_version: str = 'v
                 t_std = np.std(t, axis=0) if len(t) > 0 else np.zeros(33, dtype=np.float32)
                 e = data['egemaps_88d'].astype(np.float32)
                 w = data['wav2vec_768d'].astype(np.float32)
-                b = data.get('text_bert_768d', np.zeros(768, dtype=np.float32)).astype(np.float32)
+                if 'text_bert_768d' not in data:
+                    raise KeyError(f"Missing 'text_bert_768d' in {npz_file}. Silent fallback prohibited.")
+                b = data['text_bert_768d'].astype(np.float32)
                 
                 ac_154 = np.hstack([e, t_mean, t_std]).astype(np.float32)
                 ac_list.append(ac_154)
@@ -262,20 +296,46 @@ def load_development_dataset(cohort: str = 'woz_only', feature_version: str = 'v
                         continue
                 feat_path = os.path.join(v2_dir, r['feature_file'])
                 data = np.load(feat_path)
+                # 1. Acoustic feature loading (zero fallback)
                 if acoustic_set == 'robust':
-                    ac = data['acoustic_robust_135d'].astype(np.float32) if 'acoustic_robust_135d' in data else get_robust_acoustic_135d(data['acoustic_154d'])
-                else:
+                    if 'acoustic_robust_135d' in data:
+                        ac = data['acoustic_robust_135d'].astype(np.float32)
+                    elif 'acoustic_154d' in data:
+                        ac = get_robust_acoustic_135d(data['acoustic_154d'])
+                    else:
+                        raise KeyError(f"Requested acoustic_set='robust' but neither 'acoustic_robust_135d' nor 'acoustic_154d' is present for PID {pid} in {feat_path}")
+                elif acoustic_set == 'full':
+                    if 'acoustic_154d' not in data:
+                        raise KeyError(f"Requested acoustic_set='full' but 'acoustic_154d' is missing for PID {pid} in {feat_path}")
                     ac = data['acoustic_154d'].astype(np.float32)
-                if text_variant == 'T2' and 'bert_t2_768d' in data:
-                    bert = data['bert_t2_768d'].astype(np.float32)
-                elif 'bert_t1_768d' in data:
-                    bert = data['bert_t1_768d'].astype(np.float32)
                 else:
-                    bert = data['bert_768d'].astype(np.float32)
+                    raise ValueError(f"Unknown acoustic_set '{acoustic_set}'. Must be 'robust' or 'full'.")
+
+                # 2. Text feature loading (zero fallback)
+                if text_variant == 'T2':
+                    if 'bert_t2_768d' not in data:
+                        raise KeyError(f"Requested text_variant='T2' but 'bert_t2_768d' is missing for PID {pid} in {feat_path}. Silent fallback prohibited.")
+                    bert = data['bert_t2_768d'].astype(np.float32)
+                elif text_variant == 'T1':
+                    if 'bert_t1_768d' in data:
+                        bert = data['bert_t1_768d'].astype(np.float32)
+                    elif 'bert_768d' in data:
+                        bert = data['bert_768d'].astype(np.float32)
+                    else:
+                        raise KeyError(f"Requested text_variant='T1' but neither 'bert_t1_768d' nor 'bert_768d' is present for PID {pid} in {feat_path}")
+                else:
+                    raise ValueError(f"Unknown text_variant '{text_variant}'. Must be 'T1' or 'T2'.")
+
+                # 3. Audio & metadata features (zero fallback)
+                if 'wav2vec_768d' not in data:
+                    raise KeyError(f"'wav2vec_768d' is missing for PID {pid} in {feat_path}")
+                if 'meta_7d' not in data:
+                    raise KeyError(f"'meta_7d' is missing for PID {pid} in {feat_path}. Zero substitution prohibited.")
+
                 ac_list.append(ac)
                 w2v_list.append(data['wav2vec_768d'].astype(np.float32))
                 bert_list.append(bert)
-                meta_list.append(data.get('meta_7d', np.zeros(7, dtype=np.float32)))
+                meta_list.append(data['meta_7d'].astype(np.float32))
                 
                 meta = get_official_label_for_pid(pid, df_labels)
                 y_class.append(meta['class_id'])

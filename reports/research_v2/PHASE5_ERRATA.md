@@ -84,3 +84,34 @@ To maintain rigorous scientific standards, the following overreaching terms used
 2. **Acoustic Alone:** Fails to exceed chance level (M3 Macro-F1 31.64% vs Shuffled 32.35%).
 3. **Multimodal Fusion:** Currently dominated by text; adding acoustic and Wav2Vec2 degrades performance from 48.41% (BERT T2) down to 43.12% (Trimodal MLP T2) and 43.91% (Trimodal LogReg), failing to beat metadata with statistical significance.
 4. **Frozen Artifacts:** Confirmation folds (seeds 100–104) and sealed cohort (33 participants) remain strictly untouched.
+
+---
+
+### 8. Errata Notice: Silent Fallback in M5_BERT_T2 & Withdrawal of T1-vs-T2 Comparisons
+
+**Date of Discovery:** 2026-10-15  
+**Audit Context:** Task 6A Execution / Text Benchmark Audit  
+
+#### 8.1 Root Cause & Bug Mechanism
+During the Phase 6A text feature verification, an unflagged silent fallback was identified in `experiments/research_v2/dataset.py` (lines 111–116 and 269–274):
+```python
+if text_variant == 'T2' and 'bert_t2_768d' in data:
+    bert = data['bert_t2_768d'].astype(np.float32)
+elif 'bert_t1_768d' in data:
+    bert = data['bert_t1_768d'].astype(np.float32)
+else:
+    bert = data['bert_768d'].astype(np.float32)
+```
+When `text_variant == 'T2'` was requested, sessions lacking `bert_t2_768d` silently defaulted to `bert_t1_768d` (the official human manual challenge transcripts).
+
+#### 8.2 Scope of Fallback in Phase 5
+- At the time Phase 5 ran, only **55 DAIC-WOZ development sessions** had been transcribed into `transcripts_v2/woz_whisper/`.
+- All **61 E-DAIC Avatar development sessions** had Whisper transcripts.
+- Consequently, exactly **116 of 239 development participants** (48.5%) had genuine `bert_t2_768d` embeddings.
+- For the remaining **123 DAIC-WOZ development participants** (51.5% of the active cohort), the model silently evaluated on **human manual reference transcripts (`bert_t1_768d`)**.
+
+#### 8.3 Scientific Impact & Formal Retractions
+1. **Withdrawal of Pure ASR Claim:** The Phase 5 claim that `M5_BERT_T2_Only` proved clinical depression detection using a fully automated speech-to-text pipeline is **FORMALLY WITHDRAWN**.
+2. **Withdrawal of T1-vs-T2 Point Comparison:** Any quantitative comparison between T1 and T2 in Phase 5 is invalid, as T2 was in fact a hybrid 48.5% Whisper / 51.5% manual mixture.
+3. **Reclassification as Hybrid-Text Signal:** The statistical finding that semantic text representations outperform shuffled controls ($p < 0.001$) remains valid, but must be characterized strictly as a **hybrid-transcript result** (manual WoZ transcripts + Whisper Avatar transcripts).
+4. **Resolution for Phase 6A:** In Phase 6A (Amendment v1.3b), the silent fallback has been eliminated from all data loaders with unit tests, and Whisper-tiny transcription will be completed across 100% of the 239 development participants prior to Step E1 dry-run.
