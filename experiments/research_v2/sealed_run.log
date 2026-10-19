@@ -1,0 +1,153 @@
+Frozen config: {"rule": "prereg_phase6d_emotion_mit.md sec 5", "margin": 0.02, "audio": {"model": "V7", "source": "phase6a"}, "fusion": {"model": "V19", "source": "phase6a"}, "freeze_timestamp": "2026-10-19 11:04:18"}
+Dev-side summary: {"audio_members": ["w2v2_L8"], "audio_dev_oof_auc": 0.7376740376740377, "fusion_audio_members": ["w2v2_L8"], "fusion_text": "text_bert", "meta_coef": [1.9420223388435522, 1.7713031356057853], "fusion_dev_oof_auc": 0.7532350532350532, "V19_selected_audio": "V7", "pool_inner_auc": {"V1": 0.5265847665847666, "V2": 0.498034398034398, "V3": 0.498034398034398, "V4": 0.5014742014742015, "V5": 0.5014742014742015, "V6": 0.5809009009009009, "V7": 0.7075348075348076, "V8": 0.5871580671580672, "V9": 0.5367895167895167, "V10": 0.6479770679770681, "V11": 0.5677968877968878}}
+Loading weights:   0%|          | 0/210 [00:00<?, ?it/s]Loading weights: 100%|██████████| 210/210 [00:00<00:00, 7358.37it/s]
+[transformers] [1mWav2Vec2Model LOAD REPORT[0m from: facebook/wav2vec2-base-960h
+Key               | Status     | 
+------------------+------------+-
+lm_head.bias      | UNEXPECTED | 
+lm_head.weight    | UNEXPECTED | 
+masked_spec_embed | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights:   0%|          | 0/167 [00:00<?, ?it/s]Loading weights: 100%|██████████| 167/167 [00:00<00:00, 7564.08it/s]
+[transformers] Passing `generation_config` together with generation-related arguments=({'num_beams', 'do_sample'}) is deprecated and will be removed in future versions. Please pass either a `generation_config` object OR all generation parameters explicitly, but not both.
+[transformers] Passing `generation_config` together with generation-related arguments=({'begin_suppress_tokens', 'suppress_tokens'}) is deprecated and will be removed in future versions. Please pass either a `generation_config` object OR all generation parameters explicitly, but not both.
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer WhisperTokenizer. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+  sealed extraction 1/33 done
+  sealed extraction 2/33 done
+  sealed extraction 3/33 done
+  sealed extraction 4/33 done
+  sealed extraction 5/33 done
+  sealed extraction 6/33 done
+  sealed extraction 7/33 done
+  sealed extraction 8/33 done
+  sealed extraction 9/33 done
+  sealed extraction 10/33 done
+  sealed extraction 11/33 done
+  sealed extraction 12/33 done
+  sealed extraction 13/33 done
+  sealed extraction 14/33 done
+  sealed extraction 15/33 done
+  sealed extraction 16/33 done
+  sealed extraction 17/33 done
+  sealed extraction 18/33 done
+  sealed extraction 19/33 done
+  sealed extraction 20/33 done
+  sealed extraction 21/33 done
+  sealed extraction 22/33 done
+  sealed extraction 23/33 done
+  sealed extraction 24/33 done
+  sealed extraction 25/33 done
+  sealed extraction 26/33 done
+  sealed extraction 27/33 done
+  sealed extraction 28/33 done
+  sealed extraction 29/33 done
+  sealed extraction 30/33 done
+  sealed extraction 31/33 done
+  sealed extraction 32/33 done
+  sealed extraction 33/33 done
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6837.05it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Predictions written and locked (sha256 1704a72487416f20...). Now reading sealed labels.
+{
+  "n": 33,
+  "n_depressed": 11,
+  "predictions_sha256": "1704a72487416f2069e570c6b9a4eb3302e20613484e6c0fd8ae8f4e6fab6e5f",
+  "dev_summary": {
+    "audio_members": [
+      "w2v2_L8"
+    ],
+    "audio_dev_oof_auc": 0.7376740376740377,
+    "fusion_audio_members": [
+      "w2v2_L8"
+    ],
+    "fusion_text": "text_bert",
+    "meta_coef": [
+      1.9420223388435522,
+      1.7713031356057853
+    ],
+    "fusion_dev_oof_auc": 0.7532350532350532,
+    "V19_selected_audio": "V7",
+    "pool_inner_auc": {
+      "V1": 0.5265847665847666,
+      "V2": 0.498034398034398,
+      "V3": 0.498034398034398,
+      "V4": 0.5014742014742015,
+      "V5": 0.5014742014742015,
+      "V6": 0.5809009009009009,
+      "V7": 0.7075348075348076,
+      "V8": 0.5871580671580672,
+      "V9": 0.5367895167895167,
+      "V10": 0.6479770679770681,
+      "V11": 0.5677968877968878
+    }
+  },
+  "audio_model": {
+    "frozen": {
+      "model": "V7",
+      "source": "phase6a"
+    },
+    "auc": 0.6942148760330578,
+    "auc_ci95": [
+      0.4779945054945055,
+      0.8815096618357485
+    ],
+    "auc_perm_p": 0.034996500349965,
+    "threshold": 0.33712217132560907,
+    "sensitivity": 0.45454545454545453,
+    "specificity": 0.7727272727272727,
+    "balanced_accuracy": 0.6136363636363636,
+    "accuracy": 0.6666666666666666,
+    "confusion": {
+      "tp": 5,
+      "fn": 6,
+      "tn": 17,
+      "fp": 5
+    },
+    "auc_woz": 0.9500000000000001,
+    "n_woz": 9,
+    "auc_avatar": 0.5714285714285714,
+    "n_avatar": 24
+  },
+  "fusion_model": {
+    "frozen": {
+      "model": "V19",
+      "source": "phase6a"
+    },
+    "auc": 0.6983471074380165,
+    "auc_ci95": [
+      0.4999080882352941,
+      0.8765432098765432
+    ],
+    "auc_perm_p": 0.035096490350964904,
+    "threshold": 0.359386229815439,
+    "sensitivity": 0.45454545454545453,
+    "specificity": 0.7272727272727273,
+    "balanced_accuracy": 0.5909090909090909,
+    "accuracy": 0.6363636363636364,
+    "confusion": {
+      "tp": 5,
+      "fn": 6,
+      "tn": 16,
+      "fp": 6
+    },
+    "auc_woz": 0.8,
+    "n_woz": 9,
+    "auc_avatar": 0.6638655462184874,
+    "n_avatar": 24
+  }
+}
