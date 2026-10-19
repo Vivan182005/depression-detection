@@ -54,3 +54,18 @@ Pre-registration `prereg_phase6a.md` with amendments v1.2, v1.3, v1.3b, v1.3c; e
 and `prereg_phase6d_emotion_mit.md`; analysis tag `prereg-exec-v1`; reports `PHASE6A_RESULTS.md`, `PHASE6C_RESULTS.md`,
 `PHASE6D_RESULTS.md`; sealed artefacts `sealed_predictions.csv`, `sealed_eval.lock` (written 2026-10-19 11:18:26),
 `sealed_results.json`, `sealed_run.log`.
+
+## 6. Update: Phase 7 improved model (all 272 participants, cross-validated)
+
+After the one-shot sealed test, the 33 sealed participants joined the training pool (N = 272) and the model was rebuilt with
+PHQ-score regression, a top-3 voice ensemble (emotion-tuned HuBERT-large + wav2vec2) and emotion-RoBERTa text. Repeated nested CV
+(every person predicted by a model that never saw them):
+
+| | AUC | Accuracy | Balanced accuracy | Sensitivity | Specificity |
+|:--|--:|--:|--:|--:|--:|
+| Phase 7 P4, max-accuracy threshold | **0.764** | **74.3%** | 67.0% | 48% | 87% |
+| Phase 7 P4, balanced (Youden) threshold | 0.764 | 69.7% | **68.1%** | 64% | 72% |
+| Majority-class baseline | 0.500 | 68.8% | 50.0% | 0% | 100% |
+
+Avatar-domain AUC improved from 0.57 (sealed V7) to 0.79. Gender/domain subgroup AUCs lie within 0.75-0.79. Details: `PHASE7_RESULTS.md`.
+These are cross-validated estimates on a pool that includes the formerly-sealed participants; the untouched held-out figure remains Section 1.
