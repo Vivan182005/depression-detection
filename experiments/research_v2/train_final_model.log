@@ -1,0 +1,39 @@
+{
+  "voice": [
+    [
+      "hubert_large_er_L19",
+      "reg",
+      "False",
+      "cv_auc=0.715",
+      "hp=100.0"
+    ],
+    [
+      "hubert_large_er_L20",
+      "reg",
+      "False",
+      "cv_auc=0.712",
+      "hp=100.0"
+    ],
+    [
+      "w2v2_L6",
+      "reg",
+      "False",
+      "cv_auc=0.709",
+      "hp=100.0"
+    ]
+  ],
+  "text": [
+    "text_emo",
+    "reg",
+    "False",
+    "cv_auc=0.743",
+    "hp=10000.0"
+  ],
+  "meta_coef": [
+    2.113647636942932,
+    2.105409133312016
+  ],
+  "trained_on": "N=272 (all 272)",
+  "phase7_nested_cv_auc": 0.764265492293174
+}
+thresholds {'max_acc': 0.5380445340271264, 'youden': 0.2921942696426208} -> /Users/vivannaik/Desktop/CAPSTONE/models/final_phase7_p4.joblib

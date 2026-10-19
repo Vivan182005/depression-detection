@@ -16,11 +16,11 @@ Pool N=272 (WoZ 187, Avatar 85), depressed 85; majority-class accuracy 0.688
   seed 2 fold 4: P1=('hubert_large_er_L20', 'cls', True) P2=('hubert_large_er_L20', 'reg', True) top3=['hubert_large_er_L20', 'hubert_large_er_L19', 'whisper_L6'] text=text_emo 1s
   seed 3 fold 0: P1=('hubert_large_er_L19', 'cls', False) P2=('hubert_large_er_L20', 'reg', True) top3=['hubert_large_er_L19', 'hubert_large_er_L18', 'hubert_large_er_L20'] text=text_emo 1s
   seed 3 fold 1: P1=('w2v2_L6', 'cls', True) P2=('hubert_large_er_L19', 'reg', False) top3=['hubert_large_er_L19', 'hubert_large_er_L20', 'w2v2_L8'] text=text_emo 1s
-  seed 3 fold 2: P1=('w2v2_L6', 'cls', True) P2=('hubert_large_er_L19', 'reg', False) top3=['hubert_large_er_L19', 'w2v2_L6', 'hubert_large_er_L18'] text=text_emo 1s
+  seed 3 fold 2: P1=('w2v2_L6', 'cls', True) P2=('hubert_large_er_L19', 'reg', False) top3=['hubert_large_er_L19', 'w2v2_L6', 'hubert_large_er_L18'] text=text_emo 2s
   seed 3 fold 3: P1=('w2v2_L9', 'cls', False) P2=('w2v2_L8', 'reg', False) top3=['w2v2_L8', 'w2v2_L7', 'w2v2_L6'] text=text_emo 1s
   seed 3 fold 4: P1=('w2v2_L6', 'cls', False) P2=('hubert_large_er_L19', 'reg', False) top3=['hubert_large_er_L19', 'hubert_large_er_L18', 'hubert_large_er_L20'] text=text_emo 1s
   seed 4 fold 0: P1=('hubert_large_er_L16', 'cls', False) P2=('hubert_large_er_L20', 'reg', True) top3=['hubert_large_er_L20', 'hubert_large_er_L16', 'hubert_large_er_L19'] text=text_emo 1s
-  seed 4 fold 1: P1=('w2v2_L6', 'cls', True) P2=('w2v2_L6', 'reg', True) top3=['w2v2_L6', 'hubert_large_er_L18', 'w2v2_L8'] text=text_emo 1s
+  seed 4 fold 1: P1=('w2v2_L6', 'cls', True) P2=('w2v2_L6', 'reg', True) top3=['w2v2_L6', 'hubert_large_er_L18', 'w2v2_L8'] text=text_emo 2s
   seed 4 fold 2: P1=('w2v2_L5', 'cls', True) P2=('w2v2_L5', 'reg', True) top3=['w2v2_L5', 'w2v2_L8', 'hubert_large_er_L18'] text=text_bert 1s
   seed 4 fold 3: P1=('w2v2_L6', 'cls', True) P2=('w2v2_L6', 'reg', True) top3=['w2v2_L6', 'w2v2_L8', 'w2v2_L7'] text=text_emo 1s
   seed 4 fold 4: P1=('hubert_large_er_L20', 'cls', False) P2=('hubert_large_er_L20', 'reg', True) top3=['hubert_large_er_L20', 'hubert_large_er_L19', 'hubert_large_er_L18'] text=text_emo 1s

@@ -12,6 +12,24 @@
 
 ---
 
+## ▶️ Run the project (current results)
+
+```bash
+cd ~/Desktop/CAPSTONE
+.venv_opensmile/bin/python run_project.py            # tests + Phase 7 model + all results (~1-5 min)
+.venv_opensmile/bin/python run_project.py --report   # just print the saved results
+.venv_opensmile/bin/python run_project.py --phase6a  # also re-run the pre-registered Phase 6A study (~2 h)
+.venv_opensmile/bin/python predict_audio.py path/to/interview.wav   # screen one new recording
+```
+
+| Evaluation | AUC | Accuracy | Balanced acc. |
+|:--|--:|--:|--:|
+| Phase 7 final model, 272 participants, repeated nested CV | **0.764** | **74.3%** (majority baseline 68.8%) | 67.0% (68.1% at the balanced threshold) |
+| One-shot sealed test, 33 never-seen participants (V7 voice) | 0.694 | 66.7% | 61.4% |
+
+Full write-ups: `reports/research_v2/FINAL_RESULTS.md`, `PHASE7_RESULTS.md`, `PHASE6A_RESULTS.md`.
+The legacy "83.78%" figures further down this README came from the invalidated Candidate 2A pipeline (see the forensic audit).
+
 ## 📌 Executive Summary
 
 This system analyzes semi-clinical interviews from the **DAIC-WOZ** and extended **E-DAIC (2019)** corpora to detect depression severity. By fusing **acoustic vocal biomarkers**, **self-supervised deep speech representations**, and **clinical linguistic cues**, the system overcomes the limitations of unimodal speech models.
