@@ -1,0 +1,13 @@
+{
+  "rule": "prereg_phase6d_emotion_mit.md sec 5",
+  "margin": 0.02,
+  "audio": {
+    "model": "V7",
+    "source": "phase6a"
+  },
+  "fusion": {
+    "model": "V19",
+    "source": "phase6a"
+  },
+  "freeze_timestamp": "2026-10-19 11:04:18"
+}

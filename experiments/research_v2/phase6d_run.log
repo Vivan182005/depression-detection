@@ -1,0 +1,72 @@
+Part 1: descriptive AUC for new Phase 6D candidates
+  hubert_base_er_L1: AUC=0.5209 [0.439, 0.606]
+  hubert_base_er_L2: AUC=0.5294 [0.450, 0.613]
+  hubert_base_er_L3: AUC=0.5320 [0.452, 0.610]
+  hubert_base_er_L4: AUC=0.5573 [0.479, 0.634]
+  hubert_base_er_L5: AUC=0.5877 [0.508, 0.666]
+  hubert_base_er_L6: AUC=0.6145 [0.533, 0.687]
+  hubert_base_er_L7: AUC=0.6414 [0.564, 0.714]
+  hubert_base_er_L8: AUC=0.6559 [0.578, 0.734]
+  hubert_base_er_L9: AUC=0.6565 [0.576, 0.730]
+  hubert_base_er_L10: AUC=0.6712 [0.593, 0.743]
+  hubert_base_er_L11: AUC=0.6285 [0.552, 0.705]
+  hubert_base_er_L12: AUC=0.6120 [0.534, 0.690]
+  hubert_large_er_L1: AUC=0.5163 [0.435, 0.596]
+  hubert_large_er_L2: AUC=0.5394 [0.460, 0.618]
+  hubert_large_er_L3: AUC=0.5180 [0.435, 0.599]
+  hubert_large_er_L4: AUC=0.5140 [0.429, 0.591]
+  hubert_large_er_L5: AUC=0.5142 [0.434, 0.595]
+  hubert_large_er_L6: AUC=0.5726 [0.498, 0.647]
+  hubert_large_er_L7: AUC=0.5977 [0.521, 0.670]
+  hubert_large_er_L8: AUC=0.5505 [0.473, 0.629]
+  hubert_large_er_L9: AUC=0.5720 [0.495, 0.647]
+  hubert_large_er_L10: AUC=0.5899 [0.511, 0.663]
+  hubert_large_er_L11: AUC=0.6058 [0.528, 0.678]
+  hubert_large_er_L12: AUC=0.6486 [0.570, 0.722]
+  hubert_large_er_L13: AUC=0.6569 [0.577, 0.733]
+  hubert_large_er_L14: AUC=0.6591 [0.580, 0.734]
+  hubert_large_er_L15: AUC=0.6760 [0.599, 0.748]
+  hubert_large_er_L16: AUC=0.6762 [0.601, 0.749]
+  hubert_large_er_L17: AUC=0.6893 [0.615, 0.761]
+  hubert_large_er_L18: AUC=0.6974 [0.622, 0.766]
+  hubert_large_er_L19: AUC=0.7112 [0.636, 0.780]
+  hubert_large_er_L20: AUC=0.7125 [0.638, 0.781]
+  hubert_large_er_L21: AUC=0.7185 [0.651, 0.783]
+  hubert_large_er_L22: AUC=0.6578 [0.581, 0.735]
+  hubert_large_er_L23: AUC=0.6229 [0.545, 0.700]
+  hubert_large_er_L24: AUC=0.6427 [0.562, 0.717]
+  mit_formant: AUC=0.4821 [0.404, 0.562]
+  mit_dmfcc: AUC=0.5162 [0.434, 0.596]
+  mit_both: AUC=0.4984 [0.418, 0.583]
+  text_emo: AUC=0.7123 [0.638, 0.781]
+Part 2: nested selection over the full pool
+  seed 0 fold 0: audio=hubert_large_er_L20 (0.713) text=text_bert 24s
+  seed 0 fold 1: audio=ens_w2v2_L6-10 (0.726) text=text_emo 23s
+  seed 0 fold 2: audio=hubert_large_er_L21 (0.707) text=text_emo 24s
+  seed 0 fold 3: audio=w2v2_L6_ms (0.619) text=text_emo 23s
+  seed 0 fold 4: audio=ens_w2v2_L6-10 (0.701) text=text_bert 23s
+  seed 1 fold 0: audio=w2v2_L6_ms (0.708) text=text_emo 24s
+  seed 1 fold 1: audio=w2v2_L8 (0.712) text=text_bert 23s
+  seed 1 fold 2: audio=ens_w2v2_L6-10 (0.694) text=text_emo 24s
+  seed 1 fold 3: audio=ens_L8+best_whisper (0.702) text=text_emo 24s
+  seed 1 fold 4: audio=hubert_large_er_L20 (0.670) text=text_emo 24s
+  seed 2 fold 0: audio=hubert_large_er_L20 (0.687) text=text_emo 24s
+  seed 2 fold 1: audio=hubert_large_er_L19 (0.721) text=text_emo 23s
+  seed 2 fold 2: audio=hubert_large_er_L18 (0.762) text=text_bert 23s
+  seed 2 fold 3: audio=w2v2_L6 (0.721) text=text_emo 23s
+  seed 2 fold 4: audio=w2v2_L8 (0.745) text=text_emo 23s
+  seed 3 fold 0: audio=w2v2_L8 (0.689) text=text_emo 24s
+  seed 3 fold 1: audio=w2v2_L6 (0.692) text=text_emo 23s
+  seed 3 fold 2: audio=w2v2_L8 (0.772) text=text_bert 23s
+  seed 3 fold 3: audio=ens_w2v2_L6-10 (0.686) text=text_bert 24s
+  seed 3 fold 4: audio=w2v2_L6 (0.722) text=text_emo 23s
+  seed 4 fold 0: audio=hubert_large_er_L11 (0.666) text=text_emo 23s
+  seed 4 fold 1: audio=hubert_large_er_L16 (0.666) text=text_emo 23s
+  seed 4 fold 2: audio=w2v2_L8 (0.689) text=text_emo 23s
+  seed 4 fold 3: audio=ens_w2v2_L6-10 (0.663) text=text_bert 24s
+  seed 4 fold 4: audio=hubert_large_er_L19 (0.775) text=text_emo 23s
+  nested_audio: AUC=0.6835 [0.609, 0.754] vs V7=0.7105: -0.0270 [-0.065, +0.010] p=0.921 | {'sensitivity': 0.5486486486486487, 'specificity': 0.6751515151515152, 'balanced_accuracy': 0.6119000819000819, 'accuracy': 0.6359832635983264}
+  nested_fusion: AUC=0.7204 [0.648, 0.791] vs V19=0.7136: +0.0068 [-0.045, +0.057] p=0.389 | {'sensitivity': 0.5594594594594595, 'specificity': 0.6763636363636364, 'balanced_accuracy': 0.6179115479115479, 'accuracy': 0.6401673640167364}
+audio pick counts: {'ens_w2v2_L6-10': 5, 'w2v2_L8': 5, 'hubert_large_er_L20': 3, 'w2v2_L6': 3, 'w2v2_L6_ms': 2, 'hubert_large_er_L19': 2, 'hubert_large_er_L21': 1, 'ens_L8+best_whisper': 1, 'hubert_large_er_L18': 1, 'hubert_large_er_L11': 1, 'hubert_large_er_L16': 1}
+pair pick counts: {'ens_w2v2_L6-10|text_bert': 3, 'w2v2_L6|text_emo': 3, 'w2v2_L8|text_emo': 3, 'ens_w2v2_L6-10|text_emo': 2, 'w2v2_L6_ms|text_emo': 2, 'w2v2_L8|text_bert': 2, 'hubert_large_er_L20|text_emo': 2, 'hubert_large_er_L19|text_emo': 2, 'hubert_large_er_L20|text_bert': 1, 'hubert_large_er_L21|text_emo': 1, 'ens_L8+best_whisper|text_emo': 1, 'hubert_large_er_L18|text_bert': 1, 'hubert_large_er_L11|text_emo': 1, 'hubert_large_er_L16|text_emo': 1}
+FINAL FROZEN: {"rule": "prereg_phase6d_emotion_mit.md sec 5", "margin": 0.02, "audio": {"model": "V7", "source": "phase6a"}, "fusion": {"model": "V19", "source": "phase6a"}, "freeze_timestamp": "2026-10-19 11:04:18"}

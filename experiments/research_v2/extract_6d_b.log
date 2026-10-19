@@ -70,3 +70,100 @@ Notes:
 [45/119] PID 399 (woz) in 57.0s
 [46/119] PID 401 (woz) in 100.2s
 [47/119] PID 403 (woz) in 104.3s
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 25566.16it/s]
+[transformers] [1mHubertModel LOAD REPORT[0m from: superb/hubert-base-superb-er
+Key               | Status     |  | 
+------------------+------------+--+-
+projector.weight  | UNEXPECTED |  | 
+classifier.bias   | UNEXPECTED |  | 
+classifier.weight | UNEXPECTED |  | 
+projector.bias    | UNEXPECTED |  | 
+layer_weights     | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Loading weights:   0%|          | 0/422 [00:00<?, ?it/s]Loading weights: 100%|██████████| 422/422 [00:00<00:00, 48186.77it/s]
+[transformers] [1mHubertModel LOAD REPORT[0m from: superb/hubert-large-superb-er
+Key               | Status     |  | 
+------------------+------------+--+-
+projector.weight  | UNEXPECTED |  | 
+classifier.bias   | UNEXPECTED |  | 
+classifier.weight | UNEXPECTED |  | 
+projector.bias    | UNEXPECTED |  | 
+layer_weights     | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[48/119] PID 405 (woz) in 240.3s
+[49/119] PID 407 (woz) in 204.7s
+[50/119] PID 411 (woz) in 211.0s
+[51/119] PID 413 (woz) in 135.0s
+[52/119] PID 416 (woz) in 115.5s
+[53/119] PID 418 (woz) in 142.7s
+[54/119] PID 420 (woz) in 110.9s
+[55/119] PID 422 (woz) in 185.9s
+[56/119] PID 424 (woz) in 200.1s
+[57/119] PID 426 (woz) in 90.4s
+[58/119] PID 428 (woz) in 51.9s
+[59/119] PID 430 (woz) in 107.7s
+[60/119] PID 432 (woz) in 135.7s
+[61/119] PID 434 (woz) in 204.4s
+[62/119] PID 436 (woz) in 93.7s
+[63/119] PID 438 (woz) in 282.1s
+[64/119] PID 440 (woz) in 170.5s
+[65/119] PID 442 (woz) in 133.0s
+[66/119] PID 444 (woz) in 208.5s
+[67/119] PID 446 (woz) in 149.1s
+[68/119] PID 448 (woz) in 199.3s
+[69/119] PID 450 (woz) in 171.1s
+[70/119] PID 452 (woz) in 62.7s
+[71/119] PID 454 (woz) in 78.4s
+[72/119] PID 456 (woz) in 2943.1s
+[73/119] PID 459 (woz) in 785.4s
+[74/119] PID 462 (woz) in 132.9s
+[75/119] PID 464 (woz) in 118.4s
+[76/119] PID 466 (woz) in 239.5s
+[77/119] PID 468 (woz) in 110.3s
+[78/119] PID 470 (woz) in 120.5s
+[79/119] PID 472 (woz) in 104.1s
+[80/119] PID 474 (woz) in 144.7s
+[81/119] PID 476 (woz) in 54.4s
+[82/119] PID 478 (woz) in 100.7s
+[83/119] PID 480 (woz) in 58.8s
+[84/119] PID 482 (woz) in 111.4s
+[85/119] PID 484 (woz) in 121.2s
+[86/119] PID 486 (woz) in 48.7s
+[87/119] PID 488 (woz) in 94.5s
+[88/119] PID 490 (woz) in 84.3s
+[89/119] PID 492 (woz) in 104.1s
+[90/119] PID 608 (avatar) in 167.0s
+[91/119] PID 612 (avatar) in 56.9s
+[92/119] PID 618 (avatar) in 42.8s
+[93/119] PID 622 (avatar) in 59.1s
+[94/119] PID 627 (avatar) in 142.8s
+[95/119] PID 631 (avatar) in 14.5s
+[96/119] PID 640 (avatar) in 2581.9s
+[97/119] PID 650 (avatar) in 2251.9s
+[98/119] PID 652 (avatar) in 1162.2s
+[99/119] PID 658 (avatar) in 1169.5s
+[100/119] PID 660 (avatar) in 2240.8s
+[101/119] PID 663 (avatar) in 1313.7s
+[102/119] PID 666 (avatar) in 5740.7s
+[103/119] PID 669 (avatar) in 4881.9s
+[104/119] PID 673 (avatar) in 62.1s
+[105/119] PID 677 (avatar) in 442.2s
+[106/119] PID 680 (avatar) in 2902.7s
+[107/119] PID 683 (avatar) in 8426.3s
+[108/119] PID 687 (avatar) in 5875.9s
+[109/119] PID 689 (avatar) in 134.5s
+[110/119] PID 692 (avatar) in 1874.2s
+[111/119] PID 695 (avatar) in 1151.8s
+[112/119] PID 697 (avatar) in 2596.4s
+[113/119] PID 699 (avatar) in 39.8s
+[114/119] PID 703 (avatar) in 3052.8s
+[115/119] PID 707 (avatar) in 1205.7s
+[116/119] PID 709 (avatar) in 130.9s
+[117/119] PID 712 (avatar) in 2264.3s
+[118/119] PID 715 (avatar) in 1318.5s
+[119/119] PID 717 (avatar) in 5948.6s

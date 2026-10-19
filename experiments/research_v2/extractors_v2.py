@@ -249,8 +249,9 @@ class BertExtractorV2:
             raise RuntimeError("BERT produced 0 chunk representations.")
             
         pooled_vec = np.mean(cls_embeddings, axis=0).astype(np.float32)
-        if pooled_vec.shape != (768,):
-            raise RuntimeError(f"Expected (768,) BERT vector, got {pooled_vec.shape}")
+        expected = (self.model.config.hidden_size,)
+        if pooled_vec.shape != expected:
+            raise RuntimeError(f"Expected {expected} encoder vector, got {pooled_vec.shape}")
         return pooled_vec
 
     def extract_from_transcript_file(self, transcript_path: str, domain: str = 'woz') -> Tuple[np.ndarray, int, str]:
