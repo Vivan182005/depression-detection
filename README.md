@@ -20,6 +20,7 @@ cd ~/Desktop/CAPSTONE
 .venv_opensmile/bin/python run_project.py --report   # just print the saved results
 .venv_opensmile/bin/python run_project.py --phase6a  # also re-run the pre-registered Phase 6A study (~2 h)
 .venv_opensmile/bin/python predict_audio.py path/to/interview.wav   # screen one new recording
+.venv_opensmile/bin/python show_sealed_predictions.py              # all 33 held-out people: ID, truth, predictions, correct/wrong
 ```
 
 | Evaluation | AUC | Accuracy | Balanced acc. |
