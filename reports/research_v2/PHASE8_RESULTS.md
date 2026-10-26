@@ -40,3 +40,26 @@ The pre-declared rule (AUC ≥ 0.784 or accuracy ≥ 76.3%) is technically met o
 On this dataset, with about 270 people, the accuracy ceiling comes from the signal itself, not the learning method: four different families of techniques all land within ±1.5 points of 75%. This matches the DAIC-WOZ literature, where speaker-independent voice models report roughly 70-78%. A defensible statement: *"Supervisor-suggested augmentation, few-shot (prototypical network) and one-shot (prototype / kNN) learning were each tested under leakage-free nested cross-validation. None improved on the regression baseline, and the few- and one-shot methods were significantly worse, which is consistent with the data being sufficient for standard supervised learning."*
 
 Files: `experiments/research_v2/phase8_results.json`, `phase8_oof_predictions.csv`, `phase8_run.log`.
+
+---
+
+## 5. Phase 8b: the same ideas applied as PREPROCESSING
+
+The supervisor asked whether one-shot, few-shot and augmentation help when applied to the features, before the model
+(plan: `experiments/research_v2/prereg_phase8b_preprocessing.md`, declared before running). Same protocol and learner as A0.
+Comparisons are against R0 (= A0).
+
+| ID | Preprocessing | Voice AUC | Fused AUC [95% CI] | vs R0 [95% CI] | Accuracy | Balanced acc. | Avatar AUC |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| R0 | Mean of all segments (reference) | 0.759 | 0.785 [0.722, 0.843] | n/a | 75.2% | 68.3% | 0.816 |
+| P1 | One-shot speaker reference (first 5 segments subtracted) | 0.681 | 0.757 [0.693, 0.817] | **-0.028** [-0.047, -0.008] | 73.2% | 66.3% | 0.789 |
+| P2 | Few-shot domain adaptation (in-fold per-setup centring) | 0.759 | 0.785 [0.722, 0.843] | -0.000 [-0.004, +0.003] | 75.4% | 68.2% | 0.808 |
+| P3 | Augmentation-averaged features (clean + noisy) | 0.754 | 0.782 [0.718, 0.838] | -0.004 [-0.017, +0.009] | 75.1% | 68.0% | **0.825** |
+| P4 | Statistics pooling (mean + std) | 0.734 | 0.774 [0.709, 0.833] | -0.011 [-0.025, +0.002] | 74.7% | 67.1% | 0.798 |
+| P5 | P1 + P3 + P4 combined | 0.679 | 0.757 [0.690, 0.815] | **-0.028** [-0.049, -0.007] | 73.4% | 65.9% | 0.793 |
+
+**Verdict:** as preprocessing, none of the ideas helps either. Augmentation-averaged features (P3) give the best Avatar AUC
+(0.825 vs 0.816) but no overall gain. Few-shot domain adaptation (P2) makes no difference, because the strong voice models already
+do not depend on the recording setup. One-shot speaker referencing (P1, P5) is significantly worse: subtracting a person's own
+"baseline" voice also removes the depressed-sounding qualities that are present from their very first answer. **No variant is adopted.**
+The final model and its honest estimate (AUC 0.764, accuracy 74.3%) are unchanged.

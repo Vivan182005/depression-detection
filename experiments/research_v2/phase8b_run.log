@@ -1,0 +1,32 @@
+  seed 0 fold 0 done in 0s
+  seed 0 fold 1 done in 0s
+  seed 0 fold 2 done in 0s
+  seed 0 fold 3 done in 0s
+  seed 0 fold 4 done in 0s
+  seed 1 fold 0 done in 1s
+  seed 1 fold 1 done in 0s
+  seed 1 fold 2 done in 1s
+  seed 1 fold 3 done in 1s
+  seed 1 fold 4 done in 0s
+  seed 2 fold 0 done in 1s
+  seed 2 fold 1 done in 0s
+  seed 2 fold 2 done in 0s
+  seed 2 fold 3 done in 1s
+  seed 2 fold 4 done in 0s
+  seed 3 fold 0 done in 1s
+  seed 3 fold 1 done in 0s
+  seed 3 fold 2 done in 0s
+  seed 3 fold 3 done in 0s
+  seed 3 fold 4 done in 1s
+  seed 4 fold 0 done in 1s
+  seed 4 fold 1 done in 0s
+  seed 4 fold 2 done in 1s
+  seed 4 fold 3 done in 1s
+  seed 4 fold 4 done in 0s
+R0_mean              voice 0.759 | fused 0.785 [0.722, 0.843] vs R0 +0.000 [+0.000, +0.000] | acc 75.2% bal 68.3% | youden sens 63% | avatar 0.816 woz 0.771
+P1_oneshot_ref       voice 0.681 | fused 0.757 [0.693, 0.817] vs R0 -0.028 [-0.047, -0.008] | acc 73.2% bal 66.3% | youden sens 69% | avatar 0.789 woz 0.745
+P2_fewshot_domain    voice 0.759 | fused 0.785 [0.722, 0.843] vs R0 -0.000 [-0.004, +0.003] | acc 75.4% bal 68.2% | youden sens 64% | avatar 0.808 woz 0.772
+P3_aug_avg           voice 0.754 | fused 0.782 [0.718, 0.838] vs R0 -0.004 [-0.017, +0.009] | acc 75.1% bal 68.0% | youden sens 65% | avatar 0.825 woz 0.761
+P4_stats_pool        voice 0.734 | fused 0.774 [0.709, 0.833] vs R0 -0.011 [-0.025, +0.002] | acc 74.7% bal 67.1% | youden sens 62% | avatar 0.798 woz 0.765
+P5_combined          voice 0.679 | fused 0.757 [0.690, 0.815] vs R0 -0.028 [-0.049, -0.007] | acc 73.4% bal 65.9% | youden sens 65% | avatar 0.793 woz 0.744
+saved phase8b_results.json
