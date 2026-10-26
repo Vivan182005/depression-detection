@@ -42,3 +42,13 @@ bases and the same top-3-style averaging of calibrated scores.
 - Paired participant bootstrap of each method's fused score against Phase 7 P4.
 - **Adoption:** a method replaces P4 as the final model only if its fused nested AUC exceeds 0.764 by >= 0.02 **or** its accuracy
   exceeds 74.3% by >= 2 points without lowering AUC. All methods are reported, including those that do not help.
+
+## 4. Pre-run corrections (2026-10-26, before any Phase 8 outcome was computed)
+
+- **ProtoNet reproducibility:** the runner trains in parallel threads, which share torch's global RNG. Weight initialisation
+  now runs under a lock with the unit's seed, and dropout draws from a per-model generator. The architecture is unchanged.
+- **Extra comparison vs A0:** the three voice bases were picked by the Phase 7 final model using all 272 labels, which
+  slightly favours every Phase 8 method over P4 (P4 re-selects its bases inside each fold). Each method is therefore also
+  compared with A0 (same fixed bases, no new technique). That isolates the gain from the technique itself. The adoption
+  rule is unchanged, but a method whose gain over P4 does not also appear over A0 will be reported as base selection, not
+  as a benefit of the technique.

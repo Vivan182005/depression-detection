@@ -8,6 +8,7 @@ import os
 import sys
 import json
 import time
+import threading
 import numpy as np
 import pandas as pd
 import torch
@@ -34,6 +35,7 @@ METHODS = ['A0_ridge', 'A1_segbag', 'A2_segbag_audioaug', 'A3_aug_tta', 'A4_mixu
 SEEDS = (0, 1, 2, 3, 4)
 N_VIEWS, VIEW_FRAC, MAX_SEGS = 10, 0.6, 40
 N_JOBS = 6
+_INIT_LOCK = threading.Lock()   # torch's global RNG is shared across threads
 
 
 # ----------------------------------------------------------------------------- data
@@ -123,23 +125,28 @@ def knn(Db, tr, te, y, k, seed):
 
 
 class Encoder(nn.Module):
-    def __init__(self, d):
+    """d -> 128 -> LN -> ReLU -> Dropout(0.2) -> 64. Dropout draws from a per-model generator so threads stay reproducible."""
+    def __init__(self, d, gen):
         super().__init__()
-        self.net = nn.Sequential(nn.Linear(d, 128), nn.LayerNorm(128), nn.ReLU(), nn.Dropout(0.2), nn.Linear(128, 64))
+        self.inp, self.ln, self.out, self.gen = nn.Linear(d, 128), nn.LayerNorm(128), nn.Linear(128, 64), gen
 
     def forward(self, x):
-        return self.net(x)
+        h = torch.relu(self.ln(self.inp(x)))
+        if self.training:
+            h = h * (torch.rand(h.shape, generator=self.gen) >= 0.2) / 0.8
+        return self.out(h)
 
 
 def protonet(Db, tr, te, y, seed, episodes=300, shot=5, query=5):
     """Prototypical network over segment embeddings; participant embedding = mean of encoded segments."""
-    torch.manual_seed(seed)
     rng = np.random.RandomState(seed)
     segs = Db['segs']
     allseg = np.concatenate([segs[i] for i in tr])
     mu, sd = allseg.mean(0), allseg.std(0) + 1e-6
     T = {i: torch.tensor((segs[i] - mu) / sd, dtype=torch.float32) for i in list(tr) + list(te)}
-    enc = Encoder(allseg.shape[1])
+    with _INIT_LOCK:
+        torch.manual_seed(seed)
+        enc = Encoder(allseg.shape[1], torch.Generator().manual_seed(seed))
     opt = torch.optim.Adam(enc.parameters(), lr=1e-3)
     pos, neg = [i for i in tr if y[i] == 1], [i for i in tr if y[i] == 0]
     embed = lambda ids: torch.stack([enc(T[i]).mean(0) for i in ids])
@@ -241,8 +248,10 @@ def main():
         oof[f'{m}_voice'], oof[f'{m}_fused'] = v, f
         ci = compute_cluster_bootstrap_ci(y, f, n_bootstraps=2000, seed=42)
         pv, d, dl, du = compute_paired_cluster_bootstrap_delta(y, f, p7, n_bootstraps=5000, seed=7)
+        pa, da, dal, dau = compute_paired_cluster_bootstrap_delta(y, f, fused['A0_ridge'].mean(0), n_bootstraps=5000, seed=7)
         r = {'voice_auc': float(roc_auc_score(y, v)), 'fused_auc': float(roc_auc_score(y, f)), 'fused_ci95': list(ci),
-             'delta_vs_P4': d, 'delta_vs_P4_ci95': [dl, du], 'p_gt_P4': pv, 'operating_points': {}}
+             'delta_vs_P4': d, 'delta_vs_P4_ci95': [dl, du], 'p_gt_P4': pv,
+             'delta_vs_A0': da, 'delta_vs_A0_ci95': [dal, dau], 'p_gt_A0': pa, 'operating_points': {}}
         for rule in ('max_acc', 'youden'):
             ms = [binary_metrics(y, b) for b in bins[(m, rule)]]
             r['operating_points'][rule] = {k: float(np.mean([x[k] for x in ms])) for k in ms[0]}
@@ -251,7 +260,7 @@ def main():
         out['methods'][m] = r
         op = r['operating_points']
         print(f'{m:<22} voice AUC {r["voice_auc"]:.3f} | fused AUC {r["fused_auc"]:.3f} [{ci[0]:.3f}, {ci[1]:.3f}] '
-              f'vs P4 {d:+.3f} (p={pv:.2f}) | acc {op["max_acc"]["accuracy"]:.1%} bal {op["max_acc"]["balanced_accuracy"]:.1%} | '
+              f'vs P4 {d:+.3f} (p={pv:.2f}) vs A0 {da:+.3f} | acc {op["max_acc"]["accuracy"]:.1%} bal {op["max_acc"]["balanced_accuracy"]:.1%} | '
               f'youden bal {op["youden"]["balanced_accuracy"]:.1%} sens {op["youden"]["sensitivity"]:.0%}', flush=True)
     json.dump(out, open(os.path.join(RD, 'phase8_results.json'), 'w'), indent=2)
     oof.to_csv(os.path.join(RD, 'phase8_oof_predictions.csv'), index=False)
