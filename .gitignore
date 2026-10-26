@@ -52,3 +52,4 @@ experiments/research_v2/feature_store_6d/*.npz
 experiments/research_v2/feature_store_sealed/
 experiments/research_v2/feature_store_selftest/
 reports/research_v2/sealed_33_predictions.csv
+experiments/research_v2/feature_store_8/
