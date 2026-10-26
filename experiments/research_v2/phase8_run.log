@@ -1,0 +1,36 @@
+Built segment views for 272 participants in 20s
+  seed 0 fold 0 done in 15s
+  seed 0 fold 1 done in 14s
+  seed 0 fold 2 done in 14s
+  seed 0 fold 3 done in 15s
+  seed 0 fold 4 done in 13s
+  seed 1 fold 0 done in 15s
+  seed 1 fold 1 done in 14s
+  seed 1 fold 2 done in 16s
+  seed 1 fold 3 done in 15s
+  seed 1 fold 4 done in 15s
+  seed 2 fold 0 done in 16s
+  seed 2 fold 1 done in 15s
+  seed 2 fold 2 done in 16s
+  seed 2 fold 3 done in 16s
+  seed 2 fold 4 done in 16s
+  seed 3 fold 0 done in 16s
+  seed 3 fold 1 done in 15s
+  seed 3 fold 2 done in 16s
+  seed 3 fold 3 done in 15s
+  seed 3 fold 4 done in 16s
+  seed 4 fold 0 done in 16s
+  seed 4 fold 1 done in 16s
+  seed 4 fold 2 done in 15s
+  seed 4 fold 3 done in 15s
+  seed 4 fold 4 done in 15s
+A0_ridge               voice AUC 0.759 | fused AUC 0.785 [0.722, 0.843] vs P4 +0.021 (p=0.00) vs A0 +0.000 | acc 75.2% bal 68.3% | youden bal 69.1% sens 63%
+A1_segbag              voice AUC 0.756 | fused AUC 0.782 [0.718, 0.839] vs P4 +0.018 (p=0.01) vs A0 -0.003 | acc 75.4% bal 67.5% | youden bal 70.5% sens 65%
+A2_segbag_audioaug     voice AUC 0.750 | fused AUC 0.778 [0.713, 0.837] vs P4 +0.014 (p=0.07) vs A0 -0.008 | acc 75.1% bal 67.2% | youden bal 71.4% sens 68%
+A3_aug_tta             voice AUC 0.748 | fused AUC 0.778 [0.714, 0.835] vs P4 +0.014 (p=0.07) vs A0 -0.007 | acc 75.8% bal 68.8% | youden bal 68.5% sens 62%
+A4_mixup               voice AUC 0.762 | fused AUC 0.787 [0.725, 0.844] vs P4 +0.022 (p=0.00) vs A0 +0.001 | acc 75.0% bal 67.8% | youden bal 70.5% sens 66%
+D1_balanced            voice AUC 0.765 | fused AUC 0.788 [0.726, 0.844] vs P4 +0.023 (p=0.00) vs A0 +0.002 | acc 75.0% bal 67.4% | youden bal 70.3% sens 65%
+C1_nearest_prototype   voice AUC 0.614 | fused AUC 0.744 [0.676, 0.804] vs P4 -0.021 (p=0.90) vs A0 -0.042 | acc 72.8% bal 63.9% | youden bal 68.1% sens 64%
+C2_knn                 voice AUC 0.614 | fused AUC 0.746 [0.677, 0.807] vs P4 -0.019 (p=0.87) vs A0 -0.040 | acc 73.2% bal 64.2% | youden bal 67.1% sens 62%
+B1_protonet            voice AUC 0.685 | fused AUC 0.755 [0.687, 0.815] vs P4 -0.009 (p=0.73) vs A0 -0.031 | acc 73.5% bal 65.2% | youden bal 66.6% sens 62%
+saved phase8_results.json
