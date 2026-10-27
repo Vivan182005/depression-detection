@@ -82,6 +82,31 @@ The pre-declared rule was: F1 AUC ≥ R0 + 0.02 with a paired-bootstrap CI exclu
 
 Honest speaker-independent DAIC-WOZ / E-DAIC results are about 0.55-0.74 macro-F1 (`reports/Depression detection literature review.md`). F1 reaches **macro-F1 0.74 and AUC 0.84 under repeated speaker-disjoint nested CV on 272 people**, on ASR transcripts only and with no interviewer prompts. That puts it at the top of the honest range. It also matches the literature review's prediction that LLM PHQ item scoring was the most promising next step.
 
+## 5b. Unseen holdout: train on 239, test on the 33
+
+This is the standing rule from 2026-10-27, and every future improvement gets the same test. Each model is trained **only** on the 239 non-sealed participants. The ridge alphas (inner CV), CDF maps, stacker and both thresholds are all fit on those 239. Each model then predicts the 33 people in `sealed_ids.json` (the `unseen/` folder) once. Of the 33, 11 are depressed, so **always guessing "not depressed" scores 66.7%**. Script: `experiments/research_v2/run_holdout_239_33.py`.
+
+| Model | AUC [95% CI] | Permutation p | Accuracy | Balanced acc. | Sensitivity | Specificity | Youden: balanced acc. / sensitivity |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Frozen V7 (2026-10-19 sealed run, for reference) | 0.694 | n/a | n/a | n/a | n/a | n/a | n/a |
+| Frozen V19 (2026-10-19 sealed run, for reference) | 0.698 | n/a | n/a | n/a | n/a | n/a | n/a |
+| R0: voice + text | 0.785 [0.61, 0.93] | 0.002 | 72.7% (24/33) | 70.5% | 64% | 77% | 70.5% / 64% |
+| L1: LLM items only | 0.872 [0.73, 0.97] | 0.0002 | 75.8% (25/33) | 68.2% | 45% | 91% | 70.5% / 55% |
+| **F1: voice + text + LLM (adopted)** | **0.868 [0.72, 0.97]** | **0.0002** | **78.8% (26/33)** | 70.5% | 45% | 95% | **77.3% / 82%** |
+| F2: voice + LLM | 0.855 [0.70, 0.96] | 0.0004 | 81.8% (27/33) | 72.7% | 45% | 100% | 70.5% / 55% |
+
+**Reading it:**
+
+- **The holdout agrees with cross-validation.** F1 scores 78.8% on the 33 unseen people, against 79.1% in nested CV, and its AUC is 0.868 against 0.843 in CV.
+- **The gain over the old models holds here too.** The frozen V7/V19 models scored AUC about 0.70 on these same 33 people. R0 scores 0.785 and F1 scores 0.868.
+- **F1 is quoted as the headline, not F2.** F2 has the highest accuracy (81.8%), but F1 was the pre-declared primary model. Picking the best-looking row after the fact would be cherry-picking. The two differ by one person.
+
+**Limits:**
+
+- **The confidence intervals are wide** because there are only 33 people. One person is 3 accuracy points.
+- **Few depressed people are caught at the max-accuracy threshold** (5 of 11). For screening, the Youden threshold is the better operating point: it catches 9 of 11 (82%), with 77.3% balanced accuracy.
+- **This is a repeat check, not a pristine test.** These 33 were opened once before, on 2026-10-19. The voice bases were also chosen on all 272 people, so they saw these 33.
+
 ## 6. Next step
 
 Retrain the final model as F1 (voice + text + LLM items) on all 272 and add LLM scoring to `predict_audio`, which needs the local 4 GB Mistral model at inference. This will be done after confirmation, because it changes the app's dependencies.

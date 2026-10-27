@@ -1,0 +1,11 @@
+  seed 0 done
+  seed 1 done
+  seed 2 done
+  seed 3 done
+  seed 4 done
+Holdout: train 239, test 33 (11 depressed), majority baseline 66.7%
+R0_voice_text        AUC 0.785 [0.612, 0.929] perm p 0.0022 | acc 72.7% (24/33) bal 70.5% sens 64% spec 77% | youden acc 72.7% bal 70.5% sens 64%
+L1_llm_ridge         AUC 0.872 [0.727, 0.972] perm p 0.0002 | acc 75.8% (25/33) bal 68.2% sens 45% spec 91% | youden acc 75.8% bal 70.5% sens 55%
+F1_voice_text_llm    AUC 0.868 [0.722, 0.966] perm p 0.0002 | acc 78.8% (26/33) bal 70.5% sens 45% spec 95% | youden acc 75.8% bal 77.3% sens 82%
+F2_voice_llm         AUC 0.855 [0.700, 0.962] perm p 0.0004 | acc 81.8% (27/33) bal 72.7% sens 45% spec 100% | youden acc 75.8% bal 70.5% sens 55%
+saved holdout_239_33_results.json
