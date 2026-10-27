@@ -82,7 +82,9 @@ def main():
     ap.add_argument('--pids', default='')
     ap.add_argument('--limit', type=int, default=0)
     a = ap.parse_args()
+    import mlx.core as mx
     from mlx_lm import load
+    mx.set_cache_limit(256 * 1024 ** 2)     # 8 GB Mac: stop MLX's buffer cache growing across transcripts (swap thrash)
     model, tok = load(MODEL)
     digit_ids = []
     for d in '0123':
@@ -103,6 +105,7 @@ def main():
         pd.DataFrame([row]).to_csv(OUT, mode='a', header=not os.path.exists(OUT), index=False)
         print(f'[{i + 1}/{len(todo)}] PID {p} tokens={n_tok} items={len(s)} sum={np.nansum(list(s.values())):.2f} '
               f'in {time.time() - t0:.0f}s', flush=True)
+        mx.clear_cache()
 
 
 if __name__ == '__main__':
