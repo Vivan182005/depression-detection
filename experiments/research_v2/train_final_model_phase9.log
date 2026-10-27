@@ -1,0 +1,7 @@
+w2v2_L6                alpha   100.0 oof AUC 0.727
+hubert_large_er_L19    alpha   100.0 oof AUC 0.727
+hubert_large_er_L20    alpha   100.0 oof AUC 0.722
+text_emo               alpha 10000.0 oof AUC 0.745
+llm_items              alpha   100.0 oof AUC 0.830
+in-sample AUC 0.928 (sanity only, NOT a performance number); stacked OOF AUC 0.850
+meta coef (voice, text, llm) [1.606 1.318 3.003] thresholds {'max_acc': 0.5418854832203606, 'youden': 0.19557409188947936} -> /Users/vivannaik/Desktop/CAPSTONE/models/final_phase9_f1.joblib

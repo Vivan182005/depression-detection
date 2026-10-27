@@ -62,6 +62,21 @@ def report():
     print(f'\n4) Final saved model: models/final_phase7_p4.joblib')
     print(f'   voice = {[v[0] for v in fm["voice"]]}, text = {fm["text"][0]}, trained on {fm["trained_on"]}')
     print(f'   expected AUC on new people = {fm["phase7_nested_cv_auc"]:.3f} (nested CV), thresholds {fm["thresholds"]}')
+    p9 = os.path.join(RD, 'phase9_results.json')
+    if os.path.exists(p9):
+        p9, ho = json.load(open(p9)), json.load(open(os.path.join(RD, 'holdout_239_33_results.json')))
+        print(f'\n5) Phase 9: + zero-shot local LLM PHQ-8 item scores (N={p9["n"]}, same nested CV)')
+        for k, x in p9['analyses'].items():
+            m = x['operating_points']['max_acc']
+            print(f'   {k:<34}{x["auc"]:>7.3f}{m["accuracy"]:>9.1%}{m["balanced_accuracy"]:>9.1%}{m["sensitivity"]:>7.0%}{m["specificity"]:>7.0%}')
+        print(f'   Holdout (train 239, test the 33 unseen; majority {ho["test_majority_accuracy"]:.1%}):')
+        for k, x in ho['models'].items():
+            m = x['operating_points']['max_acc']
+            print(f'   {k:<34}{x["auc"]:>7.3f}{m["accuracy"]:>9.1%}{m["balanced_accuracy"]:>9.1%}{m["sensitivity"]:>7.0%}{m["specificity"]:>7.0%}')
+        f1 = os.path.join(ROOT, 'models', 'final_phase9_f1.json')
+        if os.path.exists(f1):
+            f1 = json.load(open(f1))
+            print(f'   Final saved model: models/final_phase9_f1.joblib (voice + text + LLM, {f1["trained_on"]}), thresholds {f1["thresholds"]}')
     print(line)
 
 
@@ -79,6 +94,11 @@ def main():
                  ['experiments/research_v2/run_phase6a_experiment.py'], 'phase6a_run.log')
         step('Phase 7 nested cross-validation on all 272 participants', ['experiments/research_v2/run_phase7_experiments.py'], 'phase7_run.log')
         step('Train the final model on all 272 participants', ['experiments/research_v2/train_final_model_phase7.py'], 'train_final_model.log')
+        if os.path.exists(os.path.join(RD, 'feature_store_9', 'llm_phq.csv')):   # LLM scores: score_phq_llm.py in .venv_llm (~3.5 h)
+            step('Phase 9 nested CV with LLM PHQ-8 items', ['experiments/research_v2/run_phase9_llm.py'], 'phase9_run.log')
+            step('Holdout: train 239, test the 33 unseen', ['experiments/research_v2/run_holdout_239_33.py'], 'holdout_239_33_run.log')
+            step('Train the Phase 9 F1 final model on all 272', ['experiments/research_v2/train_final_model_phase9.py'],
+                 'train_final_model_phase9.log')
     report()
 
 

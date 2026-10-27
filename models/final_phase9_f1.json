@@ -1,0 +1,39 @@
+{
+  "thresholds": {
+    "max_acc": 0.5418854832203606,
+    "youden": 0.19557409188947936
+  },
+  "members": {
+    "w2v2_L6": {
+      "alpha": 100.0,
+      "oof_auc": 0.727
+    },
+    "hubert_large_er_L19": {
+      "alpha": 100.0,
+      "oof_auc": 0.727
+    },
+    "hubert_large_er_L20": {
+      "alpha": 100.0,
+      "oof_auc": 0.722
+    },
+    "text_emo": {
+      "alpha": 10000.0,
+      "oof_auc": 0.745
+    },
+    "llm_items": {
+      "alpha": 100.0,
+      "oof_auc": 0.83
+    }
+  },
+  "llm": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+  "meta_coef_voice_text_llm": [
+    1.606200058586282,
+    1.3175409677284429,
+    3.0034385554117957
+  ],
+  "trained_on": "N=272 (all 272)",
+  "phase9_nested_cv_auc": 0.8428436615287827,
+  "phase9_nested_cv_accuracy": 0.7911764705882354,
+  "holdout_239_33_auc": 0.8677685950413223,
+  "holdout_239_33_accuracy": 0.7878787878787878
+}

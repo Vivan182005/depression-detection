@@ -107,9 +107,31 @@ This is the standing rule from 2026-10-27, and every future improvement gets the
 - **Few depressed people are caught at the max-accuracy threshold** (5 of 11). For screening, the Youden threshold is the better operating point: it catches 9 of 11 (82%), with 77.3% balanced accuracy.
 - **This is a repeat check, not a pristine test.** These 33 were opened once before, on 2026-10-19. The voice bases were also chosen on all 272 people, so they saw these 33.
 
-## 6. Next step
+## 6. New final model (done 2026-10-27)
 
-Retrain the final model as F1 (voice + text + LLM items) on all 272 and add LLM scoring to `predict_audio`, which needs the local 4 GB Mistral model at inference. This will be done after confirmation, because it changes the app's dependencies.
+**`models/final_phase9_f1.joblib`** replaces the Phase 7 model as the default. The Phase 7 model is kept and selectable with `--model p4`.
+
+**Training.** `experiments/research_v2/train_final_model_phase9.py` fits F1 on all 272 participants with the same procedure as each CV fold. Each member's ridge alpha is chosen by 4-fold CV AUC, using the most frequent choice over seeds 0-4:
+
+| Member | Alpha | Out-of-fold AUC |
+| :--- | :---: | :---: |
+| w2v2_L6 | 100 | 0.727 |
+| hubert_large_er_L19 | 100 | 0.727 |
+| hubert_large_er_L20 | 100 | 0.722 |
+| text_emo | 10000 | 0.745 |
+| LLM items | 100 | 0.830 |
+
+- Stacker weights: voice 1.61, text 1.32, LLM 3.00.
+- Thresholds: max-accuracy 0.542, Youden 0.196.
+
+**Expected performance on new people** is the nested-CV and holdout figures: AUC about 0.84, accuracy about 79%. The 0.93 in-sample AUC printed by the training script is a sanity check only, not a performance number.
+
+**App.** `predict_audio.py` now:
+1. computes voice and text features as before;
+2. sends the transcript to `score_phq_llm.py --text-file` in `.venv_llm` (MLX);
+3. prints the 8 PHQ-8 item estimates and the F1 risk score.
+
+**End-to-end check.** On participant 606, the app reproduced the training-pool LLM item scores and risk score exactly (0.036, not flagged; true PHQ-8 = 5).
 
 Files:
 - `experiments/research_v2/phase9_results.json`

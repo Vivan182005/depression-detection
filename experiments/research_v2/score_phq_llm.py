@@ -3,7 +3,7 @@ Script: experiments/research_v2/score_phq_llm.py
 Phase 9 (prereg_phase9_llm_phq.md): zero-shot PHQ-8 item scores from a local 4-bit Mistral-7B (MLX) on the v1.3c
 participant-only Whisper transcripts. For each item the score is E[s] = sum k p(k) over k in 0..3 from the next-token
 distribution, decoding greedily. Label-free. Output: feature_store_9/llm_phq.csv (git-ignored), resumable.
-  .venv_llm/bin/python score_phq_llm.py [--pids 300,301] [--limit N]
+  .venv_llm/bin/python score_phq_llm.py [--pids 300,301] [--limit N] [--text-file transcript.txt]
 """
 import os
 import sys
@@ -81,6 +81,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--pids', default='')
     ap.add_argument('--limit', type=int, default=0)
+    ap.add_argument('--text-file', default='', help='score one transcript file and print JSON (used by predict_audio.py)')
     a = ap.parse_args()
     import mlx.core as mx
     from mlx_lm import load
@@ -91,6 +92,10 @@ def main():
         ids = tok.encode(d, add_special_tokens=False)
         digit_ids.append(ids[-1])
     assert len(set(digit_ids)) == 4, digit_ids
+    if a.text_file:
+        s, raw, n_tok = score_one(model, tok, open(a.text_file).read(), digit_ids)
+        print('LLM_JSON ' + json.dumps({'items': s, 'n_items_parsed': len(s), 'prompt_tokens': n_tok}), flush=True)
+        return
     T = load_transcripts()
     pids = sorted(T) if not a.pids else [int(p) for p in a.pids.split(',')]
     os.makedirs(OUT_DIR, exist_ok=True)
